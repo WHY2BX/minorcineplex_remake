@@ -10,7 +10,7 @@
 <?php
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	
+	$first_name = $_POST['first_name'];
 
 	date_default_timezone_set('Asia/Bangkok');
 	$datetime = date('Y-m-d H:i:s');
@@ -21,14 +21,19 @@
 	if($password != ""){
 
 			
-		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
-		$result = mysqli_query($conn, $sql);
+		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";
+        $result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
 			
 			
 				while($row = mysqli_fetch_assoc($result)) {			
                     
+                    // Set Session
+					session_start();							
+					$_SESSION['first_name'] = $row['FIRST_NAME'];
+					
+
 					//Redirect
 					if($username == 'test')
 						echo "<script> window.open('index.php','_self'); </script>";
