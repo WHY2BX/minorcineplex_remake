@@ -5,6 +5,7 @@
 	require_once('connect.php');
     $no = $_GET['no'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
