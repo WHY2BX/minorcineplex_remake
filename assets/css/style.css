@@ -1264,6 +1264,7 @@ h6 {
 .MoviePosterBottom{
   width: 180px; height: 300px; object-fit: cover;
   border-radius: 15px;
+  
 }
 
 .MoviePosterBottom:hover{
