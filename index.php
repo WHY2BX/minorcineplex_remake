@@ -117,10 +117,10 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                echo $name;
+                                ?> <p2 style ="font-family: 'Kanit';" ><?php echo $name;?></p2>
+                                <?php
                             }
                         }
-
                   ?>
             
                 </div>
@@ -156,9 +156,9 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                $pos = $row['Movie_Poster'];
-                                echo $name;
-
+                                
+                                ?> <p3 style ="font-family: 'Kanit';" ><?php echo $name; ?></p3>
+                                <?php
                             }
                         }
 
