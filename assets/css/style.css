@@ -248,7 +248,7 @@ h6 {
 }
 
 .card-body {
-  padding: 0 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   color: #2273ff;
   
 }
@@ -1257,6 +1257,7 @@ h6 {
 .MoviePoster, .MoviePosterDetail{
   max-width:100%; width: 300px; height: 500px; object-fit: cover;
   border-radius: 15px;
+  
 }
 
 .MoviePoster:hover{
@@ -1268,6 +1269,7 @@ h6 {
 .MoviePosterBottom{
   width: 180px; height: 300px; object-fit: cover;
   border-radius: 15px;
+  
 }
 
 .MoviePosterBottom:hover{

@@ -106,7 +106,7 @@
 
                   ?>
                   
-                  <img class="MoviePoster" src="<?php echo $pos; ?>">
+                  <img class="MoviePoster" src="<?php echo $pos; ?>" >
                   <br><br>
                   <?php
 
@@ -117,7 +117,7 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                ?> <p2 style ="font-family: 'Kanit';" ><?php echo $name;?></p2>
+                                ?> <h3 style ="font-family: 'Kanit';" ><?php echo $name;?></h3>
                                 <?php
                             }
                         }
@@ -145,8 +145,8 @@
               <div class="card">
 
                 <div class="card-body">
-                  <img class="MoviePosterBottom" src="<?php echo $pos; ?>">
-                  <br><br>
+                  <img class="MoviePosterBottom" src="<?php echo $pos; ?>" style ="display: block; margin-left: auto; margin-right: auto">
+                  <br>
                   <?php
 
                       $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
@@ -157,7 +157,7 @@
 
                                 $name = $row['Movie_Name'];
                                 
-                                ?> <p3 style ="font-family: 'Kanit';" ><?php echo $name; ?></p3>
+                                ?> <h4 style ="font-family: 'Kanit'; text-align: center;" ><?php echo $name; ?></h4>
                                 <?php
                             }
                         }
