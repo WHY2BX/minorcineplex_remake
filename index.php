@@ -106,7 +106,7 @@
 
                   ?>
                   
-                  <img class="MoviePoster" src="<?php echo $pos; ?>" >
+                  <img class="MoviePoster" src="<?php echo $pos; ?>">
                   <br><br>
                   <?php
 
@@ -137,7 +137,7 @@
 
       <?php 
           $no = 4;
-          while($no <= 10){ 
+          while($no <= 15){ 
       ?>
       
           <div class="col-lg-2" onClick="window.open('movie.php?id=<?php echo $no; ?>', '_self')">
@@ -152,7 +152,6 @@
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-
                                 $name = $row['Movie_Name'];
                                 $pos = $row['Movie_Poster'];
                                 // echo $name;
@@ -190,7 +189,7 @@
       </div>
 
     </section>
-
+    <div style="text-align:center;font-family:Kanit;font-size:40px">Coming Soon . . .</div>
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

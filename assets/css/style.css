@@ -2,6 +2,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Kanit";
+  src: url(/assets/fonts/Kanit/Kanit-Regular.ttf);
+}
+
 :root {
   scroll-behavior: smooth;
 }
@@ -28,9 +34,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Kanit";
 }
 
+h3{
+  color: #4154f1;
+  font-size: 25px;
+}
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
@@ -619,7 +629,7 @@ h6 {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 20%;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
@@ -1249,8 +1259,14 @@ h6 {
   color: #012970;
 }
 
-.MoviePoster, .MoviePosterDetail{
+.MoviePoster{
   max-width:100%; width: 300px; height: 500px; object-fit: cover;
+  border-radius: 15px;
+  caret-color: transparent;
+}
+
+.MoviePosterDetail{
+  width: 200px; height: 350px; object-fit: cover;
   border-radius: 15px;
   caret-color: transparent;
 }
@@ -1271,4 +1287,19 @@ h6 {
   opacity: 0.85;
   transform: scale(0.96);
   transition: all 0.2s ease;
+}
+
+.col-lg-2{
+  width: min-content;
+}
+
+.youtube_frame{
+  margin: 1%;
+  border-radius: 10px;
+  width: 32%;
+  height: 320px;
+}
+
+img { 
+  vertical-align: unset;
 }
