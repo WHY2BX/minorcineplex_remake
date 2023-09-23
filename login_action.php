@@ -1,11 +1,9 @@
 <?php
 	session_cache_limiter('private, must-revalidate');
 	session_cache_expire(60);
-	ob_start();
 	session_start();
+	ob_start();
 	$_SESSION = array();
-	session_destroy();
-	
 ?>
 <?php require_once('connect.php'); ?>
 <?php
@@ -26,6 +24,9 @@
 
 		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
 		$result = mysqli_query($conn, $sql);
+		$_SESSION['name'] = $username;
+		$_SESSION['password'] = $password;
+		$_SESSION['status'] = "logged in";
 
 		if (mysqli_num_rows($result) > 0) {
 			
