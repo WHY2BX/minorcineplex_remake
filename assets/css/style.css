@@ -1265,7 +1265,7 @@ h6 {
   transition: all 0.2s ease;
 }
 
-.MoviePosterBottom, .MoviePosterDetail{
+.MoviePosterBottom{
   width: 180px; height: 300px; object-fit: cover;
   border-radius: 15px;
 }
