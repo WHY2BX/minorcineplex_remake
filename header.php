@@ -67,8 +67,8 @@
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2"><?php 
-            if (isset($_SESSION['name']) && ! empty($_SESSION['name'])){
-            echo $_SESSION['name']; }
+            if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+            echo $_SESSION['first_name']; }
             else
               echo "Guest"?>
       </span>

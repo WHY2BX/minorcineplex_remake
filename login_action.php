@@ -22,9 +22,10 @@
 
 		
 
-		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
+		$sql = "SELECT * FROM member WHERE Username = '".$username."' AND Password = '".$password."'";	
 		$result = mysqli_query($conn, $sql);
 		$_SESSION['name'] = $username;
+		$_SESSION['first_name'] = "";
 		$_SESSION['password'] = $password;
 		$_SESSION['status'] = "logged in";
 
@@ -34,7 +35,7 @@
 				while($row = mysqli_fetch_assoc($result)) {			
                     
 					session_start();
-					$_SESSION['first_name'] = $row['first_name'];
+					$_SESSION['first_name'] = $row['First_Name'];
 
 					//Redirect
 					if($username == 'test')
