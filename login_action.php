@@ -4,7 +4,8 @@
 	ob_start();
 	session_start();
 	$_SESSION = array();
-	session_destroy(); 
+	session_destroy();
+	
 ?>
 <?php require_once('connect.php'); ?>
 <?php
@@ -20,7 +21,9 @@
 	
 	if($password != ""){
 
-			
+
+		
+
 		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
 		$result = mysqli_query($conn, $sql);
 
@@ -29,6 +32,9 @@
 			
 				while($row = mysqli_fetch_assoc($result)) {			
                     
+					session_start();
+					$_SESSION['first_name'] = $row['first_name'];
+
 					//Redirect
 					if($username == 'test')
 						echo "<script> window.open('index.php','_self'); </script>";

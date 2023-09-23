@@ -3,7 +3,7 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-  $first_name = $_SESSION['first_name'];
+  $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,13 +40,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Aug 30 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -92,16 +85,28 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Sales <span>| Today</span></h5>
+                  <h5 class="card-title">Recommend <span>| Today</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                    <?php
+
+                        $sql = "SELECT * FROM movies WHERE Movie_ID  = ".$id;
+                        $result = mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                $name = $row['Movie_Name'];
+                                echo $name;
+
+                            }
+                        }
+
+                        ?>
+              
                     </div>
                     <div class="ps-3">
-                      <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                     
                     </div>
                   </div>
                 </div>
