@@ -629,7 +629,7 @@ h3{
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 20%;
+  width: 15%;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
@@ -1266,8 +1266,8 @@ h3{
 }
 
 .MoviePosterDetail{
-  width: 200px; height: 350px; object-fit: cover;
-  border-radius: 15px;
+  width: fit-content; height: 350px; object-fit: cover;
+  border-radius: 10px;
   caret-color: transparent;
 }
 
@@ -1296,7 +1296,7 @@ h3{
 .youtube_frame{
   margin: 1%;
   border-radius: 10px;
-  width: 32%;
+  width: 35%;
   height: 320px;
 }
 
