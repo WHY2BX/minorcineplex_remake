@@ -106,7 +106,7 @@
 
                   ?>
                   
-                  <img class="MoviePoster" src="<?php echo $pos; ?>" style="max-width:100%; width: 300px; height: 500px; object-fit: cover;">
+                  <img class="MoviePoster" src="<?php echo $pos; ?>">
                   <br><br>
                   <?php
 
@@ -137,7 +137,7 @@
 
       <?php 
           $no = 4;
-          while($no <= 20){ 
+          while($no <= 10){ 
       ?>
       
           <div class="col-lg-2" onClick="window.open('movie.php?id=<?php echo $no; ?>', '_self')">
@@ -145,7 +145,8 @@
               <div class="card">
 
                 <div class="card-body">
-                  <img src="<?php echo $no; ?>.jpg">
+                  <img class="MoviePosterBottom" src="<?php echo $pos; ?>">
+                  <br><br>
                   <?php
 
                       $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
@@ -155,6 +156,7 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
+                                $pos = $row['Movie_Poster'];
                                 echo $name;
 
                             }

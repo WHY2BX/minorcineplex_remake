@@ -257,9 +257,16 @@ h6 {
   font-size: 38px;
 }
 
-.card-body h3{
-  font-size: 25px;
+.description{
+  margin: 0 auto;
+  max-width: 35%;
 }
+
+.card-body p{
+  text-align: center;
+  font-size: 18px;
+}
+
 
 .card-body h4{
   font-size: 18px;
@@ -1248,6 +1255,7 @@ h6 {
 }
 
 .MoviePoster, .MoviePosterDetail{
+  max-width:100%; width: 300px; height: 500px; object-fit: cover;
   border-radius: 15px;
 }
 
@@ -1257,3 +1265,13 @@ h6 {
   transition: all 0.2s ease;
 }
 
+.MoviePosterBottom, .MoviePosterDetail{
+  width: 180px; height: 300px; object-fit: cover;
+  border-radius: 15px;
+}
+
+.MoviePosterBottom:hover{
+  opacity: 0.85;
+  transform: scale(0.96);
+  transition: all 0.2s ease;
+}

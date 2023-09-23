@@ -39,8 +39,9 @@
       </ul>
       
       <div class="container">
+      
         <div class="screen"></div>
-        
+        <div style="font-size:15px;margin-bottom:15px">Screen</div>
         <div class="row">
             <div class="seat"></div>
             <div class="seat"></div>
@@ -108,7 +109,6 @@
       </div>
     </div>
     
-    <div class="credits"><a href="http://www.aniket.co" target="_blank">aniket.co</a></div>
 </body>
 <script src="booking.js"></script>
 </html>

@@ -63,17 +63,18 @@
                                 $reday = $row['Release_Date'];
                                 $pos = $row['Movie_Poster'];
 
-                                ?> <img class="MoviePosterDetail" src=<?php echo $pos ?> style = "max-width:100%; width: 300px; height: 500px; object-fit: cover;">
+                                ?> <img class="MoviePosterDetail" src=<?php echo $pos ?>>
                                 <br><br><h1 style ="font-family: 'Kanit';">
-                                <?php echo $name; ?>
-                                <h1><h3 style ="font-family: 'Kanit';">
-                                <?php echo $des;?>
+                                <?php echo $name; ?></h1>
+                                <div class="description">
+                                <p style ="font-family: 'Kanit';">
+                                <?php echo $des;?></p></div>
                                 <h4 style ="font-family: 'Kanit';" > Genre : 
-                                <?php echo $gen ?>
+                                <?php echo $gen ?></h4>
                                 <h4 style ="font-family: 'Kanit';"> Duration : 
-                                <?php echo $dur ?>
+                                <?php echo $dur ?></h4>
                                 <h4 style ="font-family: 'Kanit';"> Release date :
-                                <?php echo $reday ?><br>
+                                <?php echo $reday ?></h4><br>
                                 <?php
                             }
                         }
