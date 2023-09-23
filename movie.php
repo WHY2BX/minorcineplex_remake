@@ -62,11 +62,21 @@
 
                                 $name = $row['Movie_Name'];
                                 $des = $row['Description'];
-                                ?> <br><h1 style ="font-family: 'Kanit';"><?php
-                                echo $name;
-                                ?><h1><h3 style ="font-family: 'Kanit';"><?php
-                                echo $des;
-                                ?><h3><?php
+                                $gen = $row['Genre'];
+                                $dur = $row['Duration'];
+                                $reday = $row['Release_Date'];
+
+                                ?> <br><h1 style ="font-family: 'Kanit';">
+                                <?php echo $name; ?>
+                                <h1><h3 style ="font-family: 'Kanit';">
+                                <?php echo $des;?>
+                                <h4 style ="font-family: 'Kanit';" > Genre : 
+                                <?php echo $gen ?>
+                                <h4 style ="font-family: 'Kanit';"> Duration : 
+                                <?php echo $dur ?>
+                                <h4 style ="font-family: 'Kanit';"> Release date :
+                                <?php echo $reday ?>
+                                <?php
                             }
                         }
 

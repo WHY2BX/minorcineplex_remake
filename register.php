@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+  <title>Register</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,7 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -43,7 +42,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
+                  <!-- <img src="assets/img/logo.png" alt=""> -->
                   <span class="d-none d-lg-block">MINOR Cineplex</span>
                 </a>
               </div><!-- End Logo -->
@@ -88,7 +87,7 @@
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#" id="showPopup">terms and conditions</a></label>
                         <div class="invalid-feedback">You must agree before submitting.</div>
                       </div>
                     </div>
@@ -96,18 +95,11 @@
                       <button class="btn btn-primary w-100" type="submit">Create Account</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
+                      <p class="small mb-0">Already have an account? <a href="login.php">Log in</a></p>
                     </div>
                   </form>
-
                 </div>
               </div>
-
-              <div class="credits">
-
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-
             </div>
           </div>
         </div>
@@ -116,6 +108,75 @@
 
     </div>
   </main><!-- End #main -->
+
+  <div class="popup" id="termsPopup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <br >
+            <!-- Terms and Conditions -->
+            <p><iframe src="Terms&Conditions.txt" style="border:none;width:100%;height:500px;border-radius: 10px"></iframe></p>
+        </div>
+    </div>
+
+    <style>
+        /* Styles for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            max-height: 80%;
+            width: 60%;
+            height: 80%;
+            overflow-y: auto;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        
+    </style>
+
+    <script>
+        // Get the popup and close button elements
+        var popup = document.getElementById('termsPopup');
+        var closeBtn = document.getElementById('closePopup');
+        var showPopupBtn = document.getElementById('showPopup');
+
+        // Show the popup when the "View Terms and Conditions" link is clicked
+        showPopupBtn.addEventListener('click', function() {
+            popup.style.display = 'block';
+        });
+
+        // Close the popup when the close button or outside the popup is clicked
+        closeBtn.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+  </script>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
