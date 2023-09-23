@@ -1266,8 +1266,8 @@ h3{
 }
 
 .MoviePosterDetail{
-  width: fit-content; height: 350px; object-fit: cover;
-  border-radius: 10px;
+  width: max-content; height: 600px; object-fit: scale-down;
+  border-radius: 15px;
   caret-color: transparent;
 }
 
@@ -1294,10 +1294,9 @@ h3{
 }
 
 .youtube_frame{
-  margin: 1%;
   border-radius: 10px;
   width: 35%;
-  height: 320px;
+  height: 600px;
 }
 
 img { 
