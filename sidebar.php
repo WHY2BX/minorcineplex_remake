@@ -6,11 +6,10 @@
       <li class="nav-item">
         <a class="nav-link " href="index.php">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Main page</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-<<<<<<< HEAD
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -181,9 +180,6 @@
         </ul>
       </li><!-- End Icons Nav -->
 
-=======
- 
->>>>>>> f1d1662fd7a7b83df39d7a6944bfcb64a94034e3
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
@@ -193,7 +189,6 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-<<<<<<< HEAD
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.php">
           <i class="bi bi-question-circle"></i>
@@ -210,28 +205,18 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-register.php">
-=======
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="register.php">
->>>>>>> f1d1662fd7a7b83df39d7a6944bfcb64a94034e3
           <i class="bi bi-card-list"></i>
           <span>Register</span>
         </a>
       </li><!-- End Register Page Nav -->
 
       <li class="nav-item">
-<<<<<<< HEAD
         <a class="nav-link collapsed" href="pages-login.php">
-=======
-        <a class="nav-link collapsed" href="login.php">
->>>>>>> f1d1662fd7a7b83df39d7a6944bfcb64a94034e3
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>
       </li><!-- End Login Page Nav -->
 
-<<<<<<< HEAD
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-error-404.php">
           <i class="bi bi-dash-circle"></i>
@@ -245,8 +230,6 @@
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
-=======
->>>>>>> f1d1662fd7a7b83df39d7a6944bfcb64a94034e3
 
     </ul>
 
