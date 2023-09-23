@@ -69,7 +69,7 @@
           while($no <= 3){ 
       ?>
       
-          <div class="col-lg-4" onClick="window.open('movie.php?id=<?php echo $no; ?>', '_self')" align="center">
+          <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
 
               <div class="card">
 
