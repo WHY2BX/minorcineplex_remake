@@ -3,7 +3,7 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-  $id = $_GET['id'];
+  $id = $_GET['movie_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,9 +89,10 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    
                     <?php
 
-                        $sql = "SELECT * FROM movies WHERE Movie_ID  = ".$id;
+                        $sql = "SELECT * FROM movie WHERE Movie_ID  = ".$movie_id;
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
@@ -102,7 +103,7 @@
                             }
                         }
 
-                        ?>
+                    ?>
               
                     </div>
                     <div class="ps-3">
