@@ -140,7 +140,7 @@
           while($no <= 15){ 
       ?>
       
-          <div class="col-lg-2" onClick="window.open('movie.php?id=<?php echo $no; ?>', '_self')">
+          <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">
 
               <div class="card">
 
