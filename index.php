@@ -145,6 +145,21 @@
               <div class="card">
 
                 <div class="card-body">
+                  <?php
+
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
+                      //echo $sql;
+                        $result = mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                $name = $row['Movie_Name'];
+                                $pos = $row['Movie_Poster'];
+                                // echo $name;
+
+                            }
+                        }
+                  ?>
                   <img class="MoviePosterBottom" src="<?php echo $pos; ?>" style ="display: block; margin-left: auto; margin-right: auto">
                   <br>
                   <?php
