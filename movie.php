@@ -50,7 +50,7 @@
                   <br><br><br><br>
                   
                   <?php
-                      $sql = "SELECT * FROM movie WHERE Movie_ID  = ".$no;
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
                       //echo $sql;
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result) > 0) {

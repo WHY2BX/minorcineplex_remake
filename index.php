@@ -89,20 +89,35 @@
               <div class="card">
 
                 <div class="card-body">
-                  
-                  <img class="MoviePoster" src="movies/<?php echo $no; ?>.jpg" style="max-width:100%; width: 300px; height: 500px; object-fit: cover;">
-                  <br>
                   <?php
 
-                      $sql = "SELECT * FROM movie WHERE Movie_ID  = ".$no;
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
                       //echo $sql;
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
+                                $pos = $row['Movie_Poster'];
                                 // echo $name;
 
+                            }
+                        }
+
+                  ?>
+                  
+                  <img class="MoviePoster" src="<?php echo $pos; ?>" style="max-width:100%; width: 300px; height: 500px; object-fit: cover;">
+                  <br><br>
+                  <?php
+
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
+                      //echo $sql;
+                        $result = mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                $name = $row['Movie_Name'];
+                                echo $name;
                             }
                         }
 
@@ -133,7 +148,7 @@
                   <img src="<?php echo $no; ?>.jpg">
                   <?php
 
-                      $sql = "SELECT * FROM movie WHERE Movie_ID  = ".$no;
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
                       //echo $sql;
                         $result = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($result) > 0) {
