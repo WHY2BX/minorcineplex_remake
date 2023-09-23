@@ -12,7 +12,6 @@
 
   <!-- connect db -->
 
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -48,12 +47,9 @@
     <?php include "sidebar.php"; ?>
 
   <div class="card-body" style="text-align: center;  ">
-                  <br><br><br><br><br>
-                  <img src="movies/<?php echo $no; ?>.jpg" style="max-width:100%; width: 300px; height: 500px; object-fit: cover;">
-                  <br>
+                  <br><br><br><br>
                   
                   <?php
-
                       $sql = "SELECT * FROM movie WHERE Movie_ID  = ".$no;
                       //echo $sql;
                         $result = mysqli_query($conn, $sql);
@@ -65,8 +61,10 @@
                                 $gen = $row['Genre'];
                                 $dur = $row['Duration'];
                                 $reday = $row['Release_Date'];
+                                $pos = $row['Movie_Poster'];
 
-                                ?> <br><h1 style ="font-family: 'Kanit';">
+                                ?> <img class="MoviePosterDetail" src=<?php echo $pos ?> style = "max-width:100%; width: 300px; height: 500px; object-fit: cover;">
+                                <br><br><h1 style ="font-family: 'Kanit';">
                                 <?php echo $name; ?>
                                 <h1><h3 style ="font-family: 'Kanit';">
                                 <?php echo $des;?>
@@ -75,14 +73,12 @@
                                 <h4 style ="font-family: 'Kanit';"> Duration : 
                                 <?php echo $dur ?>
                                 <h4 style ="font-family: 'Kanit';"> Release date :
-                                <?php echo $reday ?>
+                                <?php echo $reday ?><br>
                                 <?php
                             }
                         }
 
                   ?>
-            
    </div>
-
 </body>
 </html>

@@ -249,6 +249,20 @@ h6 {
 
 .card-body {
   padding: 0 20px 20px 20px;
+  color: #2273ff;
+  
+}
+
+.card-body h1{
+  font-size: 38px;
+}
+
+.card-body h3{
+  font-size: 25px;
+}
+
+.card-body h4{
+  font-size: 18px;
 }
 
 .card-img-overlay {
@@ -1232,3 +1246,14 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+.MoviePoster, .MoviePosterDetail{
+  border-radius: 15px;
+}
+
+.MoviePoster:hover{
+  opacity: 0.85;
+  transform: scale(0.96);
+  transition: all 0.2s ease;
+}
+
