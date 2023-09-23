@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login</title>
+  <title>AddShowtime</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -70,10 +70,7 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="#" class="logo d-flex align-items-center w-auto">
-                  <!--img src="assets/img/logo.png" alt=""-->
-                  <span class="d-none d-lg-block">MINOR Cineplex</span>
-                </a>
+
               </div><!-- End Logo -->
 
               <div class="card mb-3">
@@ -84,6 +81,15 @@
                     <h5 class="card-title text-center pb-0 fs-4">Add Showtime</h5>
                   </div>
                   <br><br>
+
+                  <?php
+                    // if(isset($_POST['submit'])){
+                    //     $_SESSION['movie'] = $_POST['Movie'];
+                    //     $_SESSION['location'] = $_POST['Location'];
+                    //     $_SESSION['theater'] = $_POST['Theater'];
+                    // }               
+                  ?>
+
 
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
@@ -98,7 +104,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select>";
+                                echo "<select name ='Movie'size='1'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Movie_Name"]."</option>";                                          
@@ -121,7 +127,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select>";
+                                echo "<select name ='Location'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["location_name"]."</option>";                                          
@@ -142,7 +148,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select>";
+                                echo "<select name='Theater'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Theater_ID"]."</option>";                                          
@@ -153,32 +159,24 @@
                         ?>
                         </div>
 
-                        <form action="/action_page.php">
-                          <label for="birthdaytime">Choose Date:</label>
-                          <input type="datetime-local" id="birthdaytime" name="birthdaytime">
-                          <input type="submit">
-                        </form>    
-
-                            
-                            <!-- <select id="Movie" name="Movie">
-                                <option value="volvo">Volvo XC90</option>
-                                <option value="saab">Saab 95</option>
-                                <option value="mercedes">Mercedes SLK</option>
-                                <option value="audi">Audi TT</option>
-                            </select> -->
-
-
-
-
-                    
-
-                    <br><br>
+                    <div class="col-12">
+                      <label for="Date" class="form-label">Enter Date [Format = YYYY:MM:DD]</label>
+                      <input type="text" name="date" class="form-control" id="Date" required>
+                      <div class="invalid-feedback">Please enter Date!</div>
+                    </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <label for="Start" class="form-label">Enter StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
+                      <input type="text" name="start_time" class="form-control" id="Start" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
+                                        
+                    <div class="col-12">
+                      <label for="End" class="form-label">Enter EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
+                      <input type="text" name="end_time" class="form-control" id="End" required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
                     <br>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Submit</button>
@@ -218,3 +216,5 @@
 </body>
 
 </html>
+
+
