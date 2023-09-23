@@ -22,7 +22,7 @@
 
 		
 
-		$sql = "SELECT * FROM member WHERE Username = '".$username."' AND Password = '".$password."'";	
+		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
 		$result = mysqli_query($conn, $sql);
 		$_SESSION['name'] = $username;
 		$_SESSION['first_name'] = "";

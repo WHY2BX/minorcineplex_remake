@@ -20,7 +20,7 @@
 <?php
 	
     try{
-		$sql = "INSERT INTO member (First_Name,Last_Name,Username,Password) VALUES ('$firstname', '$lastname', '$username', '$password')";  
+		$sql = "INSERT INTO Member (First_Name,Last_Name,Username,Password) VALUES ('$firstname', '$lastname', '$username', '$password')";  
 		$result = mysqli_query($conn, $sql);
 
         if ($conn->query($sql) === TRUE) {
