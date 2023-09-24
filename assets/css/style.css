@@ -225,7 +225,6 @@ h3{
   border: none;
   border-radius: 5px;
   /*box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);*/
-  background-color: #f6f9ff;
 }
 
 .card-header,
@@ -252,10 +251,21 @@ h3{
 
 .card-body {
   caret-color: transparent;
-  padding: 0 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   color: #3b83ff;
-  
+  border-radius: 80px
 }
+
+.card-body_detail {
+  caret-color: transparent;
+  padding: 20px 20px 20px 20px;
+  color: #3b83ff;
+  border-radius: 80px;
+  height: 100vh;
+  background-color: #5292ff2b;
+}
+
+
 
 .card-body h1{
   font-size: 38px;
@@ -387,7 +397,7 @@ h3{
 
 @media (min-width: 1200px) {
   .logo {
-    width: 280px;
+    width: fit-content;
   }
 }
 
@@ -403,8 +413,8 @@ h3{
   font-family: "Nunito", sans-serif;
 }
 
-.logo-header{
-  style:none;
+.d-flex{
+  caret-color: transparent;
 }
 .header {
   transition: all 0.5s;
@@ -1417,7 +1427,68 @@ p.text span {
 }
 
 
-
-
 /* Button back in movieDetailPage */
-/*  */
+.btn-animate {
+  background: rgba(14, 143, 255, 0.379);
+  width: 190px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(0, 140, 255);
+  font-family: 'Kanit';
+  position: sticky;
+
+  span {
+    position: relative;
+  }
+}
+
+/* Shake animation */
+.animate.shake:hover {
+  animation: shake .6s ease-in-out both;
+  background-color: rgba(255, 35, 35, 0.904);
+  color: white;
+
+  span {
+    animation: shakeText .5s ease-in-out both;
+    animation-delay: 0.05s;
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shakeText {
+  0% {
+    right: 4px;
+  }
+  33% {
+    right: -4px;
+  }
+  66% {
+    right: 4px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+/* Header Section */
+.d-none{
+  font-size: 26px;
+  font-weight: 700;
+  color: #012970;
+  font-family: "Nunito", sans-serif;
+}

@@ -3,8 +3,9 @@
 	require_once('connect.php');
 ?>
 
-
-
+<style>
+        @import url("styles.css");
+</style>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 

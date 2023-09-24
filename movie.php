@@ -37,7 +37,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
@@ -47,7 +46,7 @@
 	<?php include "header.php"; ?>
 	<?php include "sidebar.php"; ?>
 
-  <div class="card-body" style="text-align: center;  ">
+  <div class="card-body_detail" style="text-align: center;  ">
 				  <br><br><br><br>
 				  
 				  <?php
@@ -82,42 +81,11 @@
 							}
 						}
 				  ?>
-   </div>
-   <div class="wrapper">
-   <a class="link" href="index.php">
-	<div class="color"></div>
-	<span>Back</span>
-	<i class="fa-solid fa-arrow-right"></i>
-  </a>
-  </div>
-  <script>
-	let link = document.querySelector(".link");
-	let pink = document.querySelector(".color");
-
-	let hoverTL = gsap.timeline();
-	hoverTL.pause();
-
-	// from, to, fromTo Tweens
-	hoverTL.to(pink, {
-	width: "calc(100% + 1.3em)",
-	ease: "Elastic.easeOut(0.25)",
-	duration: 0.4
-	});
-	hoverTL.to(pink, {
-	width: "2em",
-	left: "calc(100% - 1.45em)",
-	ease: "Elastic.easeOut(0.4)",
-	duration: 0.6
-	});
-
-	link.addEventListener("mouseenter", () => {
-	hoverTL.play();
-	});
-
-	link.addEventListener("mouseleave", () => {
-	hoverTL.reverse();
-	});
-
-  </script>
+					<div><a href="index.php">
+									<button class="btn-animate animate shake">
+													<span>Back</span>
+									</button></a>
+					</div>
+			</div>
 </body>
 </html>
