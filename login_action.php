@@ -34,7 +34,7 @@
 			
 				while($row = mysqli_fetch_assoc($result)) {			
                     
-					session_start();
+					
 					$_SESSION['first_name'] = $row['First_Name'];
 
 					//Redirect

@@ -119,6 +119,11 @@ h3{
   padding: 10px 25px;
 }
 
+.dropdown-item{
+  background-color: #fff;
+  color: #012970;
+}
+
 .dropdown-menu .dropdown-footer a {
   color: #444444;
   text-decoration: underline;
@@ -1284,18 +1289,8 @@ h3{
   transition: all 0.2s ease;
 }
 
-.col-lg-2{
-  width: min-content;
-}
-
-.youtube_frame{
-  border-radius: 10px;
-  width: 35%;
-  height: 600px;
-}
-
-img { 
-  vertical-align: unset;
+#Movie{
+  width: 1000px;
 }
 
 
