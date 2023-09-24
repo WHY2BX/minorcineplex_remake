@@ -1272,3 +1272,7 @@ h6 {
   transform: scale(0.96);
   transition: all 0.2s ease;
 }
+
+#Movie{
+  width: 1000px;
+}
