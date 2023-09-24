@@ -33,10 +33,9 @@
 			
 			
 				while($row = mysqli_fetch_assoc($result)) {			
-                    
-					
+									
 					$_SESSION['first_name'] = $row['First_Name'];
-
+					$_SESSION['last_name'] = $row['Last_Name'];
 					//Redirect
 					if($username == 'test')
 						echo "<script> window.open('index.php','_self'); </script>";
