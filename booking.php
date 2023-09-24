@@ -55,7 +55,7 @@
     <div class="movie-containerseat">
       <label>Pick a movie: </label>
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
-        <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+        <form class="row g-3 needs-validation" action="booking_action.php" method="post" novalidate>
                     
                     <div class="col-12">
                         
@@ -67,7 +67,7 @@
                             if (mysqli_num_rows($result) > 0) {
                                 
                                 echo "<select name ='Movie' class='dropdown-item'>";
-
+                          
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Movie_Name"]."</option>";                                          
                                 }
@@ -161,7 +161,7 @@
         <p class="text">
           You have selected <span id="count">0</span> seats for the total price of Baht. <span id="total">0</span>
         </p>
-        <button type="button" class="btn btn-dark rounded-pill" onClick=>Book</button>
+        <button type="button" class="btn btn-dark rounded-pill" onClick="window.open('ticket.php?no=1', '_blank')" align="center">Book</button>
       </div>
     </div>
     
