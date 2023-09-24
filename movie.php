@@ -3,7 +3,7 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    $no = $_GET['no'];
+	$no = $_GET['no'];
 ?>
 
 <!DOCTYPE html>
@@ -44,44 +44,80 @@
 
 <body>
 
-    <?php include "header.php"; ?>
-    <?php include "sidebar.php"; ?>
+	<?php include "header.php"; ?>
+	<?php include "sidebar.php"; ?>
 
   <div class="card-body" style="text-align: center;  ">
-                  <br><br><br><br>
-                  
-                  <?php
-                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-                      //echo $sql;
-                        $result = mysqli_query($conn, $sql);
-                        if(mysqli_num_rows($result) > 0) {
-                            while($row = mysqli_fetch_assoc($result)) {
+				  <br><br><br><br>
+				  
+				  <?php
+					  $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
+					  //echo $sql;
+						$result = mysqli_query($conn, $sql);
+						if(mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result)) {
 
-                                $name = $row['Movie_Name'];
-                                $des = $row['Description'];
-                                $gen = $row['Genre'];
-                                $dur = $row['Duration'];
-                                $reday = $row['Release_Date'];
-                                $pos = $row['Movie_Poster'];
-                                $mov = $row['Trailer'];
+								$name = $row['Movie_Name'];
+								$des = $row['Description'];
+								$gen = $row['Genre'];
+								$dur = $row['Duration'];
+								$reday = $row['Release_Date'];
+								$pos = $row['Movie_Poster'];
+								$mov = $row['Trailer'];
 
-                                ?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
-                                <iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
-                                <br><br><h1 style ="font-family: 'Kanit';">
-                                <?php echo $name; ?></h1>
-                                <div class="description">
-                                <p style ="font-family: 'Kanit';">
-                                <?php echo $des;?></p></div>
-                                <h4 style ="font-family: 'Kanit';" > Genre : 
-                                <?php echo $gen ?></h4>
-                                <h4 style ="font-family: 'Kanit';"> Duration : 
-                                <?php echo $dur ?></h4>
-                                <h4 style ="font-family: 'Kanit';"> Release date :
-                                <?php echo $reday ?></h4><br>
-                                <?php
-                            }
-                        }
-                  ?>
+								?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
+								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
+								<br><br><h1 style ="font-family: 'Kanit';">
+								<?php echo $name; ?></h1>
+								<div class="description">
+								<p style ="font-family: 'Kanit';">
+								<?php echo $des;?></p></div>
+								<h4 style ="font-family: 'Kanit';" > Genre : 
+								<?php echo $gen ?></h4>
+								<h4 style ="font-family: 'Kanit';"> Duration : 
+								<?php echo $dur ?></h4>
+								<h4 style ="font-family: 'Kanit';"> Release date :
+								<?php echo $reday ?></h4><br>
+								<?php
+							}
+						}
+				  ?>
    </div>
+   <div class="wrapper">
+   <a class="link" href="index.php">
+	<div class="color"></div>
+	<span>Back</span>
+	<i class="fa-solid fa-arrow-right"></i>
+  </a>
+  </div>
+  <script>
+	let link = document.querySelector(".link");
+	let pink = document.querySelector(".color");
+
+	let hoverTL = gsap.timeline();
+	hoverTL.pause();
+
+	// from, to, fromTo Tweens
+	hoverTL.to(pink, {
+	width: "calc(100% + 1.3em)",
+	ease: "Elastic.easeOut(0.25)",
+	duration: 0.4
+	});
+	hoverTL.to(pink, {
+	width: "2em",
+	left: "calc(100% - 1.45em)",
+	ease: "Elastic.easeOut(0.4)",
+	duration: 0.6
+	});
+
+	link.addEventListener("mouseenter", () => {
+	hoverTL.play();
+	});
+
+	link.addEventListener("mouseleave", () => {
+	hoverTL.reverse();
+	});
+
+  </script>
 </body>
 </html>

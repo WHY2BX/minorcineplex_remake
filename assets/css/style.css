@@ -408,6 +408,9 @@ h3{
   font-family: "Nunito", sans-serif;
 }
 
+.logo-header{
+  style:none;
+}
 .header {
   transition: all 0.5s;
   z-index: 997;
@@ -1471,3 +1474,9 @@ p.text span {
 .credits a {
   color: #000000;
 }
+
+
+
+
+/* Button back in movieDetailPage */
+/*  */
