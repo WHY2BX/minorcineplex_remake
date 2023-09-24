@@ -3,7 +3,7 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    $no = $_GET['no'];
+	$no = $_GET['no'];
 ?>
 
 <!DOCTYPE html>
@@ -37,51 +37,55 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <?php include "header.php"; ?>
-    <?php include "sidebar.php"; ?>
+	<?php include "header.php"; ?>
+	<?php include "sidebar.php"; ?>
 
-  <div class="card-body" style="text-align: center;  ">
-                  <br><br><br><br>
-                  
-                  <?php
-                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-                      //echo $sql;
-                        $result = mysqli_query($conn, $sql);
-                        if(mysqli_num_rows($result) > 0) {
-                            while($row = mysqli_fetch_assoc($result)) {
+  <div class="card-body_detail" style="text-align: center;  ">
+				  <br><br><br><br>
+				  
+				  <?php
+					  $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
+					  //echo $sql;
+						$result = mysqli_query($conn, $sql);
+						if(mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result)) {
 
-                                $name = $row['Movie_Name'];
-                                $des = $row['Description'];
-                                $gen = $row['Genre'];
-                                $dur = $row['Duration'];
-                                $reday = $row['Release_Date'];
-                                $pos = $row['Movie_Poster'];
-                                $mov = $row['Trailer'];
+								$name = $row['Movie_Name'];
+								$des = $row['Description'];
+								$gen = $row['Genre'];
+								$dur = $row['Duration'];
+								$reday = $row['Release_Date'];
+								$pos = $row['Movie_Poster'];
+								$mov = $row['Trailer'];
 
-                                ?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
-                                <iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
-                                <br><br><h1 style ="font-family: 'Kanit';">
-                                <?php echo $name; ?></h1>
-                                <div class="description">
-                                <p style ="font-family: 'Kanit';">
-                                <?php echo $des;?></p></div>
-                                <h4 style ="font-family: 'Kanit';" > Genre : 
-                                <?php echo $gen ?></h4>
-                                <h4 style ="font-family: 'Kanit';"> Duration : 
-                                <?php echo $dur ?></h4>
-                                <h4 style ="font-family: 'Kanit';"> Release date :
-                                <?php echo $reday ?></h4><br>
-                                <?php
-                            }
-                        }
-                  ?>
-   </div>
+								?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
+								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
+								<br><br><h1 style ="font-family: 'Kanit';">
+								<?php echo $name; ?></h1>
+								<div class="description">
+								<p style ="font-family: 'Kanit';">
+								<?php echo $des;?></p></div>
+								<h4 style ="font-family: 'Kanit';" > Genre : 
+								<?php echo $gen ?></h4>
+								<h4 style ="font-family: 'Kanit';"> Duration : 
+								<?php echo $dur ?></h4>
+								<h4 style ="font-family: 'Kanit';"> Release date :
+								<?php echo $reday ?></h4><br>
+								<?php
+							}
+						}
+				  ?>
+					<div><a href="index.php">
+									<button class="btn-animate animate shake">
+													<span>Back</span>
+									</button></a>
+					</div>
+			</div>
 </body>
 </html>

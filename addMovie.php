@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>AddShowtime</title>
+  <title>Add Movie</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -78,7 +78,7 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Add Showtime</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Add Movie</h5>
                   </div>
                   <br><br>
 
@@ -94,89 +94,55 @@
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
                     
-                    <div class="col-12">
-                        <label for="Movie">Choose a Movie:</label>
-                        
-                        <?php
-                            //หนัง
-                            $sql = "SELECT * FROM Movie";	
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                
-                                echo "<select name ='Movie' class='dropdown-item'>";
-
-                                while($row = mysqli_fetch_assoc($result)) {	
-                                    echo "<option>".$row["Movie_Name"]."</option>";                                          
-                                }
-                                echo "</select>";
-                            }
-                            ?>
-
-                        </div>
-                        
-                        <!--สาขา-->
+                        <!--ชื่อหนัง-->
+                  <div class="col-12">
+                      <label for="mov" class="form-label">Movie Name</label>
+                      <input type="text" name="movie" class="form-control" id="mov" required>
+                      <div class="invalid-feedback">Please enter Movie!</div>
+                    </div>
+                        <!--คำธิบายหนัง-->
                         <div class="col-12">
+                      <label for="des" class="form-label">Description</label>
+                      <input type="text" name="description" class="form-control" id="des" required>
+                      <div class="invalid-feedback">Please enter Description!</div>
+                    </div>
 
-                            <label for="Movie">Choose Location:</label>
-                            <br>
-
-                        <?php   
-                            $sql = "SELECT location_name FROM Location";	
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                
-                                echo "<select name ='Location' class='dropdown-item'>";
-
-                                while($row = mysqli_fetch_assoc($result)) {	
-                                    echo "<option>".$row["location_name"]."</option>";                                          
-                                }
-                                echo "</select>";
-                            }
-
-                        ?>
-                        
-                        </div>
-
-                        <!--โรงที่...-->
+                        <!--ประเภท-->
                         <div class="col-12">
-                            <label for="Movie">Choose Theater:</label>
-                            <br>
-                        <?php   
-                            $sql = "SELECT DISTINCT Theater_ID FROM Theaters";	
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                
-                                echo "<select name='Theater' class='dropdown-item'>";
-
-                                while($row = mysqli_fetch_assoc($result)) {	
-                                    echo "<option>".$row["Theater_ID"]."</option>";                                          
-                                }
-                                echo "</select>";
-                            }
-
-                        ?>
-                        </div>
-
-                    <div class="col-12">
-                      <label for="Date" class="form-label">Date [Format = YYYY:MM:DD]</label>
-                      <input type="text" name="date" class="form-control" id="Date" required>
-                      <div class="invalid-feedback">Please enter Date!</div>
+                      <label for="Date" class="form-label">Genre</label>
+                      <input type="text" name="genre" class="form-control" id="Date" required>
+                      <div class="invalid-feedback">Please enter Genre!</div>
                     </div>
 
-                    <div class="col-12">
-                      <label for="Start" class="form-label">StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
-                      <input type="text" name="start_time" class="form-control" id="Start" required>
-                      <div class="invalid-feedback">Please enter StartTime!</div>
+
+                        <!--ระยะเวลาฉาย-->
+                        <div class="col-12">
+                      <label for="dura" class="form-label">Duration</label>
+                      <input type="text" name="duration" class="form-control" id="dura" required>
+                      <div class="invalid-feedback">Please enter Duration!</div>
                     </div>
-                                        
+
+
+                        <!--วันเริ่มฉาย -->
                     <div class="col-12">
-                      <label for="End" class="form-label">EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
-                      <input type="text" name="end_time" class="form-control" id="End" required>
-                      <div class="invalid-feedback">Please enter EndTime!</div>
+                      <label for="RDate" class="form-label">Release Date [Format = YYYY:MM:DD]</label>
+                      <input type="text" name="releasedate" class="form-control" id="RDate" required>
+                      <div class="invalid-feedback">Please enter Release Date!</div>
                     </div>
+
+                        <!--วันออกโรง -->
+                    <div class="col-12">
+                      <label for="LDate" class="form-label">Last Show Date [Format = YYYY:MM:DD]</label>
+                      <input type="text" name="lastdate" class="form-control" id="LDate" required>
+                      <div class="invalid-feedback">Please enter Last_Show_Date!</div>
+                    </div>
+
+                        <!--โปสเตอร์ -->
+                    <div class="col-12">
+                      <label for="pos" class="form-label">Movie Poster [Link]</label>
+                      <input type="text" name="poster" class="form-control" id="pos" required>
+                      <div class="invalid-feedback">Please enter Movie Poster!</div>
+                    </div>                   
 
                     <br>
                     <div class="col-12">
