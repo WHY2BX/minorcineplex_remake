@@ -3,7 +3,6 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    $no = $_GET['no'];
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +40,7 @@
 
 <body>
 
-      <?php 
-
+<?php 
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
           include "header.php";  }
       else
@@ -51,13 +49,14 @@
   ?>
 
 
-    <?php 
-    
-    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+  <?php 
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
-  
   ?>
 
 
@@ -95,8 +94,8 @@
                   <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
                     
                     <div class="col-12">
-                        <label for="Movie">Choose a Movie:</label>
-                        
+                        <label for="Movie">Choose a Movie to edit</label>
+                        <br><br>
                         <?php
                             //หนัง
                             $sql = "SELECT * FROM Movie";	

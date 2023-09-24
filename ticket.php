@@ -3,15 +3,15 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-	$no = $_GET['no'];
+  $no = 1;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
   <!-- connect db -->
+
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -37,71 +37,65 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<?php 
+
+  <?php 
+
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
           include "header.php";  }
       else
           include "Guest_header.php";
         
-  	?>
+  ?>
 
 
-  	<?php 
-      if($_SESSION['name'] == 'Manager'){
-        include "Manager_sidebar.php";
-    }
-    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+  <?php 
+    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
-  	?>
+  ?>
 
-  <div class="card-body_detail" style="text-align: center;  ">
-				  <br><br><br><br>
-				  
-				  <?php
-					  $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-					  //echo $sql;
-						$result = mysqli_query($conn, $sql);
-						if(mysqli_num_rows($result) > 0) {
-							while($row = mysqli_fetch_assoc($result)) {
 
-								$name = $row['Movie_Name'];
-								$des = $row['Description'];
-								$gen = $row['Genre'];
-								$dur = $row['Duration'];
-								$reday = $row['Release_Date'];
-								$pos = $row['Movie_Poster'];
-								$mov = $row['Trailer'];
 
-								?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
-								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
-								<br><br><h1 class="header_detail">
-								<?php echo $name; ?></h1>
-								<div class="description">
-								<p style ="font-family: 'Kanit';">
-								<?php echo $des;?></p></div>
-								<h4 style ="font-family: 'Kanit';" > Genre : 
-								<?php echo $gen ?></h4>
-								<h4 style ="font-family: 'Kanit';"> Duration : 
-								<?php echo $dur ?></h4>
-								<h4 style ="font-family: 'Kanit';"> Release date :
-								<?php echo $reday ?></h4><br>
-								<?php
-							}
-						}
-				  ?>
-					<div><a href="index.php">
-									<button class="btn-animate animate shake">
-													<span>Back</span>
-									</button></a>
-					</div>
-			</div>
+<div style = "text-align: centre;">
+    <div class="tcardWrap">
+    <div class="tcard tcardLeft">
+        <h1>Startup <span>Cinema</span></h1>
+        <div class="title">
+        <h2>How I met your Mother</h2>
+        <span>movie</span>
+        </div>
+        <div class="name">
+        <h2>Vladimir Kudinov</h2>
+        <span>name</span>
+        </div>
+        <div class="tseat">
+        <h2>156</h2>
+        <span>seat</span>
+        </div>
+        <div class="time">
+        <h2>12:00</h2>
+        <span>time</span>
+        </div>
+        
+    </div>
+    <div class="tcard tcardRight">
+        <div class="eye"></div>
+        <div class="number">
+        <h3>156</h3>
+        <span>seat</span>
+        </div>
+        <div class="barcode"></div>
+    </div>
+
+    </div>
+</div>
 </body>
 </html>

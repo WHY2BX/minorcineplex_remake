@@ -2,7 +2,6 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    $no = $_GET['no'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +40,23 @@
 <body>
 
 <?php 
-if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";
-          include "sidebar.php";}
-      else{
+      if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+          include "header.php";  }
+      else
           include "Guest_header.php";
-          include "Guest_sidebar.php";}
         
   ?>
 
+
+  <?php 
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+        include "sidebar.php";   }
+    else
+        include "Guest_sidebar.php";
+  ?>
 
 
   <main id="main" class="main">

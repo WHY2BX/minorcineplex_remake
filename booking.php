@@ -1,3 +1,10 @@
+<?php 
+	//@session_start();
+	ob_start();
+	session_start();		
+	require_once('connect.php');
+  $no = 1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,17 +40,18 @@
   
 
 <?php 
-
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";  }
+          include "header.php";}
       else
-          include "Guest_header.php";
-        
+          include "Guest_header.php";   
   ?>
 
 
   <?php 
-    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
@@ -53,43 +61,30 @@
     <br><br><br><br><br><br><br><br>
     <!-- booking seat area -->
     <div class="movie-containerseat">
-      <label>Pick a time: </label>
-      <select id="movie">
+      <label>Pick a movie: </label>
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
-        <?php 
-          $int = 1;
-          while($no <= 15){} 
-        ?>
-      
-          <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
+        <form class="row g-3 needs-validation" action="booking_action.php" method="post" novalidate>
+                    
+                    <div class="col-12">
+                        
+                        <?php
+                            //หนัง
+                            $sql = "SELECT * FROM Movie";	
+                            $result = mysqli_query($conn, $sql);
 
-              <div class="card">
-
-                <div class="card-body">
-                  <?php
-
-                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-                      //echo $sql;
-                        $result = mysqli_query($conn, $sql);
-                        if(mysqli_num_rows($result) > 0) {
-                            while($row = mysqli_fetch_assoc($result)) {
-
-                                $name = $row['Movie_Name'];
-                                $pos = $row['Movie_Poster'];
-                                // echo $name;
-
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Movie' class='dropdown-item'>";
+                          
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Movie_Name"]."</option>";                                          
+                                }
+                                echo "</select>";
                             }
-                        }
+                            ?>
 
-                  ?>
-        ?>
-
-        <option value="250">Interstellar (Rs. 250)</option>
-        <option value="200">Kabir Singh (Rs. 200)</option>
-        <option value="150">Duniyadari (Rs. 150)</option>
-        <option value="100">Natsamrat (Rs. 100)</option>
-        <option value="100">หนังหมา (Rs. 100)</option>
-      </select>
+                        </div>
+        </form>
       
       <ul class="showcase">
         <li>
@@ -174,7 +169,7 @@
         <p class="text">
           You have selected <span id="count">0</span> seats for the total price of Baht. <span id="total">0</span>
         </p>
-        <button type="button" class="btn btn-dark rounded-pill" onClick=>Book</button>
+        <button type="button" class="btn btn-dark rounded-pill" onClick="window.open('ticket.php?no=1', '_blank')" align="center">Book</button>
       </div>
     </div>
     
