@@ -63,8 +63,10 @@
                                 $dur = $row['Duration'];
                                 $reday = $row['Release_Date'];
                                 $pos = $row['Movie_Poster'];
+                                $mov = $row['Trailer'];
 
-                                ?> <img class="MoviePosterDetail" src=<?php echo $pos ?>>
+                                ?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
+                                <iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
                                 <br><br><h1 style ="font-family: 'Kanit';">
                                 <?php echo $name; ?></h1>
                                 <div class="description">
@@ -79,7 +81,6 @@
                                 <?php
                             }
                         }
-
                   ?>
    </div>
 </body>
