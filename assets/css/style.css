@@ -225,12 +225,12 @@ h3{
   border: none;
   border-radius: 5px;
   /*box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);*/
-  background-color: #f6f9ff;
+  background-color: #ffffff;
 }
 
 .card-header,
 .card-footer {
-  border-color: #ebeef4;
+  border-color: #ffffff;
  /* background-color: #fff;*/
   color: #798eb3;
   padding: 15px;

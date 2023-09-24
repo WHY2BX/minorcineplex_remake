@@ -53,43 +53,30 @@
     <br><br><br><br><br><br><br><br>
     <!-- booking seat area -->
     <div class="movie-containerseat">
-      <label>Pick a time: </label>
-      <select id="movie">
+      <label>Pick a movie: </label>
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
-        <?php 
-          $int = 1;
-          while($no <= 15){ 
-        ?>
-      
-          <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
+        <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+                    
+                    <div class="col-12">
+                        
+                        <?php
+                            //หนัง
+                            $sql = "SELECT * FROM Movie";	
+                            $result = mysqli_query($conn, $sql);
 
-              <div class="card">
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Movie' class='dropdown-item'>";
 
-                <div class="card-body">
-                  <?php
-
-                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-                      //echo $sql;
-                        $result = mysqli_query($conn, $sql);
-                        if(mysqli_num_rows($result) > 0) {
-                            while($row = mysqli_fetch_assoc($result)) {
-
-                                $name = $row['Movie_Name'];
-                                $pos = $row['Movie_Poster'];
-                                // echo $name;
-
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Movie_Name"]."</option>";                                          
+                                }
+                                echo "</select>";
                             }
-                        }
+                            ?>
 
-                  ?>
-        ?>
-
-        <option value="250">Interstellar (Rs. 250)</option>
-        <option value="200">Kabir Singh (Rs. 200)</option>
-        <option value="150">Duniyadari (Rs. 150)</option>
-        <option value="100">Natsamrat (Rs. 100)</option>
-        <option value="100">หนังหมา (Rs. 100)</option>
-      </select>
+                        </div>
+        </form>
       
       <ul class="showcase">
         <li>
