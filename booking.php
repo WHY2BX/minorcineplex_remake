@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -47,14 +50,16 @@
   ?>
 
   
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <!-- booking seat area -->
-    <div class="movie-container">
+    <div class="movie-containerseat">
       <label>Pick a time: </label>
       <select id="movie">
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
         <?php 
+          $int = 0;
         ?>
+
         <option value="250">Interstellar (Rs. 250)</option>
         <option value="200">Kabir Singh (Rs. 200)</option>
         <option value="150">Duniyadari (Rs. 150)</option>
@@ -77,7 +82,7 @@
         </li>    
       </ul>
       
-      <div class="container">
+      <div class="containerseat">
       
         <div class="screen"></div>
         <div style="font-size:15px;margin-bottom:15px">Screen</div>
