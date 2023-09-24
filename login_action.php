@@ -19,7 +19,6 @@
 	
 	if($password != ""){
 
-
 		
 
 		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
