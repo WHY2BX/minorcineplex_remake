@@ -264,7 +264,7 @@ h3{
 
 .description{
   margin: 0 auto;
-  max-width: 35%;
+  max-width: 800px;
 }
 
 .card-body p{
@@ -1266,9 +1266,10 @@ h3{
 }
 
 .MoviePosterDetail{
-  width: max-content; height: 600px; object-fit: scale-down;
-  border-radius: 15px;
+  border-radius: 10px;
+  width: fit-content; height: 380px; object-fit: cover;
   caret-color: transparent;
+  vertical-align: unset;
 }
 
 .MoviePoster:hover{
@@ -1288,6 +1289,14 @@ h3{
   transform: scale(0.96);
   transition: all 0.2s ease;
 }
+
+.youtube_frame{
+  padding: 0.2%;
+  border-radius: 15px;
+  width: 500px;
+  height: 380px;
+}
+
 
 #Movie{
   width: 1000px;
