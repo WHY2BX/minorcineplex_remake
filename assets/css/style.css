@@ -12,11 +12,6 @@
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
-  color: #444444;
-}
 
 a {
   color: #4154f1;
@@ -1310,59 +1305,10 @@ h3{
   width: 1000px;
 }
 
-/* สไตล์ของเนื้อหาหลักและส่วนล่าง */
-main {
-  padding: 20px;
-}
 
-/*ส่วนบน*/
-.moviesection {
-  height: 300px;
-  background-color: #fff;
-}
-
-
-.info{
-  float: right;
-  padding-top: 100px;
-  padding-right: 500px;
-  font-family: Arial;
-  /* font-size: large; */
-  text-align: center;
-
-  color: #000000;
-  /* background-color: red; */
-  width: 545px;
-  height: 500x;
-}
-
-.poster{
-  padding-top: 50x;
-  float: left;
-  width: 545px;
-  height: 500px;
-  /* background-color: red; */
-}
-
-/*  */
-/*  */
 /* seat booking style */
-body {
-	font-family: Arial;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-  /* background-color: #242333; */
-  color: #000000;
-  margin: 0;
-}
 
-* {
-	font-family: Arial;
-  box-sizing: border-box;
-}
-
-.movie-container {
+.movie-containerseat {
   margin: 20px 0px;
   display: flex;
   justify-content: center;
@@ -1370,7 +1316,7 @@ body {
   flex-direction: column
 }
 
-.movie-container select {
+.movie-containerseat select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1381,7 +1327,7 @@ body {
   border-radius: 5px;
 }
 
-.container {
+.containerseat {
   perspective: 1000px;
   margin: 40px 0;
   display: flex;
@@ -1446,11 +1392,6 @@ body {
   margin-left: 2px;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .screen {
   background: #fff;

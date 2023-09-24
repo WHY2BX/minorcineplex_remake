@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -47,14 +50,40 @@
   ?>
 
   
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <!-- booking seat area -->
-    <div class="movie-container">
+    <div class="movie-containerseat">
       <label>Pick a time: </label>
       <select id="movie">
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
         <?php 
+          $int = 1;
+          while($no <= 15){ 
         ?>
+      
+          <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
+
+              <div class="card">
+
+                <div class="card-body">
+                  <?php
+
+                      $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
+                      //echo $sql;
+                        $result = mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                $name = $row['Movie_Name'];
+                                $pos = $row['Movie_Poster'];
+                                // echo $name;
+
+                            }
+                        }
+
+                  ?>
+        ?>
+
         <option value="250">Interstellar (Rs. 250)</option>
         <option value="200">Kabir Singh (Rs. 200)</option>
         <option value="150">Duniyadari (Rs. 150)</option>
@@ -77,7 +106,7 @@
         </li>    
       </ul>
       
-      <div class="container">
+      <div class="containerseat">
       
         <div class="screen"></div>
         <div style="font-size:15px;margin-bottom:15px">Screen</div>
@@ -145,6 +174,7 @@
         <p class="text">
           You have selected <span id="count">0</span> seats for the total price of Baht. <span id="total">0</span>
         </p>
+        <button type="button" class="btn btn-dark rounded-pill" onClick=>Book</button>
       </div>
     </div>
     
