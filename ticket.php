@@ -94,7 +94,7 @@
                   
                     
                     <div class="col-12">
-                        <label for="Movie">Choose a Movie:</label>
+                        <label for="Movie">Movie:</label>
                         <h3>
                         The Exorcist: Believer
                         </h3>
@@ -105,19 +105,30 @@
                         <!--สาขา-->
                         <div class="col-12">
 
-                            <label for="Movie">Choose Location:</label>
+                            <label for="Movie">Location:</label>
                             <br>
                             <h3>
-                            Horror
+                            Minor_Bankok
                         </h3>
   
+                        </div>
+
+                        <br>
+                        
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">Start time:</label>
+                            <br>
+                            <h3>
+                            2023-09-13 13:00:00
+                        </h3>
                         </div>
 
                         <br>
 
                         <!--โรงที่...-->
                         <div class="col-12">
-                            <label for="Movie">Choose Theater:</label>
+                            <label for="Movie">Theater:</label>
                             <br>
                             <h3>
                             1
@@ -128,7 +139,7 @@
 
                         <!--เวลาเริ่มฉาย...-->
                         <div class="col-12">
-                            <label for="Movie">Choose Start time:</label>
+                            <label for="Movie">Start time:</label>
                             <br>
                             <h3>
                             2023-09-13 13:00:00
