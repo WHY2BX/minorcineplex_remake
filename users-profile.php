@@ -94,7 +94,9 @@ if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">History</button>
+                  <a href="index.php">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview" href="index.php">Purchase History</button>
+                  </a>
                 </li>
  
 

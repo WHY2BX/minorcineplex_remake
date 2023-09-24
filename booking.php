@@ -58,7 +58,7 @@
         <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
         <?php 
           $int = 1;
-          while($no <= 15){ 
+          while($no <= 15){} 
         ?>
       
           <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
@@ -182,3 +182,4 @@
 <script src="booking.js"></script>
 </html>
 
+              
