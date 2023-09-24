@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>AddShowtime</title>
+  <title>Manage Showtime</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,7 +40,7 @@
 
 <body>
 
-<?php 
+  <?php 
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
           include "header.php";  }
       else
@@ -77,22 +77,19 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Add Showtime</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Manage Showtime [Edit]</h5>
                   </div>
                   <br><br>
 
-                  <?php
-                    // if(isset($_POST['submit'])){
-                    //     $_SESSION['movie'] = $_POST['Movie'];
-                    //     $_SESSION['location'] = $_POST['Location'];
-                    //     $_SESSION['theater'] = $_POST['Theater'];
-                    // }               
-                  ?>
+
 
 
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
-                    
+                  
+                  <label for="Movie">CHOOSE OLD SHOWTIME TO EDIT</label>
+
+
                     <div class="col-12">
                         <label for="Movie">Choose a Movie:</label>
                         
@@ -113,7 +110,7 @@
                             ?>
 
                         </div>
-                        
+
                         <!--สาขา-->
                         <div class="col-12">
 
@@ -158,8 +155,97 @@
 
                         ?>
                         </div>
+                    
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Start time:</label>
+                            <br>
+                        <?php   
+                            $sql = "SELECT DISTINCT Start_Time FROM Showtime";	
+                            $result = mysqli_query($conn, $sql);
 
-                    <div class="col-12">
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name='Theater' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Start_Time"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        </div>
+                        <br><br><br><br>
+                        <label for="Movie">CHOOSE NEW SHOWTIME DATA</label>
+
+                        <div class="col-12">
+                        <label for="Movie">Choose a Movie:</label>
+                        
+                        <?php
+                            //หนัง
+                            $sql = "SELECT * FROM Movie";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Movie' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Movie_Name"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+                            ?>
+
+                        </div>
+
+                        <!--สาขา-->
+                        <div class="col-12">
+
+                            <label for="Movie">Choose Location:</label>
+                            <br>
+
+                        <?php   
+                            $sql = "SELECT location_name FROM Location";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Location' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["location_name"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        
+                        </div>
+
+                        <!--โรงที่...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Theater:</label>
+                            <br>
+                        <?php   
+                            $sql = "SELECT DISTINCT Theater_ID FROM Theaters";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name='Theater' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Theater_ID"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        </div>
+                    
+                        <div class="col-12">
                       <label for="Date" class="form-label">Date [Format = YYYY:MM:DD]</label>
                       <input type="text" name="date" class="form-control" id="Date" required>
                       <div class="invalid-feedback">Please enter Date!</div>
@@ -179,8 +265,10 @@
 
                     <br>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Submit</button>
+                      <button class="btn btn-primary w-100" type="submit">Edit Showtime</button>
                     </div>
+
+
 
 
 

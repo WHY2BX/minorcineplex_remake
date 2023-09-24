@@ -36,8 +36,9 @@
 									
 					$_SESSION['first_name'] = $row['First_Name'];
 					$_SESSION['last_name'] = $row['Last_Name'];
+					
 					//Redirect
-					if($username == 'test')
+					if($username == 'Manager')
 						echo "<script> window.open('index.php','_self'); </script>";
 					else
 						echo "<script> window.open('index.php','_self'); </script>";

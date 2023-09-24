@@ -1,3 +1,10 @@
+<?php 
+	//@session_start();
+	ob_start();
+	session_start();		
+	require_once('connect.php');
+  $no = 1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,17 +40,18 @@
   
 
 <?php 
-
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";  }
+          include "header.php";}
       else
-          include "Guest_header.php";
-        
+          include "Guest_header.php";   
   ?>
 
 
   <?php 
-    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
@@ -169,3 +177,4 @@
 <script src="booking.js"></script>
 </html>
 
+              

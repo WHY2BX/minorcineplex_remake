@@ -2,7 +2,6 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    $no = $_GET['no'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +40,23 @@
 <body>
 
 <?php 
-if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";
-          include "sidebar.php";}
-      else{
+      if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+          include "header.php";  }
+      else
           include "Guest_header.php";
-          include "Guest_sidebar.php";}
         
   ?>
 
+
+  <?php 
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+        include "sidebar.php";   }
+    else
+        include "Guest_sidebar.php";
+  ?>
 
 
   <main id="main" class="main">
@@ -94,7 +101,9 @@ if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">History</button>
+                  <a href="index.php">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview" href="index.php">Purchase History</button>
+                  </a>
                 </li>
  
 

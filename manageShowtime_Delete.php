@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>AddShowtime</title>
+  <title>Manage Showtime</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -77,7 +77,7 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Add Showtime</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Manage Showtime [Delete]</h5>
                   </div>
                   <br><br>
 
@@ -113,7 +113,7 @@
                             ?>
 
                         </div>
-                        
+
                         <!--สาขา-->
                         <div class="col-12">
 
@@ -158,29 +158,36 @@
 
                         ?>
                         </div>
+                    
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Start time:</label>
+                            <br>
+                        <?php   
+                            $sql = "SELECT DISTINCT Start_Time FROM Showtime";	
+                            $result = mysqli_query($conn, $sql);
 
-                    <div class="col-12">
-                      <label for="Date" class="form-label">Date [Format = YYYY:MM:DD]</label>
-                      <input type="text" name="date" class="form-control" id="Date" required>
-                      <div class="invalid-feedback">Please enter Date!</div>
-                    </div>
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name='Theater' class='dropdown-item'>";
 
-                    <div class="col-12">
-                      <label for="Start" class="form-label">StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
-                      <input type="text" name="start_time" class="form-control" id="Start" required>
-                      <div class="invalid-feedback">Please enter StartTime!</div>
-                    </div>
-                                        
-                    <div class="col-12">
-                      <label for="End" class="form-label">EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
-                      <input type="text" name="end_time" class="form-control" id="End" required>
-                      <div class="invalid-feedback">Please enter EndTime!</div>
-                    </div>
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Start_Time"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        </div>
+                        
+
 
                     <br>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Submit</button>
+                      <button class="btn btn-primary w-100" type="submit">Delete Showtime</button>
                     </div>
+
+
 
 
 
