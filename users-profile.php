@@ -158,6 +158,7 @@
                         <th>Theater ID</th>
                         <th>Seat ID</th>
                         <th>Date-Time</th>
+                        <th>Total Payment</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -168,6 +169,7 @@
                         <td>3</td>
                         <td>9</td>
                         <td>2023-09-20 20:00:00</td>
+                        <td>160</td>
                       </tr>
                       <tr>
                         <td>Transformers: Rise of the Beasts</td>
@@ -176,6 +178,7 @@
                         <td>1</td>
                         <td>15</td>
                         <td>2023-10-15 14:00:00</td>
+                        <td>180</td>
                       </tr>
                     </tbody>
                   </table>
