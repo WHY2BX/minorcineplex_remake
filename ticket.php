@@ -3,7 +3,10 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-  $no = 1;
+    // $mname = $_GET['mname'];
+    // $mlo = $_GET['mlo'];
+    // $mthea = $_GET['mthea'];
+    // $mstart = $_GET['mstart'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,59 +46,117 @@
 </head>
 
 <body>
+  
 
-
-  <?php 
-
+<?php 
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";  }
+          include "header.php";}
       else
-          include "Guest_header.php";
-        
+          include "Guest_header.php";   
   ?>
 
 
   <?php 
-    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+      if($_SESSION['name'] == 'Manager'){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
   ?>
 
 
+    <div class="container">
 
-<div style = "text-align: centre;">
-    <div class="tcardWrap">
-    <div class="tcard tcardLeft">
-        <h1>Startup <span>Cinema</span></h1>
-        <div class="title">
-        <h2>How I met your Mother</h2>
-        <span>movie</span>
-        </div>
-        <div class="name">
-        <h2>Vladimir Kudinov</h2>
-        <span>name</span>
-        </div>
-        <div class="tseat">
-        <h2>156</h2>
-        <span>seat</span>
-        </div>
-        <div class="time">
-        <h2>12:00</h2>
-        <span>time</span>
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                  <div style="text-align: center;">
+                    <img class="card-title text-center pb-0 fs-4" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Sign-check-icon.png" style="width: 20%; margin-left: auto;">
+                  </div>
+                    <h5 class="card-title text-center pb-0 fs-4">Booking Success!</h5>
+                  </div>
+                  <br>
+
+                  <!--Movie-->
+                  
+                    
+                    <div class="col-12">
+                        <label for="Movie">Choose a Movie:</label>
+                        <h3>
+                        The Exorcist: Believer
+                        </h3>
+                        </div>
+
+                        <br>
+
+                        <!--สาขา-->
+                        <div class="col-12">
+
+                            <label for="Movie">Choose Location:</label>
+                            <br>
+                            <h3>
+                            Horror
+                        </h3>
+  
+                        </div>
+
+                        <br>
+
+                        <!--โรงที่...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Theater:</label>
+                            <br>
+                            <h3>
+                            1
+                        </h3>
+                        </div>
+                    
+                        <br>
+
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Start time:</label>
+                            <br>
+                            <h3>
+                            2023-09-13 13:00:00
+                        </h3>
+                        </div>
+           
+                    <br><br>
+
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit" onClick="window.open('index.php', '_self')">Back</button>
+                    </div>
+
+                 
+
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
         
-    </div>
-    <div class="tcard tcardRight">
-        <div class="eye"></div>
-        <div class="number">
-        <h3>156</h3>
-        <span>seat</span>
-        </div>
-        <div class="barcode"></div>
-    </div>
+    <br>
 
-    </div>
+  </form>
+
 </div>
+</div>
+</div>
+    
 </body>
 </html>
