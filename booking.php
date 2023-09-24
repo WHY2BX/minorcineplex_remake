@@ -59,13 +59,40 @@
 
   
     <br><br><br><br><br><br><br><br>
-    <!-- booking seat area -->
-    <div class="movie-containerseat">
-      <label>Pick a movie: </label>
-        <!-- รอ import รอบหนังจาก sql ถ้าเป็นไปได้ -->
-        <form class="row g-3 needs-validation" action="booking_action.php" method="post" novalidate>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Manage Showtime [Delete]</h5>
+                  </div>
+                  <br><br>
+
+                  <?php
+                    // if(isset($_POST['submit'])){
+                    //     $_SESSION['movie'] = $_POST['Movie'];
+                    //     $_SESSION['location'] = $_POST['Location'];
+                    //     $_SESSION['theater'] = $_POST['Theater'];
+                    // }               
+                  ?>
+
+
+                  <!--Movie-->
+                  <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
                     
                     <div class="col-12">
+                        <label for="Movie">Choose a Movie:</label>
                         
                         <?php
                             //หนัง
@@ -75,7 +102,7 @@
                             if (mysqli_num_rows($result) > 0) {
                                 
                                 echo "<select name ='Movie' class='dropdown-item'>";
-                          
+
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Movie_Name"]."</option>";                                          
                                 }
@@ -84,94 +111,95 @@
                             ?>
 
                         </div>
-        </form>
-      
-      <ul class="showcase">
-        <li>
-          <div class="seat"></div>
-          <small>N/A</small>
-        </li>
-        <li>
-          <div class="seat selected"></div>
-          <small>selected</small>
-        </li>
-        <li>
-          <div class="seat occupied"></div>
-          <small>occupied</small>
-        </li>    
-      </ul>
-      
-      <div class="containerseat">
-      
-        <div class="screen"></div>
-        <div style="font-size:15px;margin-bottom:15px">Screen</div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+
+                        <!--สาขา-->
+                        <div class="col-12">
+
+                            <label for="Movie">Choose Location:</label>
+                            <br>
+
+                        <?php   
+                            $sql = "SELECT location_name FROM Location";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Location' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["location_name"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        
+                        </div>
+
+                        <!--โรงที่...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Theater:</label>
+                            <br>
+                        <?php   
+                            $sql = "SELECT DISTINCT Theater_ID FROM Theaters";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name='Theater' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Theater_ID"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        </div>
+                    
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">Choose Start time:</label>
+                            <br>
+                        <?php   
+                            $sql = "SELECT DISTINCT Start_Time FROM Showtime";	
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name='Theater' class='dropdown-item'>";
+
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Start_Time"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+
+                        ?>
+                        </div>
+           
+                    <br><br>
+
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit" onClick="window.open('ticket.php?no=1', '_blank')">Submit</button>
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
+        </div>
         
-        <p class="text">
-          You have selected <span id="count">0</span> seats for the total price of Baht. <span id="total">0</span>
-        </p>
-        <button type="button" class="btn btn-dark rounded-pill" onClick="window.open('ticket.php?no=1', '_blank')" align="center">Book</button>
-      </div>
-    </div>
+    <br>
+
+  </form>
+
+</div>
+</div>
+</div>
     
 </body>
 <script src="booking.js"></script>
