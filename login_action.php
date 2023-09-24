@@ -19,6 +19,7 @@
 	
 	if($password != ""){
 
+		
 
 		$sql = "SELECT * FROM Member WHERE Username = '".$username."' AND Password = '".$password."'";	
 		$result = mysqli_query($conn, $sql);
