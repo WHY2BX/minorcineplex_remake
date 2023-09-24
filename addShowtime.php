@@ -104,7 +104,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select name ='Movie'size='1'>";
+                                echo "<select name ='Movie' class='dropdown-item'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Movie_Name"]."</option>";                                          
@@ -127,7 +127,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select name ='Location'>";
+                                echo "<select name ='Location' class='dropdown-item'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["location_name"]."</option>";                                          
@@ -136,6 +136,7 @@
                             }
 
                         ?>
+                        
                         </div>
 
                         <!--โรงที่...-->
@@ -148,7 +149,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select name='Theater'>";
+                                echo "<select name='Theater' class='dropdown-item'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Theater_ID"]."</option>";                                          
@@ -160,19 +161,19 @@
                         </div>
 
                     <div class="col-12">
-                      <label for="Date" class="form-label">Enter Date [Format = YYYY:MM:DD]</label>
+                      <label for="Date" class="form-label">Date [Format = YYYY:MM:DD]</label>
                       <input type="text" name="date" class="form-control" id="Date" required>
                       <div class="invalid-feedback">Please enter Date!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="Start" class="form-label">Enter StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
+                      <label for="Start" class="form-label">StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
                       <input type="text" name="start_time" class="form-control" id="Start" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                                         
                     <div class="col-12">
-                      <label for="End" class="form-label">Enter EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
+                      <label for="End" class="form-label">EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
                       <input type="text" name="end_time" class="form-control" id="End" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
