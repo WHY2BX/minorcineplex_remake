@@ -66,7 +66,7 @@
 
 								?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
 								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
-								<br><br><h1 style ="font-family: 'Kanit';">
+								<br><br><h1 class="header_detail">
 								<?php echo $name; ?></h1>
 								<div class="description">
 								<p style ="font-family: 'Kanit';">

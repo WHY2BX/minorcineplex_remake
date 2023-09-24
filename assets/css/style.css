@@ -225,10 +225,6 @@ h3{
   border: none;
   border-radius: 5px;
   /*box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);*/
-<<<<<<< HEAD
-  background-color: #ffffff;
-=======
->>>>>>> d77e3374a103241f1eb44dab5a40b0d26ab964a1
 }
 
 .card-header,
@@ -1312,6 +1308,77 @@ h3{
   border-radius: 15px;
   width: 500px;
   height: 380px;
+}
+
+/* Button back in movieDetailPage */
+.btn-animate {
+  background: rgba(14, 143, 255, 0.379);
+  width: 190px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(0, 140, 255);
+  font-family: 'Kanit';
+  position: sticky;
+
+  span {
+    position: relative;
+  }
+}
+
+/* Shake animation */
+.animate.shake:hover {
+  animation: shake .6s ease-in-out both;
+  background-color: rgba(255, 35, 35, 0.904);
+  color: white;
+  
+  span {
+    animation: shakeText .5s ease-in-out both;
+    animation-delay: 0.05s;
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shakeText {
+  0% {
+    right: 4px;
+  }
+  33% {
+    right: -4px;
+  }
+  66% {
+    right: 4px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+.d-none{
+  font-size: 26px;
+  font-weight: 700;
+  color: #012970;
+  font-family: "Nunito", sans-serif;
+}
+
+.header_detail{
+  color: #3b83ff;
+  font-size: 2.5rem;
+  font-family: 'Kanit';
 }
 
 
