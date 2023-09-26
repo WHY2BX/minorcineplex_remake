@@ -91,7 +91,7 @@
 
 
                   <!--Movie-->
-                  <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="manageMovie_Delete_action.php" method="post" novalidate>
                     
                     <div class="col-12">
                         <label for="Movie">Choose a Movie:</label>
