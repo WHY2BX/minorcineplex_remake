@@ -91,7 +91,7 @@
 
 
                   <!--Movie-->
-                  <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
                     
                     <div class="col-12">
                         <label for="Movie">Choose a Movie to edit</label>
@@ -122,8 +122,8 @@
                     </div>
                         <!--คำธิบายหนัง-->
                         <div class="col-12">
-                      <label for="des" class="form-label">New Description</label>
-                      <input type="text" name="description" class="form-control" id="des" required>
+                      <label for="des" class="form-label">Description</label>
+                      <textarea name="description" cols="40" rows="5" class="form-control" id = "des" required></textarea>
                       <div class="invalid-feedback">Please enter Description!</div>
                     </div>
 
@@ -155,6 +155,20 @@
                       <label for="LDate" class="form-label">New Last Show Date [Format = YYYY:MM:DD]</label>
                       <input type="text" name="lastdate" class="form-control" id="LDate" required>
                       <div class="invalid-feedback">Please enter Last_Show_Date!</div>
+                    </div>
+                
+                        <!--โปสเตอร์ -->
+                    <div class="col-12">
+                      <label for="LDate" class="form-label">New Poster</label>
+                      <input type="text" name="poster" class="form-control" id="LDate" required>
+                      <div class="invalid-feedback">Please enter Poster!</div>
+                    </div>
+
+                        <!--ตัวอย่าง -->
+                      <div class="col-12">
+                      <label for="LDate" class="form-label">New Trailer</label>
+                      <input type="text" name="trailer" class="form-control" id="LDate" required>
+                      <div class="invalid-feedback">Please enter Trailer!</div>
                     </div>
 
                     <br>

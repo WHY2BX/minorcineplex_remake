@@ -3,7 +3,6 @@
 	session_cache_expire(60);
 	session_start();
 	ob_start();
-	$_SESSION = array();
 ?>
 <?php require_once('connect.php'); ?>
 <?php
@@ -16,7 +15,8 @@
     try{
 		$sql = "DELETE FROM Movie Where Movie_Name = '$moviename'";  
 		$result = mysqli_query($conn, $sql);
-            echo "record was deleted successfully";         
+			echo '<script>alert("record was deleted successfully")</script>';
+			echo "<script> window.open('manageMovie_Delete.php','_self'); </script>";          
     }
     catch (Exception $e) {
         echo $e;

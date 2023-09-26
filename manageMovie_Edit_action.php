@@ -5,7 +5,8 @@
 	ob_start();
 ?>
 <?php require_once('connect.php'); ?>
-<?php
+<?php 
+    $select_Movie = $_POST['Movie'];
     $movie = mysqli_real_escape_string($conn, $_POST['movie']); //mysqli_real_escape_string เอาไว้ใช้ลบตัวอักษรพิเศษ
 	$description = mysqli_real_escape_string($conn, $_POST['description']);
 	$genre = $_POST['genre'];
@@ -14,14 +15,13 @@
 	$last = $_POST['lastdate'];
 	$poster = $_POST['poster'];
 	$trailer = $_POST['trailer'];
-	$manager = $_SESSION['name'];
+    $manager = $_SESSION['name'];
 ?>
 
 <?php
 
-	
+	 
     try{
-
         // หาEmployee_Num 
         $sql1 = "SELECT Employee_Num from Movie_Manager Where User_Name = '$manager'"; 
         $result1 = mysqli_query($conn, $sql1);
@@ -32,14 +32,17 @@
         }
 
 
-		$sql = "INSERT INTO Movie (Movie_Name,Description,Genre,Duration,Release_Date,Last_Show_Date,Employee_Num,Movie_Poster,Trailer) VALUES ('$movie','$description','$genre','$duration','$release','$last',$managerid,'$poster','$trailer')";  
-		$result = mysqli_query($conn, $sql);
-			echo '<script>alert("New record created successfully")</script>';
-			echo "<script> window.open('addMovie.php','_self'); </script>";         
+        $sql = "UPDATE Movie 
+        SET Movie_Name = '$movie', Description = '$description', Genre = '$genre', Duration = '$duration',
+            Release_Date = '$release', Last_Show_Date = '$last', Employee_Num = '$managerid', Movie_Poster = '$poster',
+            Trailer = '$trailer'
+        WHERE Movie_Name = '$select_Movie'";
+        $result = mysqli_query($conn, $sql);
+            echo '<script>alert("record was edited successfully")</script>';
+			echo "<script> window.open('manageMovie_Edit.php','_self'); </script>";             
     }
     catch (Exception $e) {
         echo $e;
-		echo $description;
     }
          
 			
