@@ -91,7 +91,7 @@
 
 
                   <!--Movie-->
-                  <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="addMovie_action.php" method="post" novalidate>
                     
                         <!--ชื่อหนัง-->
                   <div class="col-12">
@@ -102,7 +102,7 @@
                         <!--คำธิบายหนัง-->
                         <div class="col-12">
                       <label for="des" class="form-label">Description</label>
-                      <input type="text" name="description" class="form-control" id="des" required>
+                      <textarea name="description" cols="40" rows="5" class="form-control" id = "des" required></textarea>
                       <div class="invalid-feedback">Please enter Description!</div>
                     </div>
 
@@ -141,7 +141,14 @@
                       <label for="pos" class="form-label">Movie Poster [Link]</label>
                       <input type="text" name="poster" class="form-control" id="pos" required>
                       <div class="invalid-feedback">Please enter Movie Poster!</div>
-                    </div>                   
+                    </div>
+                    
+                        <!--ตัวอย่าง -->
+                    <div class="col-12">
+                      <label for="trail" class="form-label">Trailer [Link]</label>
+                      <input type="text" name="trailer" class="form-control" id="trail" required>
+                      <div class="invalid-feedback">Please enter trailer!</div>
+                    </div>          
 
                     <br>
                     <div class="col-12">

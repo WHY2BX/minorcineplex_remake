@@ -4,7 +4,6 @@
 	ob_start();
 	session_start();
 	$_SESSION = array();
-	session_destroy(); 
 ?>
 <?php require_once('connect.php'); ?>
 <?php
@@ -40,11 +39,8 @@
     try{
 		$sql = "INSERT INTO Showtime (Theater_ID,Movie_ID,Employee_Num,Location_ID,Show_Date,Start_Time,End_Time) VALUES ($theater,$movieid,1,$locationid,'$date','$stime','$etime')";  
 		$result = mysqli_query($conn, $sql);
-
-
-            echo "New record created successfully";
-
-         
+			echo '<script>alert("New record created successfully")</script>';
+			echo "<script> window.open('addShowtime.php','_self'); </script>";
            
     }
     catch (Exception $e) {
