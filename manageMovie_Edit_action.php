@@ -31,7 +31,21 @@
             }
         }
 
+        // หา Movie_ID
+        $sql2 = "SELECT Movie_ID from Movie Where Movie_Name = '$select_Movie'"; 
+        $result2 = mysqli_query($conn, $sql2);
+        if (mysqli_num_rows($result2) > 0) {
+            while($row1 = mysqli_fetch_assoc($result2)) {	
+                $movieid = $row1['Movie_ID'];
+            }
+        }
 
+
+        // เพิ่มข้อมูลลงตารางManage_Movie
+        $sql = "INSERT INTO Manage_Movie (Employee_Num,Movie_ID) VALUES ('$managerid','$movieid')";  
+		$result3 = mysqli_query($conn, $sql);
+
+        //อัพเดตค่าใน Movie
         $sql = "UPDATE Movie 
         SET Movie_Name = '$movie', Description = '$description', Genre = '$genre', Duration = '$duration',
             Release_Date = '$release', Last_Show_Date = '$last', Employee_Num = '$managerid', Movie_Poster = '$poster',
