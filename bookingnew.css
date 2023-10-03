@@ -9,8 +9,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-  background-color: #ffffff;
-  color: #020101;
+  background-color: #242333;
+  color: #fff;
   margin: 0;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .occupied {
-  background-color: #ff0000;
+  background-color: #fff;
 }
 
 .seat:nth-of-type(2) {
@@ -86,7 +86,7 @@ body {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0,0,0,0.1);
   padding: 5px 10px;
   border-radius: 5px;
   color: #777;
@@ -110,12 +110,12 @@ body {
 }
 
 .screen {
-  background: #ffffff;
+  background: #fff;
   height: 70px;
   width: 70%;
   margin: 15px 0;
   transform: rotateX(-45deg);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 10px rgba(255,255,255,0.7);
 }
 
 p.text {
@@ -130,9 +130,5 @@ p.text span {
 
 .credits a {
   color: #fff;
-}
-
-.row1{
-  background-color: #ff0000;
 }
 
