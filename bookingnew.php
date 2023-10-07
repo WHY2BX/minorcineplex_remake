@@ -57,72 +57,72 @@
     <div class="screen"></div>
     <form action="booking_action.php">
       <div class="row">
-          <input type ="checkbox" class="seat" id="A1">
-          <input type ="checkbox" class="seat" id="A2">
-          <input type ="checkbox" class="seat" id="A3">
-          <input type ="checkbox" class="seat" id="A4">
-          <input type ="checkbox" class="seat" id="A5">
-          <input type ="checkbox" class="seat" id="A6">
-          <input type ="checkbox" class="seat" id="A7">
-          <input type ="checkbox" class="seat" id="A8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="A8">
         </div>
         <div class="row">
-          <input type ="checkbox" class="seat" id="B1">
-          <input type ="checkbox" class="seat" id="B2">
-          <input type ="checkbox" class="seat" id="B3">
-          <input type ="checkbox" class="seat" id="B4">
-          <input type ="checkbox" class="seat" id="B5">
-          <input type ="checkbox" class="seat" id="B6">
-          <input type ="checkbox" class="seat" id="B7">
-          <input type ="checkbox" class="seat" id="B8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="B8">
         </div>
         <div class="row">
-          <input type ="checkbox" class="seat" id="C1">
-          <input type ="checkbox" class="seat" id="C2">
-          <input type ="checkbox" class="seat" id="C3">
-          <input type ="checkbox" class="seat" id="C4">
-          <input type ="checkbox" class="seat" id="C5">
-          <input type ="checkbox" class="seat" id="C6">
-          <input type ="checkbox" class="seat" id="C7">
-          <input type ="checkbox" class="seat" id="C8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="C8">
         </div>
         <div class="row">
-          <input type ="checkbox" class="seat" id="D1">
-          <input type ="checkbox" class="seat" id="D2">
-          <input type ="checkbox" class="seat" id="D3">
-          <input type ="checkbox" class="seat" id="D4">
-          <input type ="checkbox" class="seat" id="D5">
-          <input type ="checkbox" class="seat" id="D6">
-          <input type ="checkbox" class="seat" id="D7">
-          <input type ="checkbox" class="seat" id="D8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="D8">
         </div>
         <div class="row">
-          <input type ="checkbox" class="seat" id="E1">
-          <input type ="checkbox" class="seat" id="E2">
-          <input type ="checkbox" class="seat" id="E3">
-          <input type ="checkbox" class="seat" id="E4">
-          <input type ="checkbox" class="seat" id="E5">
-          <input type ="checkbox" class="seat" id="E6">
-          <input type ="checkbox" class="seat" id="E7">
-          <input type ="checkbox" class="seat" id="E8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="E8">
         </div>
         <div class="row">
-          <input type ="checkbox" class="seat" id="F1">
-          <input type ="checkbox" class="seat" id="F2">
-          <input type ="checkbox" class="seat" id="F3">
-          <input type ="checkbox" class="seat" id="F4">
-          <input type ="checkbox" class="seat" id="F5">
-          <input type ="checkbox" class="seat" id="F6">
-          <input type ="checkbox" class="seat" id="F7">
-          <input type ="checkbox" class="seat" id="F8">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F1">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F2">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F3">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F4">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F5">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F6">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F7">
+          <input type ="checkbox" class="seat" name = "seats[]" value="F8">
         </div>
 
         <p class="text">
         You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
         </p>
 
-        <div class="col-12">
-          <button class="btn btn-primary w-100" type="submit">Submit</button>
+        <div class="form-group">
+          <button class="btn btn-primary w-100" name= "Bookingseat" type="submit">Submit</button>
         </div>
     </form>                        
   </div>
