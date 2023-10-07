@@ -166,9 +166,8 @@
                     </thead>
   
                     <tbody>
-                   
+  
                       <?php
-                          
                           //หา Client_ID
                           $client = $_SESSION['name'];
                           $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
@@ -180,10 +179,8 @@
                           }
 
 
-                        $sql = "SELECT * FROM Booking bk, Showtime s, Movie m, Location l , Theaters t, Seat ss, Member me WHERE bk.Client_No = '$clientid' AND me.Client_No = bk.Client_No AND bk.Showtime_ID = s.Showtime_ID AND m.Movie_ID = s.Movie_ID AND l.location_ID = s.location_ID 
-                        AND s.Theater_ID = t.Theater_ID AND bk.Seat_ID = ss.Seat_ID AND ss.Theater_ID = t.Theater_ID AND ss.location_ID = t.location_ID AND s.location_ID = t.location_ID";
+                        $sql = "SELECT * FROM Booking bk, Movie m, Location l, Showtime s, WHERE Client_No = '$clientid' AND bk.location_ID = l.location_ID AND bk.Movie_ID = m.Movie_ID AND s.Theater_ID = bk.Theater_ID";
                         $result = $conn->query($sql);
-
 
                         if ($result->num_rows > 0){
                           while($row = $result-> fetch_assoc()){
