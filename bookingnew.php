@@ -21,7 +21,7 @@
   <div class="col-12">
           <label for="Movie">Choose a Movie:</label>                  
           <?php
-          //หนังหมา
+          //หนัง
                 $sql = "SELECT * FROM Movie";	
                 $result = mysqli_query($conn, $sql);
 
@@ -37,8 +37,66 @@
            ?>
     </div>
 
-    
-  </form>
+    <div class="col-12">
+          <label for="location">Choose a location:</label>                  
+          <?php
+          //สาขา
+                $sql = "SELECT * FROM Location";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Location' id='location' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["location_name"]."</option>";                                          
+                                }
+                  echo "</select>";
+                  $loc_name = "</select>";
+                            }
+           ?>
+    </div>
+
+    <div class="col-12">
+          <label for="Movie">Choose a Theater:</label>                  
+          <?php
+          //โรงที่
+                $sql = "SELECT DISTINCT Theater_ID FROM Theaters ";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Theaters' id='Theaters' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["Theater_ID"]."</option>";                                          
+                                }
+                  echo "</select>";
+                            }
+           ?>
+    </div>
+
+    <div class="col-12">
+          <label for="Movie">Choose a time:</label>                  
+          <?php
+          //เวลาฉาย
+                $sql = "SELECT DISTINCT Start_Time FROM Showtime";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Start_time' id='Start_times' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["Start_Time"]."</option>";                                          
+                                }
+                  echo "</select>";
+                            }
+           ?>
+    </div>
+
+
+
   <ul class="showcase">
     <li>
       <div class="seat"></div>
@@ -56,8 +114,8 @@
   
   <div class="container">
     <div class="screen"></div>
-  
-      <div class="row">
+    <form action="booking_action.php">
+    <div class="row">
           <input type ="checkbox" class="seat" name = "seats[]" value="A1">
           <input type ="checkbox" class="seat" name = "seats[]" value="A2">
           <input type ="checkbox" class="seat" name = "seats[]" value="A3">
@@ -122,15 +180,13 @@
         คุณได้เลือก <span id="count">0</span> ที่นั่ง, ราคารวมทั้งสิ้น <span id="total">0</span> บาท
         </p>
 
-        <div class="row">
-          <button type="submit" class="btn btn-primary w-100" name="bo" value="BookSeats">Submit</button>
+        <div class="col-12">
+          <button class="btn btn-primary w-100" name = "bo" type="submit">Submit</button>
         </div>
-
-    </form>                     
+    </form>                        
   </div>
 </div>
 
 <script src="bookingnew.js"></script>
 </body>
 </html>
-

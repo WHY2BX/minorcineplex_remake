@@ -4,11 +4,11 @@
 	ob_start();
 	session_start();
 
-?>
 
-<?php require_once('connect.php'); ?>
 
-<?php   
+    require_once('connect.php');
+
+
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];
     $location = $_POST['Location'];
@@ -48,7 +48,7 @@
             }
 
             //หา Showtime_ID
-            $sql5 = "SELECT Showtime_ID from Showtime Where Theater_ID = '$theater' AND Start_time = $starttime"; 
+            $sql5 = "SELECT Showtime_ID from Showtime Where Theater_ID = '$theater' AND Start_time = '$starttime'"; 
             $result5 = mysqli_query($conn, $sql5);
             if (mysqli_num_rows($result5) > 0) {
                 while($row = mysqli_fetch_assoc($result5)) {	
@@ -67,7 +67,6 @@
                 $result6 = mysqli_query($conn, $sql6);
             }
    
-    
      
         }
         catch(Exception $e){
