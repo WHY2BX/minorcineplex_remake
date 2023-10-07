@@ -66,7 +66,7 @@
                 VALUES ($movieid,$clientid,$theater,$locationid,'2','240','$showtimeid', '$seatnum')";  
                 $result6 = mysqli_query($conn, $sql6);
             }
-   
+            echo "<script> window.open('ticket.php','_self'); </script>";
      
         }
         catch(Exception $e){
