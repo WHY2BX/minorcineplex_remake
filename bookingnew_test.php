@@ -1,3 +1,4 @@
+<script>
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
@@ -11,7 +12,7 @@ function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const selectedSeatsCount = selectedSeats.length;
   count.innerText = selectedSeatsCount;
-  total.innerText = selectedSeatsCount * 120;
+  total.innerText = selectedSeatsCount * ticketPrice;
 }
 
 //Movie Select Event
@@ -28,3 +29,5 @@ container.addEventListener('click', e => {
   }
   updateSelectedCount();
 });
+
+</script>

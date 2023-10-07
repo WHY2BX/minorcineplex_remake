@@ -80,7 +80,7 @@
                     <h5 class="card-title text-center pb-0 fs-4">Booking Ticket</h5>
                   </div>
                   <br>
-
+w
                   <!--Movie-->
                   <form class="row g-3 needs-validation" >
                     
@@ -219,7 +219,7 @@
 </div>
     
 </body>
-<script src="booking.js"></script>
+<script src="booking.php"></script>
 </html>
 
               

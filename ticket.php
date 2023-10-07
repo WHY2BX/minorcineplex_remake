@@ -114,17 +114,6 @@
                         </div>
 
                         <br>
-                        
-                        <!--เวลาเริ่มฉาย...-->
-                        <div class="col-12">
-                            <label for="Movie">Start time:</label>
-                            <br>
-                            <h3>
-                            2023-09-13 13:00:00
-                        </h3>
-                        </div>
-
-                        <br>
 
                         <!--โรงที่...-->
                         <div class="col-12">

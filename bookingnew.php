@@ -118,7 +118,7 @@
         </div>
 
         <p class="text">
-        You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
+        คุณได้เลือก <span id="count">0</span> ที่นั่ง, ราคารวมทั้งสิ้น <span id="total">0</span> บาท
         </p>
 
         <div class="form-group">
