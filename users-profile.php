@@ -148,8 +148,11 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-history">
 
                   <!-- Profile Edit Form -->
-                <form>
+                  
+                <!--History form-->
+                  <form>
                   <table>
+
                     <thead>
                       <tr>
                         <th>Movie Name</th>
@@ -161,6 +164,7 @@
                         <th>Total Payment</th>
                       </tr>
                     </thead>
+  
                     <tbody>
                       <tr>
                         <td>Garfield: The Movie</td>
@@ -171,16 +175,20 @@
                         <td>2023-09-20 20:00:00</td>
                         <td>160</td>
                       </tr>
-                      <tr>
-                        <td>Transformers: Rise of the Beasts</td>
-                        <td>2023-10-17</td>
-                        <td>Minor_Bangkok </td>
-                        <td>1</td>
-                        <td>15</td>
-                        <td>2023-10-15 14:00:00</td>
-                        <td>180</td>
-                      </tr>
+                      <?php
+                        $sql = "SELECT * FROM Booking WHERE Client_No = '5'";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0){
+                          while($row = $result-> fetch_assoc()){
+                            echo "<tr><td>" . $row["Booking_ID"] . "</td><td>". $row["Movie_ID"] . "</td><td>". $row["Booking_ID"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Booking_ID"] . "</td><td>". $row["Total_Price"] . "</td>" ;
+                          }
+                        }
+
+
+                      ?>
                     </tbody>
+
                   </table>
                 </form><!-- End History Form -->
 
