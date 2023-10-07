@@ -17,6 +17,7 @@
 <div class="movie-container">
   <label>Pick a movie: </label>
   <form>
+  
   <div class="col-12">
           <label for="Movie">Choose a Movie:</label>                  
           <?php
@@ -36,7 +37,65 @@
            ?>
     </div>
 
-    
+    <div class="col-12">
+          <label for="location">Choose a location:</label>                  
+          <?php
+          //หนัง
+                $sql = "SELECT * FROM Location";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Location' id='location' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["location_name"]."</option>";                                          
+                                }
+                  echo "</select>";
+                  $loc_name = "</select>";
+                            }
+           ?>
+    </div>
+
+    <div class="col-12">
+          <label for="Movie">Choose a Theater:</label>                  
+          <?php
+          //หนัง
+                $sql = "SELECT DISTINCT Theater_ID FROM Theaters ";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Theaters' id='Theaters' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["Theater_ID"]."</option>";                                          
+                                }
+                  echo "</select>";
+                            }
+           ?>
+    </div>
+
+    <div class="col-12">
+          <label for="Movie">Choose a time:</label>                  
+          <?php
+          //หนัง
+                $sql = "SELECT DISTINCT Start_Time FROM Showtime";	
+                $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                                
+                    echo "<select name ='Start_time' id='Start_time' class='dropdown-item'>";
+
+                  while($row = mysqli_fetch_assoc($result)) {	
+                        echo "<option>".$row["Start_Time"]."</option>";                                          
+                                }
+                  echo "</select>";
+                            }
+           ?>
+    </div>
+
+
   </form>
   <ul class="showcase">
     <li>
