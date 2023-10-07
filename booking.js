@@ -1,3 +1,4 @@
+
 const containerseat = document.querySelector('.containerseat');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
@@ -27,4 +28,5 @@ containerseat.addEventListener('click', e => {
     e.target.classList.toggle('selected');
   }
   updateSelectedCount();
+
 });

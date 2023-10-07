@@ -219,7 +219,7 @@ w
 </div>
     
 </body>
-<script src="booking.js"></script>
+<script src="booking.php"></script>
 </html>
 
               
