@@ -17,6 +17,7 @@
 <div class="movie-container">
   <label>Pick a movie: </label>
   <form action="booking_action.php" method="POST">
+  
   <div class="col-12">
           <label for="Movie">Choose a Movie:</label>                  
           <?php
@@ -36,9 +37,8 @@
            ?>
     </div>
 
-  
-
-
+    
+  </form>
   <ul class="showcase">
     <li>
       <div class="seat"></div>
@@ -126,7 +126,7 @@
           <button type="submit" class="btn btn-primary w-100" name="bo" value="BookSeats">Submit</button>
         </div>
 
-    </form>                        
+    </form>                     
   </div>
 </div>
 

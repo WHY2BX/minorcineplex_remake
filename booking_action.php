@@ -5,14 +5,17 @@
 	session_start();
 
 ?>
+
 <?php require_once('connect.php'); ?>
+
 <?php   
     $movie = $_POST['Movie'];
-    $theater = $_POST['Theater'];
+    $theater = $_POST['Theaters'];
     $location = $_POST['Location'];
 	$locationid;
     $client = $_SESSION['name'];
     $clientid;
+    $starttime = $_POST['Start_time'];
     $showtimeid;
 
     if(isset($_POST['bo'])){
@@ -36,7 +39,7 @@
             }
 
             //หา Client_ID
-            $sql4 = "SELECT Client_No from Member Where User_Name = '$client'"; 
+            $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
             $result4 = mysqli_query($conn, $sql4);
             if (mysqli_num_rows($result4) > 0) {
                 while($row = mysqli_fetch_assoc($result4)) {	
@@ -45,11 +48,11 @@
             }
 
             //หา Showtime_ID
-            $sql5 = "SELECT Showtime_ID from Showtime Where Theater_ID = '$theater' AND Start_time = '??????????'"; 
+            $sql5 = "SELECT Showtime_ID from Showtime Where Theater_ID = '$theater' AND Start_time = $starttime"; 
             $result5 = mysqli_query($conn, $sql5);
             if (mysqli_num_rows($result5) > 0) {
                 while($row = mysqli_fetch_assoc($result5)) {	
-                    $clientid = $row['Showtime_ID'];
+                    $showtimeid = $row['Showtime_ID'];
                 }
             }
 
@@ -59,9 +62,9 @@
 
             $Seat = $_POST['seats'];
             foreach($Seat as $seatnum){
-                $sql = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID) 
-                VALUES ($movieid,$clientid,$theater,$locationid,'2','240','$etime')";  
-                $result = mysqli_query($conn, $sql);
+                $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID) 
+                VALUES ($movieid,$clientid,$theater,$locationid,'2','240','$showtimeid', '$seatnum')";  
+                $result6 = mysqli_query($conn, $sql6);
             }
    
     
