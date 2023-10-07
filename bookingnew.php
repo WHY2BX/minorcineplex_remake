@@ -16,11 +16,11 @@
 <body>
 <div class="movie-container">
   <label>Pick a movie: </label>
-  <form>
+  <form action="booking_action.php" method="POST">
   <div class="col-12">
           <label for="Movie">Choose a Movie:</label>                  
           <?php
-          //หนัง
+          //หนังหมา
                 $sql = "SELECT * FROM Movie";	
                 $result = mysqli_query($conn, $sql);
 
@@ -36,8 +36,9 @@
            ?>
     </div>
 
-    
-  </form>
+  
+
+
   <ul class="showcase">
     <li>
       <div class="seat"></div>
@@ -55,7 +56,7 @@
   
   <div class="container">
     <div class="screen"></div>
-    <form action="booking_action.php">
+  
       <div class="row">
           <input type ="checkbox" class="seat" name = "seats[]" value="A1">
           <input type ="checkbox" class="seat" name = "seats[]" value="A2">
@@ -121,9 +122,10 @@
         คุณได้เลือก <span id="count">0</span> ที่นั่ง, ราคารวมทั้งสิ้น <span id="total">0</span> บาท
         </p>
 
-        <div class="form-group">
-          <button class="btn btn-primary w-100" name= "Bookingseat" type="submit">Submit</button>
+        <div class="row">
+          <button type="submit" class="btn btn-primary w-100" name="bo" value="BookSeats">Submit</button>
         </div>
+
     </form>                        
   </div>
 </div>
