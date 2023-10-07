@@ -3,8 +3,6 @@
 	session_cache_expire(60);
 	ob_start();
 	session_start();
-	$_SESSION = array();
-	session_destroy(); 
 ?>
 <?php require_once('connect.php'); ?>
 <?php
@@ -16,6 +14,7 @@
 	$date = $_POST['date'];
 	$stime = $_POST['start_time'];
 	$etime = $_POST['end_time'];
+	$manager = $_SESSION['name'];
 ?>
 
 <?php
@@ -38,13 +37,20 @@
 
 	
     try{
-		$sql = "INSERT INTO Showtime (Theater_ID,Movie_ID,Employee_Num,Location_ID,Show_Date,Start_Time,End_Time) VALUES ($theater,$movieid,1,$locationid,'$date','$stime','$etime')";  
+
+        // หาEmployee_Num 
+        $sql1 = "SELECT Employee_Num from Movie_Manager Where User_Name = '$manager'"; 
+        $result1 = mysqli_query($conn, $sql1);
+        if (mysqli_num_rows($result1) > 0) {
+            while($row = mysqli_fetch_assoc($result1)) {	
+                $managerid = $row['Employee_Num'];
+            }
+        }
+
+		$sql = "INSERT INTO Showtime (Theater_ID,Movie_ID,Employee_Num,Location_ID,Show_Date,Start_Time,End_Time) VALUES ($theater,$movieid,$managerid,$locationid,'$date','$stime','$etime')";  
 		$result = mysqli_query($conn, $sql);
-
-
-            echo "New record created successfully";
-
-         
+			echo '<script>alert("New record created successfully")</script>';
+			echo "<script> window.open('addShowtime.php','_self'); </script>";
            
     }
     catch (Exception $e) {
