@@ -15,7 +15,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="booking.php">
+        <a class="nav-link collapsed" href="bookingnew.php">
           <i class="bi bi-person"></i>
           <span>Booking</span>
         </a>

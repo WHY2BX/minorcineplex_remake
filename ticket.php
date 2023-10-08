@@ -1,16 +1,19 @@
 <?php 
-	//@session_start();
-	ob_start();
-	session_start();		
-	require_once('connect.php');
-    $movie = $_POST['Movie'];
-    $theater = $_POST['Theaters'];
-    $location = $_POST['Location'];
-	  $locationid;
-    $client = $_SESSION['name'];
-    $clientid;
-    $starttime = $_POST['Start_time'];
-    $showtimeid;
+  session_cache_limiter('private, must-revalidate');
+  session_cache_expire(60);
+  ob_start();
+  session_start();
+  require_once('connect.php');
+
+  $movie = $_POST['Movie'];
+  $theater = $_POST['Theaters'];
+  $location = $_POST['Location'];
+  $locationid;
+  $client = $_SESSION['name'];
+  $clientid;
+  $starttime = $_POST['Start_time'];
+  $showtimeid;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,18 +62,6 @@
           include "Guest_header.php";   
   ?>
 
-
-  <?php 
-      if($_SESSION['name'] == 'Manager'){
-        include "Manager_sidebar.php";
-    }
-    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-        include "sidebar.php";   }
-    else
-        include "Guest_sidebar.php";
-  ?>
-
-
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -100,7 +91,9 @@
                     <div class="col-12">
                         <label for="Movie">Movie:</label>
                         <h3>
-                        The Exorcist: Believer
+                        <?php
+                          echo "$movie";
+                        ?>
                         </h3>
                         </div>
 
@@ -112,8 +105,10 @@
                             <label for="Movie">Location:</label>
                             <br>
                             <h3>
-                            Minor_Bankok
-                        </h3>
+                              <?php
+                                echo "$location";
+                              ?>
+                            </h3>
   
                         </div>
 
@@ -124,8 +119,10 @@
                             <label for="Movie">Theater:</label>
                             <br>
                             <h3>
-                            1
-                        </h3>
+                              <?php
+                                echo "$theater";
+                              ?>
+                            </h3>
                         </div>
                     
                         <br>
@@ -135,8 +132,21 @@
                             <label for="Movie">Start time:</label>
                             <br>
                             <h3>
-                            2023-09-13 13:00:00
-                        </h3>
+                              <?php
+                                echo "$starttime";
+                              ?>
+                            </h3>
+                        </div>
+
+                        <!--เวลาเริ่มฉาย...-->
+                        <div class="col-12">
+                            <label for="Movie">total:</label>
+                            <br>
+                            <h3>
+                              <?php
+                                echo "$starttime";
+                              ?>
+                            </h3>
                         </div>
            
                     <br><br>
