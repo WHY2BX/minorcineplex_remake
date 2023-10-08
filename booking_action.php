@@ -56,14 +56,23 @@
                 }
             }
 
-            //Numticket + ticketprice ? ยังหาวิธีไม่ได้
+            //หาNumticket + ticketprice
 
-
-
+            
+            $numticket = 0;
             $Seat = $_POST['seats'];
+            foreach($Seat as $totalselected){
+                $numticket++;
+            }
+            $total = $numticket*120;
+
+            //หาBooking_Date
+            $date = date("y-m-d");
+
+            
             foreach($Seat as $seatnum){
-                $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID) 
-                VALUES ($movieid,$clientid,$theater,$locationid,'2','240','$showtimeid', '$seatnum')";  
+                $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID,Booking_date) 
+                VALUES ($movieid,$clientid,$theater,$locationid,'$numticket','$total','$showtimeid', '$seatnum', '$date')";  
                 $result6 = mysqli_query($conn, $sql6);
             }
             echo "<script> window.open('ticket.php','_self'); </script>";
