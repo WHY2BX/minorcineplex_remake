@@ -4,8 +4,8 @@
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: "Kanit";
-  src: url(./assets/fonts/Kanit/Kanit-Regular.ttf);
+  font-family: 'Kanit', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 }
 
 :root {
