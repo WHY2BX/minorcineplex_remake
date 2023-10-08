@@ -3,10 +3,14 @@
 	ob_start();
 	session_start();		
 	require_once('connect.php');
-    // $mname = $_GET['mname'];
-    // $mlo = $_GET['mlo'];
-    // $mthea = $_GET['mthea'];
-    // $mstart = $_GET['mstart'];
+    $movie = $_POST['Movie'];
+    $theater = $_POST['Theaters'];
+    $location = $_POST['Location'];
+	  $locationid;
+    $client = $_SESSION['name'];
+    $clientid;
+    $starttime = $_POST['Start_time'];
+    $showtimeid;
 ?>
 <!DOCTYPE html>
 <html lang="en">

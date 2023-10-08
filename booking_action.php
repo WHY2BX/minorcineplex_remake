@@ -8,7 +8,7 @@
 
     require_once('connect.php');
 
-
+    
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];
     $location = $_POST['Location'];
