@@ -91,7 +91,7 @@
 
 
                   <!--Movie-->
-                  <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="manageShowtime_Delete_action.php" method="post" novalidate>
                     
                     <div class="col-12">
                         <label for="Movie">Choose a Movie:</label>
@@ -169,7 +169,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select name='Theater' class='dropdown-item'>";
+                                echo "<select name='st' class='dropdown-item'>";
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Start_Time"]."</option>";                                          
