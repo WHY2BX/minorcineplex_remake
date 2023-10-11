@@ -13,7 +13,7 @@
   $starttime = $_SESSION['Time_his'];
   $showtimeid;
 
-
+  $seat = $_SESSION['seat'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,18 +133,12 @@
                             <br>
                             <h3>
                               <?php
-                                $Seat = $_SESSION['seats'];
-                                $num = $_SESSION['num'];
-                                $num1 = $_SESSION['num']*120;
-                                foreach($Seat as $seatnum){
-                                if($num == 1){
-                                  echo "$seatnum";
-                                }
-                                else{
-                                  echo "$seatnum, ";
-                                }
-                                  $num--;
-                              }
+                   
+                      
+                                  echo "$seat";
+                                
+            
+                              
                               ?>
                             </h3>
                         </div>
@@ -163,6 +157,8 @@
                             </h3>
                         </div>
 
+                        <br>
+
                         <!--ราคา...-->
                         <div class="col-12">
                             <label for="Movie">Price:</label>
@@ -179,6 +175,7 @@
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" onClick="window.open('index.php', '_self')">Back</button>
                     </div>
+
 
                  
 

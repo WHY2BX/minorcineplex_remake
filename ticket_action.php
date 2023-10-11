@@ -77,6 +77,17 @@
                 }
             }
 
+
+            //หา Theater_ID
+            $sql1 = "SELECT Seat_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result1) > 0 ) {
+                while($row = mysqli_fetch_assoc($result1)) {	
+                    $seat = $row['Seat_ID'];
+                    $_SESSION['seat'] = $seat;
+                }
+            }            
+
             //หาNumticket + ticketprice
 
             
@@ -95,11 +106,7 @@
             $date = date("y-m-d");
 
             
-            foreach($Seat as $seatnum){
-                $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID,Booking_date) 
-                VALUES ($movieid,$clientid,$theater,$locationid,'1','120','$showtimeid', '$seatnum', '$date')";  
-                $result6 = mysqli_query($conn, $sql6);
-            }
+
             echo "<script> window.open('ticket_his.php','_self'); </script>";
      
         }
