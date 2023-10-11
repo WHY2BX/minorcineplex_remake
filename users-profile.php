@@ -47,7 +47,6 @@
         
   ?>
 
-
   <?php 
       if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";
@@ -150,7 +149,7 @@
                   <!-- Profile Edit Form -->
                   
                 <!--History form-->
-                  <form>
+                  <form action = "ticket_action.php" method="post">
                   <table>
 
                     <thead>
@@ -161,12 +160,14 @@
                         <th>Theater ID</th>
                         <th>Seat ID</th>
                         <th>Date-Time</th>
-                        <th>Total Payment</th>
+                        <th>Price</th>
+                        <th>Ticket</th>
                       </tr>
                     </thead>
   
                     <tbody>
                    
+
                       <?php
                           
                           //หา Client_ID
@@ -184,15 +185,17 @@
                         AND s.Theater_ID = t.Theater_ID AND bk.Seat_ID = ss.Seat_ID AND ss.Theater_ID = t.Theater_ID AND ss.location_ID = t.location_ID AND s.location_ID = t.location_ID";
                         $result = $conn->query($sql);
 
+                        
 
                         if ($result->num_rows > 0){
                           while($row = $result-> fetch_assoc()){
-                            echo "<tr><td>" . $row["Movie_Name"] . "</td><td>". $row["Booking_date"] . "</td><td>". $row["location_name"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Start_Time"] . "</td><td>". $row["Total_Price"] . "</td>" ;
+                            echo "<tr><td>" . $row["Movie_Name"] . "</td><td>". $row["Booking_date"] . "</td><td>". $row["location_name"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Start_Time"] . "</td><td>". $row["Total_Price"] . "</td>"?><td><button class="btn btn-primary w-100" name = "bo" type="submit">View Ticket</button></td> 
+                        <?php  
                           }
                         }
+                        ?>
 
-
-                      ?>
+                      
                     </tbody>
 
                   </table>

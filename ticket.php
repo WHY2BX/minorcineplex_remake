@@ -1,9 +1,18 @@
 <?php 
   session_cache_limiter('private, must-revalidate');
-  session_cache_expire(60);
   ob_start();
   session_start();
   require_once('connect.php');
+
+  $movie = $_SESSION['Movie'];
+  $theater = $_SESSION['Theaters'];
+  $location = $_SESSION['Location'];
+  $locationid;
+  $client = $_SESSION['name'];
+  $clientid;
+  $starttime = $_SESSION['Start_time'];
+  $showtimeid;
+
 
 ?>
 <!DOCTYPE html>
@@ -115,6 +124,31 @@
                               ?>
                             </h3>
                         </div>
+
+                        <br>
+
+                        <!--ที่นั่ง...-->
+                        <div class="col-12">
+                            <label for="Movie">Seat:</label>
+                            <br>
+                            <h3>
+                              <?php
+                                $Seat = $_SESSION['seats'];
+                                $num = $_SESSION['num'];
+                                $num1 = $_SESSION['num']*120;
+                                foreach($Seat as $seatnum){
+                                if($num == 1){
+                                  echo "$seatnum";
+                                }
+                                else{
+                                  echo "$seatnum, ";
+                                }
+                                  $num--;
+                              }
+                              ?>
+                            </h3>
+                        </div>
+
                     
                         <br>
 
@@ -129,15 +163,13 @@
                             </h3>
                         </div>
 
-                        <br>
-
-                        <!--จำนวนตั๋ว ราคา...-->
+                        <!--เวลาเริ่มฉาย...-->
                         <div class="col-12">
-                            <label for="Movie">total:</label>
+                            <label for="Movie">Price:</label>
                             <br>
                             <h3>
                               <?php
-                                echo "not variable";
+                                echo "$num1";
                               ?>
                             </h3>
                         </div>

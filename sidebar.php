@@ -31,12 +31,7 @@
 
  
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="register.php">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="Logout.php">
