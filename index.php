@@ -139,7 +139,7 @@
 
       <?php 
           $no = 4;
-          while($no <= 15){ 
+          while($no <= 17){ 
       ?>
       
           <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">

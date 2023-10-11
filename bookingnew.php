@@ -59,24 +59,7 @@
            ?>
     </div>
 
-    <div class="col-12">
-          <label for="Movie">Choose a Theater:</label>                  
-          <?php
-          //โรงที่
-                $sql = "SELECT DISTINCT Theater_ID FROM Theaters ";	
-                $result = mysqli_query($conn, $sql);
 
-               if (mysqli_num_rows($result) > 0) {
-                                
-                    echo "<select name ='Theaters' id='Theaters' class='dropdown-item'>";
-
-                  while($row = mysqli_fetch_assoc($result)) {	
-                        echo "<option>".$row["Theater_ID"]."</option>";                                          
-                                }
-                  echo "</select>";
-                            }
-           ?>
-    </div>
 
     <div class="col-12">
           <label for="Movie">Choose a time:</label>                  
