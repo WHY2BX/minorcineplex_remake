@@ -3,63 +3,77 @@
 	session_cache_expire(60);
 	ob_start();
 	session_start();
-    $hisNum = $_GET['no'];
-
-
-
-    require_once('connect.php');
-
-    $hisnum = $_SESSION['hisnum'];
     
-    $movie = $_POST['Movie'];
-    $theater = $_POST['Theaters'];
-    $location = $_POST['Location'];
-	$locationid;
-    $client = $_SESSION['name'];
-    $clientid;
-    $starttime = $_POST['Start_time'];
-    $showtimeid;
-
-    $_SESSION['Movie'] = $movie;
-    $_SESSION['Theaters'] = $theater;
+    require_once('connect.php');
+    $hisNum = $_GET['hisNum'];
+    
+    
+    
     $_SESSION['Location'] = $location;
     $_SESSION['Start_time'] = $starttime;
+
 
     if(isset($_POST['bo'])){
         try {
             //หาMovie_ID
-            $sql1 = "SELECT Movie_ID FROM Booking WHERE Booking_ID = '".$hisnum."'";
+            $sql1 = "SELECT Movie_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
             $result1 = mysqli_query($conn, $sql1);
             if (mysqli_num_rows($result1) > 0) {
                 while($row = mysqli_fetch_assoc($result1)) {	
-                    $movieid = $row['Movie_ID'];
+                    $movie_id = $row['Movie_ID'];
+                }
+            }
+            $sql2 = "SELECT Movie_Name FROM Movie WHERE Movie_ID = '".$movie_id."'";
+            $result2 = mysqli_query($conn, $sql2);
+            if (mysqli_num_rows($result2) > 0) {
+                while($row = mysqli_fetch_assoc($result2)) {	
+                    $movie_name = $row['Movie_Name'];
+                    $_SESSION['Movie_his'] = $movie_name;
                 }
             }
 
             //หา location_ID
-            $sql2 = "SELECT location_ID FROM Location WHERE location_name = '".$location."'";
+            $sql1 = "SELECT location_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result1) > 0 ) {
+                while($row = mysqli_fetch_assoc($result1)) {	
+                    $location_ID = $row['location_ID'];
+                }
+            }
+            $sql2 = "SELECT location_name FROM Location WHERE location_ID = '".$location_ID."'";
             $result2 = mysqli_query($conn, $sql2);
             if (mysqli_num_rows($result2) > 0) {
-                while($row1 = mysqli_fetch_assoc($result2)) {	
-                    $locationid = $row1['location_ID'];
+                while($row = mysqli_fetch_assoc($result2)) {	
+                    $location_name = $row['location_name'];
+                    $_SESSION['Location_his'] = $location_name;
                 }
             }
 
-            //หา Client_ID
-            $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
-            $result4 = mysqli_query($conn, $sql4);
-            if (mysqli_num_rows($result4) > 0) {
-                while($row = mysqli_fetch_assoc($result4)) {	
-                    $clientid = $row['Client_No'];
+            //หา Theater_ID
+            $sql1 = "SELECT Theater_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result1) > 0 ) {
+                while($row = mysqli_fetch_assoc($result1)) {	
+                    $theater = $row['Theater_ID'];
+                    $_SESSION['Theaters'] = $theater;
                 }
             }
+
 
             //หา Showtime_ID
-            $sql5 = "SELECT Showtime_ID from Showtime Where Theater_ID = '$theater' AND Start_time = '$starttime'"; 
-            $result5 = mysqli_query($conn, $sql5);
-            if (mysqli_num_rows($result5) > 0) {
-                while($row = mysqli_fetch_assoc($result5)) {	
-                    $showtimeid = $row['Showtime_ID'];
+            $sql1 = "SELECT Showtime_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result1) > 0) {
+                while($row = mysqli_fetch_assoc($result1)) {	
+                    $Showtime_ID = $row['Showtime_ID'];
+                }
+            }
+            $sql2 = "SELECT Start_Time FROM Showtime WHERE Showtime_ID = '".$Showtime_ID."'";
+            $result2 = mysqli_query($conn, $sql2);
+            if (mysqli_num_rows($result2) > 0) {
+                while($row = mysqli_fetch_assoc($result2)) {	
+                    $Start_Time = $row['Start_Time'];
+                    $_SESSION['Time_his'] = $Start_Time;
                 }
             }
 
@@ -86,7 +100,7 @@
                 VALUES ($movieid,$clientid,$theater,$locationid,'1','120','$showtimeid', '$seatnum', '$date')";  
                 $result6 = mysqli_query($conn, $sql6);
             }
-            echo "<script> window.open('ticket.php','_self'); </script>";
+            echo "<script> window.open('ticket_his.php','_self'); </script>";
      
         }
         catch(Exception $e){
