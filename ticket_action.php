@@ -3,6 +3,7 @@
 	session_cache_expire(60);
 	ob_start();
 	session_start();
+    $hisNum = $_GET['no'];
 
 
 
