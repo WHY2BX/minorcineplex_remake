@@ -3,13 +3,13 @@
 	session_cache_expire(60);
 	ob_start();
 	session_start();
-    $hisNum = $_GET['no'];
+    $hisnum = $_GET['hisNum'];
 
 
 
     require_once('connect.php');
 
-    $hisnum = $_SESSION['hisnum'];
+ 
     
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];
