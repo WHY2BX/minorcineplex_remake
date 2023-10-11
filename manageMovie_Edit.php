@@ -50,7 +50,7 @@
 
 
   <?php 
-      if($_SESSION['name'] == 'Manager'){
+      if(isset($_SESSION['name']) ){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){

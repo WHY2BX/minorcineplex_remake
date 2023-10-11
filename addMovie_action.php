@@ -19,9 +19,7 @@
 
 <?php
 
-	
     try{
-
         // หาEmployee_Num 
         $sql1 = "SELECT Employee_Num from Movie_Manager Where User_Name = '$manager'"; 
         $result1 = mysqli_query($conn, $sql1);

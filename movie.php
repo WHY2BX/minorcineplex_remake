@@ -1,10 +1,27 @@
 <?php 
-	//@session_start();
-	ob_start();
-	session_start();		
-	require_once('connect.php');
-	$no = $_GET['no'];
+// Start the session (uncomment this line if you want to start the session)
+// @session_start(); 
+
+// Start output buffering and session
+ob_start();
+session_start();
+
+// Retrieve 'no' parameter from the GET request
+$no = isset($_GET['no']) ? $_GET['no'] : null;
+
+if ($no !== null) {
+    // The 'no' parameter exists; you can use it safely.
+    
+    // Include 'connect.php' to establish a database connection
+    require_once('connect.php');
+
+    // Proceed with database queries or other logic
+} else {
+    // Handle the case where 'no' parameter is not set or invalid
+    echo "Invalid or missing 'no' parameter.";
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,10 +67,8 @@
           include "Guest_header.php";
         
   	?>
-
-
   	<?php 
-      if($_SESSION['name'] == 'Manager'){
+      if(isset($_SESSION['name'])){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -66,12 +81,17 @@
 				  <br><br><br><br>
 				  
 				  <?php
-					  $sql = "SELECT * FROM Movie WHERE Movie_ID  = ".$no;
-					  //echo $sql;
-						$result = mysqli_query($conn, $sql);
-						if(mysqli_num_rows($result) > 0) {
-							while($row = mysqli_fetch_assoc($result)) {
+					$sql = "SELECT * FROM Movie WHERE Movie_ID = " . $no;
 
+					// Execute the query and check for errors
+					$result = mysqli_query($conn, $sql);
+
+					if (!$result) {
+						// Query execution failed, handle the error
+						echo "Error in the SQL query: " . mysqli_error($conn);
+					} else {
+						if (mysqli_num_rows($result) > 0) {
+							while ($row = mysqli_fetch_assoc($result)) {
 								$name = $row['Movie_Name'];
 								$des = $row['Description'];
 								$gen = $row['Genre'];
@@ -80,23 +100,30 @@
 								$pos = $row['Movie_Poster'];
 								$mov = $row['Trailer'];
 
-								?><img class="MoviePosterDetail" src=<?php echo $pos ?>>
-								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen ></iframe>
+								?><img class="MoviePosterDetail" src="<?php echo $pos ?>">
+								<iframe class="youtube_frame" src="<?php echo $mov; ?>" allowfullscreen></iframe>
 								<br><br><h1 class="header_detail">
 								<?php echo $name; ?></h1>
 								<div class="description">
-								<p style ="font-family: 'Kanit';">
-								<?php echo $des;?></p></div>
-								<h4 style ="font-family: 'Kanit';" > Genre : 
-								<?php echo $gen ?></h4>
-								<h4 style ="font-family: 'Kanit';"> Duration : 
-								<?php echo $dur ?></h4>
-								<h4 style ="font-family: 'Kanit';"> Release date :
-								<?php echo $reday ?></h4><br>
+									<p style="font-family: 'Kanit';">
+										<?php echo $des; ?></p>
+								</div>
+								<h4 style="font-family: 'Kanit';"> Genre :
+									<?php echo $gen ?></h4>
+								<h4 style="font-family: 'Kanit';"> Duration :
+									<?php echo $dur ?></h4>
+								<h4 style="font-family: 'Kanit';"> Release date :
+									<?php echo $reday ?></h4><br>
 								<?php
 							}
+						} else {
+							// No results found
+							echo "No movie found with Movie_ID: " . $no;
 						}
-				  ?>
+					}
+
+					?>
+
 					<div><a href="index.php">
 									<button class="btn-animate animate shake">
 													<span>Back</span>

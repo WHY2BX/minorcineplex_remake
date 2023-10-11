@@ -4,11 +4,8 @@
 	ob_start();
 	session_start();
 
-
-
     require_once('connect.php');
 
-    
     ?>
     <form action="ticket.php" method="POST">
     <?php
@@ -107,12 +104,4 @@
     else{
         echo "error";
     }
-
-
-
-
-
-
-
-
 ?>

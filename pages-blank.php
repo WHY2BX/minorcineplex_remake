@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+  <title></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,7 +63,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <p>This is an examle page with no content. You can use it as a starter for your custom pages.</p>
             </div>
           </div>
 
@@ -74,7 +74,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <p>This is an examle page with no content. You can use it as a starter for your custom pages.</p>
             </div>
           </div>
 
