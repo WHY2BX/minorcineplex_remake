@@ -9,7 +9,7 @@
 
     require_once('connect.php');
 
-    $hisNum = $_SESSION['hisnum'];
+    $hisnum = $_SESSION['hisnum'];
     
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];
@@ -28,7 +28,7 @@
     if(isset($_POST['bo'])){
         try {
             //หาMovie_ID
-            $sql1 = "SELECT Movie_ID FROM Movie WHERE Movie_Name = '".$movie."'";
+            $sql1 = "SELECT Movie_ID FROM Booking WHERE Booking_ID = '".$hisnum."'";
             $result1 = mysqli_query($conn, $sql1);
             if (mysqli_num_rows($result1) > 0) {
                 while($row = mysqli_fetch_assoc($result1)) {	
