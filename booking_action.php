@@ -66,10 +66,14 @@
             
             $numticket = 0;
             $Seat = $_POST['seats'];
+            //เก็บ list seats ใน $_SESSION
+            $_SESSION['seats'] = $Seat;
+
             foreach($Seat as $totalselected){
                 $numticket++;
             }
             $total = $numticket*120;
+            $_SESSION['num'] = $numticket;
             $_SESSION['total'] = $total;
             //หาBooking_Date
             $date = date("y-m-d");
@@ -77,7 +81,7 @@
             
             foreach($Seat as $seatnum){
                 $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID,Booking_date) 
-                VALUES ($movieid,$clientid,$theater,$locationid,'$numticket','$total','$showtimeid', '$seatnum', '$date')";  
+                VALUES ($movieid,$clientid,$theater,$locationid,'1','120','$showtimeid', '$seatnum', '$date')";  
                 $result6 = mysqli_query($conn, $sql6);
             }
             echo "<script> window.open('ticket.php','_self'); </script>";
