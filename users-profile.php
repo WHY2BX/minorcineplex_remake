@@ -47,7 +47,6 @@
         
   ?>
 
-
   <?php 
       if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";

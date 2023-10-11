@@ -18,6 +18,11 @@
     $starttime = $_POST['Start_time'];
     $showtimeid;
 
+    $_SESSION['Movie'] = $movie;
+    $_SESSION['Theaters'] = $theater;
+    $_SESSION['Location'] = $location;
+    $_SESSION['Start_time'] = $starttime;
+
     if(isset($_POST['bo'])){
         try {
             //หาMovie_ID
@@ -65,7 +70,7 @@
                 $numticket++;
             }
             $total = $numticket*120;
-
+            $_SESSION['total'] = $total;
             //หาBooking_Date
             $date = date("y-m-d");
 

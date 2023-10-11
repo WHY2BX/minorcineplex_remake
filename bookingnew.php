@@ -16,7 +16,7 @@
 <body>
 <div class="movie-container">
   <label>Pick a movie: </label>
-  <form action="ticket.php" method="POST">
+  
   <form action="booking_action.php" method="POST">
   
   
@@ -99,20 +99,7 @@
 
 
 
-  <ul class="showcase">
-    <li>
-      <div class="seat"></div>
-      <small>N/A</small>
-    </li>
-    <li>
-      <div class="seat selected"></div>
-      <small>Selected</small>
-    </li>
-    <li>
-      <div class="seat occupied"></div>
-      <small>Occupied</small>
-    </li>    
-  </ul>
+
   
   <div class="container">
     <div class="screen"></div>

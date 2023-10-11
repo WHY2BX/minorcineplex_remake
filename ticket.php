@@ -1,18 +1,18 @@
 <?php 
   session_cache_limiter('private, must-revalidate');
-  session_cache_expire(60);
   ob_start();
   session_start();
   require_once('connect.php');
 
-  $movie = $_POST['Movie'];
-  $theater = $_POST['Theaters'];
-  $location = $_POST['Location'];
+  $movie = $_SESSION['Movie'];
+  $theater = $_SESSION['Theaters'];
+  $location = $_SESSION['Location'];
   $locationid;
   $client = $_SESSION['name'];
   $clientid;
-  $starttime = $_POST['Start_time'];
+  $starttime = $_SESSION['Start_time'];
   $showtimeid;
+  $total = $_SESSION['total'];
 
 ?>
 <!DOCTYPE html>
@@ -144,7 +144,7 @@
                             <br>
                             <h3>
                               <?php
-                                echo "$starttime";
+                                echo "$total";
                               ?>
                             </h3>
                         </div>
