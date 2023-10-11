@@ -9,6 +9,10 @@
     require_once('connect.php');
 
     
+    ?>
+    <form action="ticket.php" method="POST">
+    <?php
+
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];
     $location = $_POST['Location'];
@@ -18,6 +22,14 @@
     $starttime = $_POST['Start_time'];
     $showtimeid;
 
+    $_SESSION['movie'] = $movie;
+    $_SESSION['theater'] = $theater;
+    $_SESSION['location'] = $location;
+    $_SESSION['starttime'] = $starttime;
+
+    ?>
+    </form>
+    <?php
     if(isset($_POST['bo'])){
         try {
             //หาMovie_ID

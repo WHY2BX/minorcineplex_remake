@@ -5,15 +5,6 @@
   session_start();
   require_once('connect.php');
 
-  $movie = $_POST['Movie'];
-  $theater = $_POST['Theaters'];
-  $location = $_POST['Location'];
-  $locationid;
-  $client = $_SESSION['name'];
-  $clientid;
-  $starttime = $_POST['Start_time'];
-  $showtimeid;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +83,7 @@
                         <label for="Movie">Movie:</label>
                         <h3>
                         <?php
-                          echo "$movie";
+                          echo $_SESSION['movie'];
                         ?>
                         </h3>
                         </div>
@@ -106,7 +97,7 @@
                             <br>
                             <h3>
                               <?php
-                                echo "$location";
+                                echo $_SESSION['location'];
                               ?>
                             </h3>
   
@@ -120,7 +111,7 @@
                             <br>
                             <h3>
                               <?php
-                                echo "$theater";
+                                echo $_SESSION['theater'];
                               ?>
                             </h3>
                         </div>
@@ -133,18 +124,20 @@
                             <br>
                             <h3>
                               <?php
-                                echo "$starttime";
+                                echo $_SESSION['starttime'];
                               ?>
                             </h3>
                         </div>
 
-                        <!--เวลาเริ่มฉาย...-->
+                        <br>
+
+                        <!--จำนวนตั๋ว ราคา...-->
                         <div class="col-12">
                             <label for="Movie">total:</label>
                             <br>
                             <h3>
                               <?php
-                                echo "$starttime";
+                                echo "not variable";
                               ?>
                             </h3>
                         </div>
