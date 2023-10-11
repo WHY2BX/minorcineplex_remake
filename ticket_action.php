@@ -8,6 +8,7 @@
 
     require_once('connect.php');
 
+    $hisNum = $_SESSION['hisnum'];
     
     $movie = $_POST['Movie'];
     $theater = $_POST['Theaters'];

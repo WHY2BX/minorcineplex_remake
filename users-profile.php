@@ -186,13 +186,15 @@
                         $result = $conn->query($sql);
 
                         
-
+                        $hisNum = 1;
                         if ($result->num_rows > 0){
                           while($row = $result-> fetch_assoc()){
                             echo "<tr><td>" . $row["Movie_Name"] . "</td><td>". $row["Booking_date"] . "</td><td>". $row["location_name"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Start_Time"] . "</td><td>". $row["Total_Price"] . "</td>"?><td><button class="btn btn-primary w-100" name = "bo" type="submit">View Ticket</button></td> 
-                        <?php  
+                        <?php
+                          $hisNum++;
                           }
                         }
+                        $_SESSION['hisnum'] = $hisNum;
                         ?>
 
                       
