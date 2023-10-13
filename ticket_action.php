@@ -5,9 +5,16 @@
 	session_start();
     
     require_once('connect.php');
-    $hisNum = $_GET['hisNum'];
-    
-    
+    if (isset($_GET['hisNum'])) {
+        $hisNum = $_GET['hisNum'];
+        // Now you can safely use $hisNum
+    } else {
+        // Handle the case where 'hisNum' is not provided in the URL
+        // Set a default value or display an error message.
+        echo "Error: 'hisNum' is missing in the URL.";
+    }
+    $location = "Some Location";
+    $starttime = "2023-10-13 08:00:00";
     
     $_SESSION['Location'] = $location;
     $_SESSION['Start_time'] = $starttime;

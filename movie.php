@@ -55,6 +55,8 @@ if ($no !== null) {
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Font Kanit -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
 </head>
 
@@ -105,14 +107,14 @@ if ($no !== null) {
 								<br><br><h1 class="header_detail">
 								<?php echo $name; ?></h1>
 								<div class="description">
-									<p style="font-family: 'Kanit';">
+									<p>
 										<?php echo $des; ?></p>
 								</div>
-								<h4 style="font-family: 'Kanit';"> Genre :
+								<h4> Genre :
 									<?php echo $gen ?></h4>
-								<h4 style="font-family: 'Kanit';"> Duration :
+								<h4> Duration :
 									<?php echo $dur ?></h4>
-								<h4 style="font-family: 'Kanit';"> Release date :
+								<h4> Release date :
 									<?php echo $reday ?></h4><br>
 								<?php
 							}

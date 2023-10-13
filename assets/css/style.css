@@ -3,15 +3,9 @@
 # General
 --------------------------------------------------------------*/
 
-@font-face {
-  font-family: 'Kanit', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-}
-
 :root {
   scroll-behavior: smooth;
 }
-
 
 a {
   color: #4154f1;
@@ -21,15 +15,6 @@ a {
 a:hover {
   color: #717ff5;
   text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Kanit";
 }
 
 h3{
@@ -49,6 +34,10 @@ h3{
   #main {
     padding: 20px;
   }
+}
+
+body{
+  font-family: 'Kanit';
 }
 
 /*--------------------------------------------------------------

@@ -28,14 +28,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Aug 30 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Font Kanit -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
+  
 </head>
 
 <body>

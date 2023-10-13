@@ -39,6 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
 </head>
 
@@ -119,7 +120,7 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                ?> <h3 style ="font-family: 'Kanit';" ><?php echo $name;?></h3>
+                                ?> <h3><?php echo $name;?></h3>
                                 <?php
                             }
                         }
