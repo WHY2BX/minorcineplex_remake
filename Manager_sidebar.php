@@ -23,6 +23,7 @@
       </li><!-- End Profile Page Nav -->
 
 
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="Logout.php">
           <i class="bi bi-box-arrow-in-right"></i>
@@ -79,6 +80,23 @@
           <span>Edit Showtime</span>
         </a>
       </li>      
+
+
+      <li class="nav-heading">Graph</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="graph_movie.php">
+          <i class="bi bi-person"></i>
+          <span>Movie Total Earning</span>
+        </a>
+      </li><!-- End Movie Graph Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="graph_location.php">
+          <i class="bi bi-person"></i>
+          <span>Location Total Earning</span>
+        </a>
+      </li><!-- End Movie Graph Page Nav -->
       
 
 

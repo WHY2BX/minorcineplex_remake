@@ -132,9 +132,7 @@ if ($no !== null) {
 						}else{
 							echo "login.php";
 						}?>>
-						<button class="btn-animate animate shake">
-							<span>จอง</span>
-						</button></a>
+
 					</div>
 			</div>
 </body>

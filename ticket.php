@@ -3,17 +3,7 @@
   ob_start();
   session_start();
   require_once('connect.php');
-  $_SESSION['Movie'] = "Godzilla vs. Kong";
-  $_SESSION['Theaters'] = "Theater 1";
-  $_SESSION['Location'] = "Central Plaza Chaengwattana";
-  $_SESSION['Start_time'] = "2021-04-01 10:00:00";
-  $_SESSION['seats'] = array("A1","A2","A3","A4","A5");
-
-  $_SESSION['movie'] = "Godzilla vs. Kong";
-  $_SESSION['location'] = "Central Plaza Chaengwattana";
-  $_SESSION['theater'] = "Theater 1";
-  $_SESSION['starttime'] = "2021-04-01 10:00:00";
-  $_SESSION['num'] = 5;
+ 
 
   $movie = $_SESSION['Movie'];
   $theater = $_SESSION['Theaters'];
@@ -130,7 +120,7 @@
                             <br>
                             <h3>
                               <?php
-                                echo $_SESSION['theater'];
+                                echo $_SESSION['Theaters'];
                               ?>
                             </h3>
                         </div>
@@ -190,7 +180,7 @@
                       <button class="btn btn-primary w-100" type="submit" onClick="window.open('index.php', '_self')">Back</button>
                     </div>
 
-                 
+           
 
                 </div>
               </div>

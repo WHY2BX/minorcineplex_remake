@@ -46,7 +46,7 @@
 <body>
 
 
-  <?php 
+<?php 
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
           include "header.php";  }
       else
@@ -54,9 +54,8 @@
         
   ?>
 
-
   <?php 
-      if(isset($_SESSION['name'])){
+      if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -142,7 +141,11 @@
           $no = 4;
           while($no <= 17){ 
       ?>
-          <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">
+      <?php  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name']) && $_SESSION['name'] != 'Manager') {?>
+              <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">
+      <?php } else { ?>
+              <div class="col-lg-2" onClick="window.open('movie_nobook.php?no=<?php echo $no; ?>', '_self')">
+      <?php } ?>
 
               <div class="card">
 
