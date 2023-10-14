@@ -81,7 +81,6 @@
 
             //หาNumticket + ticketprice
 
-            
             $numticket = 0;
             $Seat = $_POST['seats'];
             //เก็บ list seats ใน $_SESSION

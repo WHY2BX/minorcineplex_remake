@@ -126,10 +126,14 @@ if ($no !== null) {
 
 					?>
 
-					<div><a href="index.php">
-									<button class="btn-animate animate shake">
-													<span>Back</span>
-									</button></a>
+					<div><a href= <?php if(isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+							echo "booking.php?no=".$no;
+						}else{
+							echo "login.php";
+						}?>>
+						<button class="btn-animate animate shake">
+							<span>จอง</span>
+						</button></a>
 					</div>
 			</div>
 </body>
