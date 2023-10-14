@@ -5,9 +5,16 @@
 	session_start();
     
     require_once('connect.php');
-    $hisNum = $_GET['hisNum'];
-    
-    
+    if (isset($_GET['hisNum'])) {
+        $hisNum = $_GET['hisNum'];
+        // Now you can safely use $hisNum
+    } else {
+        // Handle the case where 'hisNum' is not provided in the URL
+        // Set a default value or display an error message.
+        echo "Error: 'hisNum' is missing in the URL.";
+    }
+    $location = "Some Location";
+    $starttime = "2023-10-13 08:00:00";
     
     $_SESSION['Location'] = $location;
     $_SESSION['Start_time'] = $starttime;
@@ -77,6 +84,17 @@
                 }
             }
 
+
+            //หา Theater_ID
+            $sql1 = "SELECT Seat_ID FROM Booking WHERE Booking_ID = '".$hisNum."'";
+            $result1 = mysqli_query($conn, $sql1);
+            if (mysqli_num_rows($result1) > 0 ) {
+                while($row = mysqli_fetch_assoc($result1)) {	
+                    $seat = $row['Seat_ID'];
+                    $_SESSION['seat'] = $seat;
+                }
+            }            
+
             //หาNumticket + ticketprice
 
             
@@ -95,11 +113,7 @@
             $date = date("y-m-d");
 
             
-            foreach($Seat as $seatnum){
-                $sql6 = "INSERT INTO Booking (Movie_ID,Client_No,Theater_ID,Location_ID,Num_ticket,Total_Price,Showtime_ID,Seat_ID,Booking_date) 
-                VALUES ($movieid,$clientid,$theater,$locationid,'1','120','$showtimeid', '$seatnum', '$date')";  
-                $result6 = mysqli_query($conn, $sql6);
-            }
+
             echo "<script> window.open('ticket_his.php','_self'); </script>";
      
         }

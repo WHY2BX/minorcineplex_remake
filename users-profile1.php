@@ -1,10 +1,10 @@
 <?php 
-
 	ob_start();
-	session_start();		
+	session_start();
+  $_SESSION['first_name'] = 'John';
+  $_SESSION['last_name'] = 'CENA';
+  $_SESSION['name'] = 'JohnCENA1977';
 	require_once('connect.php');
-  $hisNum = 1;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +51,9 @@
         
   ?>
 
+
   <?php 
-      if($_SESSION['name'] == 'Manager'){
+      if(isset($_SESSION['name'])){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -83,7 +84,8 @@
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.png" alt="Profile" class="rounded-circle">
-              <h2><?php
+              <h2>
+                <?php
                 echo $_SESSION['first_name']." ".$_SESSION['last_name'];
                 ?>
               </h2>
@@ -120,7 +122,8 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Username</div>
-                    <div class="col-lg-9 col-md-8"><?php
+                    <div class="col-lg-9 col-md-8">
+                    <?php
                         echo $_SESSION['name']
                     ?>
                       
@@ -129,7 +132,8 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">FirstName</div>
-                    <div class="col-lg-9 col-md-8"><?php
+                    <div class="col-lg-9 col-md-8">
+                      <?php
                         echo $_SESSION['first_name']
                       ?>
                     </div>
@@ -137,8 +141,10 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">LastName</div>
-                    <div class="col-lg-9 col-md-8"><?php
-                      echo $_SESSION['last_name'] ?>
+                    <div class="col-lg-9 col-md-8">
+                      <?php
+                      echo $_SESSION['last_name'] 
+                      ?>
                     </div>
                   </div>
 
@@ -153,7 +159,7 @@
                   <!-- Profile Edit Form -->
                   
                 <!--History form-->
-                  <form action = "ticket_action.php?hisNum=<?php echo $hisNum; ?>" method="post" >
+                  <form>
                   <table>
 
                     <thead>
@@ -164,16 +170,13 @@
                         <th>Theater ID</th>
                         <th>Seat ID</th>
                         <th>Date-Time</th>
-                        <th>Price</th>
-                <th>Ticket</th>
+                        <th>Total Payment</th>
                       </tr>
                     </thead>
   
                     <tbody>
-                   
-
+  
                       <?php
-                          
                           //หา Client_ID
                           $client = $_SESSION['name'];
                           $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
@@ -185,23 +188,17 @@
                           }
 
 
-                        $sql = "SELECT * FROM Booking bk, Showtime s, Movie m, Location l , Theaters t, Seat ss, Member me WHERE bk.Client_No = '$clientid' AND me.Client_No = bk.Client_No AND bk.Showtime_ID = s.Showtime_ID AND m.Movie_ID = s.Movie_ID AND l.location_ID = s.location_ID 
-                        AND s.Theater_ID = t.Theater_ID AND bk.Seat_ID = ss.Seat_ID AND ss.Theater_ID = t.Theater_ID AND ss.location_ID = t.location_ID AND s.location_ID = t.location_ID";
+                        $sql = "SELECT * FROM Booking bk, Movie m, Location l, Showtime s, WHERE Client_No = '$clientid' AND bk.location_ID = l.location_ID AND bk.Movie_ID = m.Movie_ID AND s.Theater_ID = bk.Theater_ID";
                         $result = $conn->query($sql);
 
-                        
-                        
                         if ($result->num_rows > 0){
                           while($row = $result-> fetch_assoc()){
-                            echo "<tr><td>" . $row["Movie_Name"] . "</td><td>". $row["Booking_date"] . "</td><td>". $row["location_name"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Start_Time"] . "</td><td>". $row["Total_Price"] . "</td>"?><td><button class="btn btn-primary w-100" name = "bo" type="submit" >View Ticket</button></td> 
-                        <?php
-                          $hisNum++;
+                            echo "<tr><td>" . $row["Movie_Name"] . "</td><td>". $row["Booking_date"] . "</td><td>". $row["location_name"] . "</td><td>". $row["Theater_ID"] . "</td><td>". $row["Seat_ID"] . "</td><td>". $row["Start_Time"] . "</td><td>". $row["Total_Price"] . "</td>" ;
                           }
                         }
-                        
-                        ?>
 
-                      
+
+                      ?>
                     </tbody>
 
                   </table>

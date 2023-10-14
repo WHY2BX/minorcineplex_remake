@@ -35,6 +35,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Font Kanit -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
 </head>
 
@@ -50,7 +52,7 @@
 
 
   <?php 
-      if($_SESSION['name'] == 'Manager'){
+      if(isset($_SESSION['name'])){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){

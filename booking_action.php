@@ -4,17 +4,13 @@
 	ob_start();
 	session_start();
 
-
-
     require_once('connect.php');
 
-    
     ?>
     <form action="ticket.php" method="POST">
     <?php
 
     $movie = $_POST['Movie'];
-    $theater = $_POST['Theaters'];
     $location = $_POST['Location'];
 	$locationid;
     $client = $_SESSION['name'];
@@ -23,12 +19,11 @@
     $showtimeid;
 
     $_SESSION['Movie'] = $movie;
-    $_SESSION['Theaters'] = $theater;
+    
     $_SESSION['Location'] = $location;
     $_SESSION['Start_time'] = $starttime;
 
     $_SESSION['movie'] = $movie;
-    $_SESSION['theater'] = $theater;
     $_SESSION['location'] = $location;
     $_SESSION['starttime'] = $starttime;
 
@@ -55,6 +50,17 @@
                 }
             }
 
+            //หา Theater_ID
+            $sql8 = "SELECT Theater_ID FROM Showtime Where location_ID = '$locationid' AND Start_time = '$starttime' AND Movie_ID = '$movieid'";
+            $result8 = mysqli_query($conn, $sql8);
+            if (mysqli_num_rows($result8) > 0) {
+                while($row1 = mysqli_fetch_assoc($result8)) {	
+                    $theater = $row1['Theater_ID'];
+                }
+            }            
+
+            $_SESSION['Theaters'] = $theater;
+
             //หา Client_ID
             $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
             $result4 = mysqli_query($conn, $sql4);
@@ -75,7 +81,6 @@
 
             //หาNumticket + ticketprice
 
-            
             $numticket = 0;
             $Seat = $_POST['seats'];
             //เก็บ list seats ใน $_SESSION
@@ -107,12 +112,4 @@
     else{
         echo "error";
     }
-
-
-
-
-
-
-
-
 ?>

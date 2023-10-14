@@ -8,8 +8,8 @@
 ?>
 <?php require_once('connect.php'); ?>
 <?php
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	

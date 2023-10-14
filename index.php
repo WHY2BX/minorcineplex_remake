@@ -39,6 +39,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
 </head>
 
@@ -55,7 +56,7 @@
 
 
   <?php 
-      if($_SESSION['name'] == 'Manager'){
+      if(isset($_SESSION['name'])){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -119,7 +120,7 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                ?> <h3 style ="font-family: 'Kanit';" ><?php echo $name;?></h3>
+                                ?> <h3><?php echo $name;?></h3>
                                 <?php
                             }
                         }
@@ -139,9 +140,8 @@
 
       <?php 
           $no = 4;
-          while($no <= 15){ 
+          while($no <= 17){ 
       ?>
-      
           <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">
 
               <div class="card">
@@ -172,12 +172,11 @@
                             while($row = mysqli_fetch_assoc($result)) {
 
                                 $name = $row['Movie_Name'];
-                                
+
                                 ?> <h4 style ="font-family: 'Kanit'; text-align: center;" ><?php echo $name; ?></h4>
                                 <?php
                             }
                         }
-
                   ?>
             
                 </div>
@@ -191,7 +190,6 @@
       </div>
 
     </section>
-    <div style="text-align:center;font-family:Kanit;font-size:40px">Coming Soon . . .</div>
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -3,6 +3,17 @@
   ob_start();
   session_start();
   require_once('connect.php');
+  $_SESSION['Movie'] = "Godzilla vs. Kong";
+  $_SESSION['Theaters'] = "Theater 1";
+  $_SESSION['Location'] = "Central Plaza Chaengwattana";
+  $_SESSION['Start_time'] = "2021-04-01 10:00:00";
+  $_SESSION['seats'] = array("A1","A2","A3","A4","A5");
+
+  $_SESSION['movie'] = "Godzilla vs. Kong";
+  $_SESSION['location'] = "Central Plaza Chaengwattana";
+  $_SESSION['theater'] = "Theater 1";
+  $_SESSION['starttime'] = "2021-04-01 10:00:00";
+  $_SESSION['num'] = 5;
 
   $movie = $_SESSION['Movie'];
   $theater = $_SESSION['Theaters'];
@@ -19,10 +30,7 @@
 <html lang="en">
 
 <head>
-
   <!-- connect db -->
-
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -49,6 +57,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Font Kanit -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
 </head>
 
