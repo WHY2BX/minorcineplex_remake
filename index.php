@@ -46,7 +46,7 @@
 <body>
 
 
-  <?php 
+<?php 
       if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
           include "header.php";  }
       else
@@ -54,9 +54,8 @@
         
   ?>
 
-
   <?php 
-      if(isset($_SESSION['name'])){
+      if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){

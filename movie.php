@@ -69,8 +69,9 @@ if ($no !== null) {
           include "Guest_header.php";
         
   	?>
+
   	<?php 
-      if(isset($_SESSION['name'])){
+      if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -127,7 +128,7 @@ if ($no !== null) {
 					?>
 
 					<div><a href= <?php if(isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-							echo "booking.php?no=".$no;
+							echo "bookingnew.php?no=".$no;
 						}else{
 							echo "login.php";
 						}?>>
