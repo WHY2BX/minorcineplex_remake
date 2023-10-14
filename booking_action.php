@@ -51,7 +51,7 @@
             }
 
             //หา Theater_ID
-            $sql8 = "SELECT Theater_ID FROM Showtime Where location_ID = '$locationid' AND Start_time = '$starttime' AND Movie_ID = '$movieid'";
+            $sql8 = "SELECT Theater_ID FROM Showtime Where location_ID = '$locationid' AND Start_Time = '$starttime' AND Movie_ID = '$movieid'";
             $result8 = mysqli_query($conn, $sql8);
             if (mysqli_num_rows($result8) > 0) {
                 while($row1 = mysqli_fetch_assoc($result8)) {	
