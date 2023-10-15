@@ -99,7 +99,6 @@
           <div class="card">
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
-               <!-- Bordered Tabs -->
               <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">

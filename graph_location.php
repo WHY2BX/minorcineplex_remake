@@ -13,17 +13,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Movie Chart</title>
 
-
     <style>
-    
-        body {
-            width: 550px;
-            margin: 3rem auto;
-        }
 
         #chart-container {
-            width: 100%;
+            width: 50%;
             height: auto;
+            margin: 10rem auto;
         }
 
     </style>
