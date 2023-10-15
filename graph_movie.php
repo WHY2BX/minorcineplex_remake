@@ -77,6 +77,7 @@
 
     <div id="chart-container">
         <canvas id="MovieCanvas"></canvas>
+
     </div>
 
 
@@ -103,8 +104,8 @@
                         labels: movie_name,
                         datasets: [{
                                 label: 'Movie Total earnings',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
+                                backgroundColor: '#012970',
+                                borderColor: '#012970',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: earning
@@ -120,6 +121,7 @@
             }
         }
     </script>
+
 
 </body>
 </html>
