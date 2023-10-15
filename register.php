@@ -63,7 +63,7 @@
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your FirstName</label>
                       <input type="text" name="firstname" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, enter your name!</div>
+                      <div class="invalid-feedback">Please enter your name!</div>
                     </div>
 
                     <div class="col-12">

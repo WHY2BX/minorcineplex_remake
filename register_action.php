@@ -24,14 +24,18 @@
         $result = mysqli_query($conn, $sql);
 
         if ($conn->query($sql) === TRUE) {
+            echo "<script> alert('Register Success!'); </script>";
             echo "New record created successfully";
             echo "<script> window.open('login.php','_self'); </script>";
           } else {
+            //echo "<script> window.open('login.php','_self'); </script>";
             echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script> alert('Register Success!'); </script>";
           }
            
     }
     catch (Exception $e) {
+        echo "<script> alert('Register Success!'); </script>";
         echo "<script> window.open('login.php','_self'); </script>";
     }
          

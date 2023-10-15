@@ -83,7 +83,7 @@
                   <div style="text-align: center;">
                     <img class="card-title text-center pb-0 fs-4" src="https://images.emojiterra.com/twitter/v14.0/512px/1f4ba.png" style="width: 20%; margin-left: auto;">
                   </div>
-                    <h5 class="card-title text-center pb-0 fs-4">Booking History!</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Booking History</h5>
                   </div>
                   <br>
 
