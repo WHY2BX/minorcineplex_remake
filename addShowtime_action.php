@@ -12,8 +12,8 @@
 	$locationid;
 	$theater = $_POST['Theater'];
 	$date = $_POST['date'];
-	$stime = $_POST['start_time'];
-	$etime = $_POST['end_time'];
+	$stime = $date." ".$_POST['start_time'];
+	// $etime = $_POST['end_time'];
 	$manager = $_SESSION['name'];
 ?>
 
@@ -47,7 +47,7 @@
             }
         }
 
-		$sql = "INSERT INTO Showtime (Theater_ID,Movie_ID,Employee_Num,Location_ID,Show_Date,Start_Time,End_Time) VALUES ($theater,$movieid,$managerid,$locationid,'$date','$stime','$etime')";  
+		$sql = "INSERT INTO Showtime (Theater_ID,Movie_ID,Employee_Num,Location_ID,Show_Date,Start_Time) VALUES ($theater,$movieid,$managerid,$locationid,'$date','$stime')";  
 		$result = mysqli_query($conn, $sql);
 			echo '<script>alert("New record created successfully")</script>';
 			echo "<script> window.open('addShowtime.php','_self'); </script>";

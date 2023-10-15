@@ -101,7 +101,7 @@
                     let chartdata = {
                         labels: location_name,
                         datasets: [{
-                                label: 'Movie Total earnings',
+                                label: 'Movie Total earnings(Baht)',
                                 backgroundColor: '#012970',
                                 borderColor: '#012970',
                                 hoverBackgroundColor: '#CCCCCC',
