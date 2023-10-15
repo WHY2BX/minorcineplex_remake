@@ -20,7 +20,6 @@
     }
     catch (Exception $e) {
         echo $e;
-		echo $description;
     }
          
 			

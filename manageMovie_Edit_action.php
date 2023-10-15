@@ -42,8 +42,8 @@
 
 
         // เพิ่มข้อมูลลงตารางManage_Movie
-        $sql = "INSERT INTO Manage_Movie (Employee_Num,Movie_ID) VALUES ('$managerid','$movieid')";  
-		$result3 = mysqli_query($conn, $sql);
+        // $sql = "INSERT INTO Manage_Movie (Employee_Num,Movie_ID) VALUES ('$managerid','$movieid')";  
+		// $result3 = mysqli_query($conn, $sql);
 
         //อัพเดตค่าใน Movie
         $sql = "UPDATE Movie 
