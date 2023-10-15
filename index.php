@@ -51,7 +51,7 @@
           include "header.php";  }
       else
           include "Guest_header.php";
-        
+
   ?>
 
   <?php 
