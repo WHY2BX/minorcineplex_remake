@@ -168,16 +168,12 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="Start" class="form-label">StartTime [Format = YYYY:MM:DD HH:MM:SS]</label>
+                      <label for="Start" class="form-label">StartTime [Format = HH:MM:SS]</label>
                       <input type="text" name="start_time" class="form-control" id="Start" required>
                       <div class="invalid-feedback">Please enter StartTime!</div>
                     </div>
                                         
-                    <div class="col-12">
-                      <label for="End" class="form-label">EndTime [Format = YYYY:MM:DD HH:MM:SS]</label>
-                      <input type="text" name="end_time" class="form-control" id="End" required>
-                      <div class="invalid-feedback">Please enter EndTime!</div>
-                    </div>
+
 
                     <br>
                     <div class="col-12">

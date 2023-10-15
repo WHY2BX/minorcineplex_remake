@@ -98,19 +98,7 @@
             //หาNumticket + ticketprice
 
             
-            $numticket = 0;
-            $Seat = $_POST['seats'];
-            //เก็บ list seats ใน $_SESSION
-            $_SESSION['seats'] = $Seat;
-
-            foreach($Seat as $totalselected){
-                $numticket++;
-            }
-            $total = $numticket*120;
-            $_SESSION['num'] = $numticket;
-            $_SESSION['total'] = $total;
-            //หาBooking_Date
-            $date = date("y-m-d");
+ 
 
             
 
