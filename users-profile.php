@@ -165,7 +165,7 @@
                         <th>Seat ID</th>
                         <th>Date-Time</th>
                         <th>Price</th>
-                        <th>Ticket</th>
+                <th>Ticket</th>
                       </tr>
                     </thead>
   
