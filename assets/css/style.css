@@ -1696,3 +1696,32 @@
   tfoot tr th:last-child {
     font-family: monospace;
   }
+
+.headertext{
+  caret-color: transparent;
+  font-size: 96px;
+  z-index: 100;
+  position: fixed;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-top: -50px;
+  margin-left: 15px;
+  background: linear-gradient(180deg, rgba(23, 74, 255, 0.80) 43.79%, #001970 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rowreward{
+  margin-top: 15%;
+  display: flex;
+  padding-top: 5%;
+  cursor:grab;
+  margin-left: 15%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.col_pass{
+  filter: grayscale(100%);
+}
