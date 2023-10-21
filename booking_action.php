@@ -112,7 +112,7 @@
                 VALUES ($movieid,$clientid,$theater,$locationid,'1','120','$showtimeid', '$seatnum', '$date')";  
                 $result6 = mysqli_query($conn, $sql6);
             }
-            echo "<script> window.open('ticket.php','_self'); </script>";
+            echo "<script> window.open('Promotion_use.php','_self'); </script>";
      
             //เพิ่ม Movie_PassLevel +1
             $sql7 = "UPDATE Member set Movie_PassLevel = $Passlevel+1  where Client_No = '$clientid'"; 

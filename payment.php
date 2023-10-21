@@ -40,46 +40,65 @@
   <!-- Font Kanit -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
 
-  <!-- pop up -->
-  <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
 <body>
   
+<?php
+if (isset($_SESSION['first_name']) && !empty($_SESSION['first_name'])) {
+    include "header.php";
+} else {
+    include "Guest_header.php";
+}
+?>
 
-<?php 
-      if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
-          include "header.php";}
-      else
-          include "Guest_header.php";   
-  ?>
+<?php
+if (isset($_SESSION['name'])) {
+    include "Manager_sidebar.php";
+} elseif (isset($_SESSION['first_name']) && !empty($_SESSION['first_name'])) {
+    include "sidebar.php";
+} else {
+    include "Guest_sidebar.php";
+}
+?>
 
-  <!-- นับเวลาถอยหลัง -->
-  <h1><span id="seconds">2</span></h1>
-  
-  <!--จะโหลดมาไว้ใน  server  หรือใช้แบบนี้ก็ได้ -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://www.jacklmoore.com/colorbox/jquery.colorbox.js"></script>
-  
-  <script>
-      function openColorBox(){
-		  //กำหนดขนาดและหน้าเว็บที่จะแสดงใน popup สามารถใส่เป็นภาพก็ได้นะครับ
-        $.colorbox({iframe:true, width:"800px", height:"500px", href: "http://devbanban.com/"});
-      }
-      
-      function countDown(){
-        seconds--
-        $("#seconds").text(seconds);
-        if (seconds === 0){
-          openColorBox();
-          clearInterval(i);
-        }
-      }
-      //กำหนดเวลา วินาทีที่จะให้ popup ทำงาน 
-      var seconds = 2,
-          i = setInterval(countDown, 1000);
-    </script>
+<main>
+    <div class="container">
+    <form action="index.php" method="post" novalidate>
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Payment</h5>
+                    <br><br>
+                    <img src= "https://media.discordapp.net/attachments/998863837400932373/1165288385099857980/IMG_8559.jpg?ex=65464e61&is=6533d961&hm=95e281f8cb913a285c6276e2273d1608d97e0e5cdf73749ae4e948616e39b8f3&=&width=701&height=701" width="500" height="500">
+                    <br><br>
+                    <button class="btn btn-primary w-100" type="submit">submit</button>
+
+                </div>  
+              </div>
+
+            </div>
+          </div>
+        </div>
+        </form>
+      </section>
+
+    </div>
+  </main><!-- End #main -->
 
 </body>
 </html>

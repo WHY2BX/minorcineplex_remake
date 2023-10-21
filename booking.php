@@ -172,14 +172,14 @@ if (isset($_SESSION['name'])) {
                                             openNewTabBtn.addEventListener("click", function() {
                                                 // สร้าง URL ที่คุณต้องการให้หน้าเว็บใหม่เปิด
                                                 const variableToSend = "ข้อมูลที่คุณต้องการส่ง";
-                                                const url = "ticket.php?mname='<?php echo $mname; ?>'";
+                                                const url = "ticket.php?mname=''";
 
                                                 // เปิดหน้าเว็บใหม่ใน Tab ใหม่
                                                 window.open(url, '_blank');
                                             });
                                         </script> -->
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>

@@ -51,10 +51,7 @@
   ?>
 
   <?php 
-      if($_SESSION['name'] == 'Manager'){
-        include "Manager_sidebar.php";
-    }
-    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";
@@ -92,7 +89,7 @@
 
 
                   
-                  <form class="row g-3 needs-validation" action="manageMovie_Delete_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="payment_action.php" method="post" novalidate>
                     
                     <div class="col-12">
                         <label for="Movie">Choose a Promotion:</label>
@@ -136,7 +133,7 @@
                       <button class="btn btn-primary w-100" type="submit">Use Promotion</button>
                     </div>
 
-
+                            
 
 
 
