@@ -20,6 +20,13 @@
         </a>
       </li><!-- End Booking Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="Battlepass.php">
+          <i class="bi bi-grid"></i>
+          <span>Movie Pass</span>
+        </a>
+      </li><!-- End Booking Page Nav -->
+
 
       <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="users-profile.php">
