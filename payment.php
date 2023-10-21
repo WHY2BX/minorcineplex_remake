@@ -3,7 +3,7 @@
   ob_start();
   session_start();
   require_once('connect.php');
-
+  $client = $_SESSION['name'];
 
 ?>
 <!DOCTYPE html>
@@ -46,23 +46,21 @@
 
 <body>
   
-<?php
-if (isset($_SESSION['first_name']) && !empty($_SESSION['first_name'])) {
-    include "header.php";
-} else {
-    include "Guest_header.php";
-}
-?>
+<?php 
+      if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+          include "header.php";  }
+      else
+          include "Guest_header.php";
+        
+  ?>
 
-<?php
-if (isset($_SESSION['name'])) {
-    include "Manager_sidebar.php";
-} elseif (isset($_SESSION['first_name']) && !empty($_SESSION['first_name'])) {
-    include "sidebar.php";
-} else {
-    include "Guest_sidebar.php";
-}
-?>
+  <?php 
+  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+        include "sidebar.php";   }
+    else
+        include "Guest_sidebar.php";
+  ?>
+
 
 <main>
     <div class="container">
@@ -81,8 +79,98 @@ if (isset($_SESSION['name'])) {
 
                 <div class="card-body">
 
+                <?php $total = $_SESSION['total'];
+                      $promotion = $_POST['Promotion']; 
+                      if($promotion == 'Discount 100 Baht'){
+                        $total -= 100;
+                      }
+                      else if($promotion == 'Discount 15 Baht'){
+                        $total -= 15;
+                      }
+                      else if($promotion == 'Discount 50%'){
+                        $total = $total*0.5;
+                      }
+                      else if($promotion == 'Free Movie Ticket'){
+                        $total -= 120;
+                      }
+                      else if($promotion == 'None'){
+                        $total = $total;
+                      }
+                      $_SESSION['totals'] = $total;
+
+                      //หา Client_ID
+                      $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
+                      $result4 = mysqli_query($conn, $sql4);
+                      if (mysqli_num_rows($result4) > 0) {
+                          while($row = mysqli_fetch_assoc($result4)) {	
+                              $clientid = $row['Client_No'];
+                          }
+                      }
+                      
+                      //-------------Level Up Zone----------------------
+
+                      //หา Movie_PassLevel
+                      $sql7 = "SELECT Movie_PassLevel from Member Where Client_No = '$clientid'"; 
+                      $result7 = mysqli_query($conn, $sql7);
+                      if (mysqli_num_rows($result7) > 0) {
+                          while($row = mysqli_fetch_assoc($result7)) {	
+                              $Passlevel = $row['Movie_PassLevel'];
+                          }
+                      }
+                      
+                      //เพิ่ม Movie_PassLevel +1
+                      if($Passlevel != 5){
+                        $sql7 = "UPDATE Member set Movie_PassLevel = $Passlevel+1  where Client_No = '$clientid'"; 
+                        $result8 = mysqli_query($conn, $sql7);
+                        $Passlevel+=1;
+                      }
+
+                      //-------------END Level Up Zone----------------------
+
+                      //-------------Add Promotion For Member Zone----------------------
+
+                      if($Passlevel != 5){
+                      $sql = "INSERT INTO Member_Promotion (Client_No,Movie_PassLevel,Status) VALUES ('$clientid','$Passlevel','1')";  
+                      $result = mysqli_query($conn, $sql);
+                      }
+                      //-------------END Add Promotion For Member Zone----------------------
+
+                      //-------------ปรับStatus Promotion ที่ Member ใช้ทำให้ใช้ไม่ได้อีกรอบ---------------------
+
+                      if($promotion != "None"){
+                            //หา Movie_PassLevel
+                            $sql7 = "SELECT Movie_PassLevel from Member Where Client_No = '$clientid'"; 
+                            $result7 = mysqli_query($conn, $sql7);
+                            if (mysqli_num_rows($result7) > 0 ) {
+                                while($row = mysqli_fetch_assoc($result7)) {	
+                                    $Member_Passlevel = $row['Movie_PassLevel'];
+                                }
+                            }
+
+                            $sql8 = "SELECT Movie_PassLevel from Promotion Where Promotion_Description = '$promotion' AND Movie_PassLevel <= '$Member_Passlevel'"; 
+                            $result9 = mysqli_query($conn, $sql8);                      
+                            if (mysqli_num_rows($result9) > 0) {
+                              while($row = mysqli_fetch_assoc($result9)) {	
+                                  $Passlevel = $row['Movie_PassLevel'];
+                              }
+                          }
+
+                            $sql10 = "UPDATE Member_Promotion set Status = 0  where Client_No = '$clientid' AND Movie_PassLevel = '$Passlevel'"; 
+                            $result9 = mysqli_query($conn, $sql10);
+                  }
+
+
+
+
+                      //-------------END ปรับStatus Promotion ที่ Member ใช้ทำให้ใช้ไม่ได้อีกรอบ----------------------
+                ?>
+
+
+
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Payment</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Total: <?php echo $total; ?></h5>
+
                     <br><br>
                     <img src= "https://media.discordapp.net/attachments/998863837400932373/1165288385099857980/IMG_8559.jpg?ex=65464e61&is=6533d961&hm=95e281f8cb913a285c6276e2273d1608d97e0e5cdf73749ae4e948616e39b8f3&=&width=701&height=701" width="500" height="500">
                     <br><br>

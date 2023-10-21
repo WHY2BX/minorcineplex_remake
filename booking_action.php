@@ -97,13 +97,13 @@
 
 
             //หา Movie_PassLevel
-            $sql7 = "SELECT Movie_PassLevel from Member Where Client_No = '$clientid'"; 
-            $result7 = mysqli_query($conn, $sql7);
-            if (mysqli_num_rows($result7) > 0) {
-                while($row = mysqli_fetch_assoc($result7)) {	
-                    $Passlevel = $row['Movie_PassLevel'];
-                }
-            }
+            // $sql7 = "SELECT Movie_PassLevel from Member Where Client_No = '$clientid'"; 
+            // $result7 = mysqli_query($conn, $sql7);
+            // if (mysqli_num_rows($result7) > 0) {
+            //     while($row = mysqli_fetch_assoc($result7)) {	
+            //         $Passlevel = $row['Movie_PassLevel'];
+            //     }
+            // }
 
 
             
@@ -114,9 +114,9 @@
             }
             echo "<script> window.open('Promotion_use.php','_self'); </script>";
      
-            //เพิ่ม Movie_PassLevel +1
-            $sql7 = "UPDATE Member set Movie_PassLevel = $Passlevel+1  where Client_No = '$clientid'"; 
-            $result7 = mysqli_query($conn, $sql7);           
+            // //เพิ่ม Movie_PassLevel +1
+            // $sql7 = "UPDATE Member set Movie_PassLevel = $Passlevel+1  where Client_No = '$clientid'"; 
+            // $result7 = mysqli_query($conn, $sql7);           
 
         }
         catch(Exception $e){

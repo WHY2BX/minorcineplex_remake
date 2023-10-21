@@ -169,7 +169,7 @@
                             <br>
                             <h3>
                               <?php
-                                echo "$num1";
+                                echo $_SESSION['totals'];
                               ?>
                             </h3>
                         </div>

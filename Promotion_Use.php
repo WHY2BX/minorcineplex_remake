@@ -89,7 +89,7 @@
 
 
                   
-                  <form class="row g-3 needs-validation" action="payment_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="payment.php" method="post" novalidate>
                     
                     <div class="col-12">
                         <label for="Movie">Choose a Promotion:</label>
