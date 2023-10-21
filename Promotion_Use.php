@@ -50,9 +50,8 @@
         
   ?>
 
-
   <?php 
-      if(isset($_SESSION['name'])){
+      if($_SESSION['name'] == 'Manager'){
         include "Manager_sidebar.php";
     }
     else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
@@ -100,21 +99,32 @@
                         
                         <?php
 
-                            //โปรโมชั่น
-                            $sql = "SELECT Promotion_Description from Member_Promotion join Promotion using (Movie_PassLevel) Where Client_No = 5 And Status = 1";	
-                            $result = mysqli_query($conn, $sql);
+                            $client = $_SESSION['name'];
 
+                            //หา client
+                            $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
+                            $result4 = mysqli_query($conn, $sql4);
+                            if (mysqli_num_rows($result4) > 0) {
+                                while($row = mysqli_fetch_assoc($result4)) {	
+                                    $clientid = $row['Client_No'];
+                                }
+                            }
+
+                            //โปรโมชั่นที่ Member มี
+                            $sql = "SELECT Promotion_Description from Member_Promotion join Promotion using (Movie_PassLevel) Where Client_No = '$clientid' And Status = 1";	
+                            $result = mysqli_query($conn, $sql);
+                            echo "<select name ='Promotion' class='dropdown-item'>";
                             if (mysqli_num_rows($result) > 0) {
                                 
-                                echo "<select name ='Promotion' class='dropdown-item'>";
+                                
 
                                 while($row = mysqli_fetch_assoc($result)) {	
                                     echo "<option>".$row["Promotion_Description"]."</option>";
                                                                           
                                 }
-                                echo "<option>"."None"."</option>";
-                                echo "</select>";
                             }
+                              echo "<option>"."None"."</option>";
+                              echo "</select>";
                             ?>
 
                         </div>
