@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Manage Movie</title>
+  <title>Manage Promotion</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -79,7 +79,7 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Manage Movie [Delete]</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Manage Promotion [Delete]</h5>
                   </div>
                   <br><br>
 
@@ -120,7 +120,7 @@
 
                     <br>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Delete Movie</button>
+                      <button class="btn btn-primary w-100" type="submit">Delete Promotion</button>
                     </div>
 
 
