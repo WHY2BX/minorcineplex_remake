@@ -66,7 +66,7 @@ if (isset($_SESSION['name'])) {
 
 <main>
     <div class="container">
-    <form action="index.php" method="post" novalidate>
+    <form action="ticket.php" method="post" novalidate>
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
