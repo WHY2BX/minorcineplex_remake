@@ -142,7 +142,33 @@
                     </div>
                   </div>
 
- 
+            <?php 
+                    //หา Client_ID
+                    $client = $_SESSION['name'];
+                    $sql4 = "SELECT Client_No from Member Where Username = '$client'"; 
+                    $result4 = mysqli_query($conn, $sql4);
+                    if (mysqli_num_rows($result4) > 0) {
+                        while($row = mysqli_fetch_assoc($result4)) {	
+                            $clientid = $row['Client_No'];
+                              }
+                    }              
+            
+            
+              //หา Movie_PassLevel
+              $sql7 = "SELECT Movie_PassLevel from Member Where Client_No = '$clientid'"; 
+              $result7 = mysqli_query($conn, $sql7);
+              if (mysqli_num_rows($result7) > 0) {
+                  while($row = mysqli_fetch_assoc($result7)) {	
+                      $Passlevel = $row['Movie_PassLevel'];
+                  }
+              }?>                  
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Movie_Pass Level</div>
+                    <div class="col-lg-9 col-md-8"><?php
+                      echo $Passlevel ?>
+                    </div>
+                  </div>
 
   
 
