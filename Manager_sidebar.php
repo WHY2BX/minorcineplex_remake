@@ -48,6 +48,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="addPromotion.php">
+          <i class="bi bi-person"></i>
+          <span>Add Promotion</span>
+        </a>
+      </li>
+
       <li class="nav-heading">Manage</li>
 
       <!--ลบ -->
@@ -63,8 +70,14 @@
           <i class="bi bi-person"></i>
           <span>Delete Showtime</span>
         </a>
-      </li>      
+      </li>     
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="managePromotion_Delete.php">
+          <i class="bi bi-person"></i>
+          <span>Delete Promotion</span>
+        </a>
+      </li> 
       <!--เเก้ไข-->
 
       <li class="nav-item">
@@ -79,8 +92,14 @@
           <i class="bi bi-person"></i>
           <span>Edit Showtime</span>
         </a>
-      </li>      
+      </li> 
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="managePromotion_Edit.php">
+          <i class="bi bi-person"></i>
+          <span>Edit Promotion</span>
+        </a>
+      </li> 
 
       <li class="nav-heading">Graph</li>
 
