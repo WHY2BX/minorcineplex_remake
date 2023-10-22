@@ -312,3 +312,52 @@
   }
 
 })();
+
+
+//Search
+document.addEventListener("DOMContentLoaded", function() {
+  const searchButton = document.getElementById("searchButton");
+  const movieSearch = document.getElementById("movieSearch");
+
+  searchButton.addEventListener("click", function() {
+      const searchTerm = movieSearch.value.trim().toLowerCase();
+      let foundMatch = false;
+
+      if (searchTerm) {
+          const movieCards = document.querySelectorAll(".card");
+          let firstMatchedCard = null;
+
+          movieCards.forEach(card => {
+              const movieTitleElement = card.querySelector("h4");
+              if (movieTitleElement) {
+                  const movieTitle = movieTitleElement.textContent.toLowerCase();
+                  if (movieTitle.includes(searchTerm)) {
+                      card.style.display = "block";
+                      foundMatch = true;
+                      if (!firstMatchedCard) {
+                          firstMatchedCard = card;
+                          card.style.filter = "none";
+                      }
+                  } else {
+                      card.style.filter = "blur(5px) grayscale(100%)";
+                  }
+              }
+          });
+
+          if (!foundMatch) {
+              alert("No movies matching.");
+          } else {
+              if (firstMatchedCard) {
+                  firstMatchedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+          }
+      } else {
+          const movieCards = document.querySelectorAll(".card");
+          movieCards.forEach(card => {
+              card.style.filter = "none";
+              card.style.display = "block";
+          });
+      }
+  });
+});
+

@@ -240,9 +240,14 @@
   
   .card-body {
     caret-color: transparent;
-    padding: 20px 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
     color: #3b83ff;
     border-radius: 80px
+  }
+
+  .card-body h1{
+    font-size: 38px;
+    color: #005eff;
   }
   
   .card-body_detail {
@@ -255,12 +260,10 @@
   }
   
   
-  
-  .card-body h1{
-    font-size: 38px;
-    color: #005eff;
+  .col-lg-4{
+    width: 33.3%;
   }
-  
+
   .description{
     margin: 0 auto;
     max-width: 800px;
@@ -1740,4 +1743,63 @@
   color: #fff;
   background-color: #77ff1d;
   border-color: #ff16f7;
+}
+
+
+.search-container {
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+
+#searchButton {
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar{
+  width: 100%;
+  max-width: 700px;
+  background: rgba(243, 247, 255, 0.8);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  
+}
+
+.search-bar input{
+  font-size: 28px;
+  background: transparent;
+  flex: 1;
+  border: 0px;
+  outline: none;
+  padding: 24px 24px;
+  color: rgb(40, 29, 247);
+  
+}
+
+::placeholder{
+  font-size: 20px;
+  color: #4153f19a;
+}
+
+.search-bar button img{
+  width:25px;
+  caret-color: transparent;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #58629b;
+  cursor: pointer;
+  caret-color: transparent;
 }

@@ -77,6 +77,7 @@
       </nav>
     </div><!-- End Page Title -->
 
+
     <section class="section dashboard">
 
       <div class="row">
@@ -134,6 +135,13 @@
         <?php $no++; } ?>
 
       </div>
+
+    <div class="search-container">
+    <div class="search-bar">
+    <input type="text" id="movieSearch" placeholder="Search by Movie Name">
+    <button id="searchButton"><img src="./assets/css/search.png"></button>
+    </div>
+  </div><br><br>
 
       <div class="row">
 
