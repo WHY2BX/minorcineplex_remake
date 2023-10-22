@@ -158,19 +158,40 @@
                             $sql10 = "UPDATE Member_Promotion set Status = 0  where Client_No = '$clientid' AND Movie_PassLevel = '$Passlevel'"; 
                             $result9 = mysqli_query($conn, $sql10);
                   }
+              
+                      //-------------END ปรับStatus Promotion ที่ Member ใช้ทำให้ใช้ไม่ได้อีกรอบ----------------------?>
+ 
+                    <?php
+                    $time = 5;
+                    ?>
 
 
-
-
-                      //-------------END ปรับStatus Promotion ที่ Member ใช้ทำให้ใช้ไม่ได้อีกรอบ----------------------
-                ?>
-
-
-
-                  <div class="pt-4 pb-2">
+                    <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Payment</h5>
                     <h5 class="card-title text-center pb-0 fs-4">Total: <?php echo $total; ?></h5>
+                    <h5 class="card-title text-center pb-0 fs-4" id="timer"><?php echo "Time left: ".$time; ?></h5>
 
+                    
+                    <script>
+                      var element = document.getElementById("timer");
+                      var timer = <?php echo $time; ?>;
+
+                      function updateTimer() {
+                        element.innerHTML = "Time left: " + timer;
+                        timer--;
+
+                        if (timer < 0) {
+                          clearInterval(interval);
+                          window.alert("Time for makeing payment is out")
+                          window.open('index.php', '_self');
+                        }
+                      }
+                      var interval = setInterval(updateTimer, 1000);
+                    </script>
+
+
+
+                               
                     <br><br>
                     <img src= "https://media.discordapp.net/attachments/998863837400932373/1165288385099857980/IMG_8559.jpg?ex=65464e61&is=6533d961&hm=95e281f8cb913a285c6276e2273d1608d97e0e5cdf73749ae4e948616e39b8f3&=&width=701&height=701" width="500" height="500">
                     <br><br>
