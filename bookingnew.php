@@ -155,6 +155,10 @@
         <div class="col-12">
           <button class="btn btn-primary w-100" name = "bo" type="submit">Submit</button>
         </div>
+        <br>
+        <div class="col-12">
+          <button class="btn btn-primary w-100" name = "ca" type="submit" style="background-color: red;border-color: red;">Cancel</button>
+        </div>
     </form>                       
   </div>
 </div>

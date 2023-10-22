@@ -123,6 +123,9 @@
             echo $e;
         }
     }
+    else if(isset($_POST['ca'])){
+        echo "<script> window.open('index.php','_self'); </script>";
+    }
 
     else{
         echo "error";

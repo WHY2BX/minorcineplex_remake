@@ -1735,3 +1735,9 @@
 .col_passed{
   filter: grayscale(0%);
 }
+
+.cancel_button {
+  color: #fff;
+  background-color: #77ff1d;
+  border-color: #ff16f7;
+}
