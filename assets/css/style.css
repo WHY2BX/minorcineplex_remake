@@ -1722,6 +1722,16 @@
   overflow-x: scroll;
 }
 
+
+.item_pass{
+  width: 200px; height: 200px; 
+  object-fit: cover;
+  border-radius: 15px;
+}
+
 .col_pass{
   filter: grayscale(100%);
+}
+.col_passed{
+  filter: grayscale(0%);
 }
