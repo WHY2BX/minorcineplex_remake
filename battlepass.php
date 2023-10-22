@@ -42,110 +42,110 @@
     </div>
     <div class="rowreward">
 
-        <div class="col_passed" onclick="window.open('movie.php?no=4', '_self')">
+        <div class="col_passed">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/free_pass.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">1</h4>
                 </div>
               </div>
           </div>
           
-          <div class="col_passed" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_passed">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">2</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">3</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">4</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">5</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">6</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount60.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">7</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">8</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">9</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">10</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/discount10.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">11</h4>
                 </div>
               </div>
           </div>
-          <div class="col_pass" onclick="window.open('movie.php?no=4', '_self')">
+          <div class="col_pass">
             <div class="card">
                 <div class="card-body">
-                    <img class="MoviePosterBottom" src="https://github.com/Pooh303/MoviePoster/blob/main/haunting_in_venice.jpg?raw=true" style="display: block; margin-left: auto; margin-right: auto">
+                    <img class="item_pass" src="./assets/img/free_pass.png" style="display: block; margin-left: auto; margin-right: auto">
                     <br>
                    <h4 style="font-family: 'Kanit'; text-align: center;">12</h4>
                 </div>
