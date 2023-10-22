@@ -87,12 +87,15 @@
                       else if($promotion == 'Discount 15 Baht'){
                         $total -= 15;
                       }
-                      else if($promotion == 'Discount 50%'){
-                        $total = $total*0.5;
+                      else if($promotion == 'Discount 60%'){
+                        $total = $total*0.6;
                       }
                       else if($promotion == 'Free Movie Ticket'){
                         $total -= 120;
                       }
+                      else if($promotion == 'Discount 10%'){
+                        $total = $total*0.1;
+                      }                      
                       else if($promotion == 'None'){
                         $total = $total;
                       }
@@ -119,7 +122,7 @@
                       }
                       
                       //เพิ่ม Movie_PassLevel +1
-                      if($Passlevel != 5){
+                      if($Passlevel <= 12){
                         $sql7 = "UPDATE Member set Movie_PassLevel = $Passlevel+1  where Client_No = '$clientid'"; 
                         $result8 = mysqli_query($conn, $sql7);
                         $Passlevel+=1;
@@ -129,7 +132,7 @@
 
                       //-------------Add Promotion For Member Zone----------------------
 
-                      if($Passlevel != 5){
+                      if($Passlevel <= 12){
                       $sql = "INSERT INTO Member_Promotion (Client_No,Movie_PassLevel,Status) VALUES ('$clientid','$Passlevel','1')";  
                       $result = mysqli_query($conn, $sql);
                       }
@@ -162,14 +165,14 @@
                       //-------------END ปรับStatus Promotion ที่ Member ใช้ทำให้ใช้ไม่ได้อีกรอบ----------------------?>
  
                     <?php
-                    $time = 5;
+                    $time = 300;
                     ?>
 
 
                     <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Payment</h5>
                     <h5 class="card-title text-center pb-0 fs-4">Total: <?php echo $total; ?></h5>
-                    <h5 class="card-title text-center pb-0 fs-4" id="timer"><?php echo "Time left: ".$time; ?></h5>
+                    <h5 class="card-title text-center pb-0 fs-4" id="timer"><?php echo "Time left: ".$time." seconds"; ?></h5>
 
                     
                     <script>
@@ -177,7 +180,7 @@
                       var timer = <?php echo $time; ?>;
 
                       function updateTimer() {
-                        element.innerHTML = "Time left: " + timer;
+                        element.innerHTML = "Time left: " + timer+ " seconds";
                         timer--;
 
                         if (timer < 0) {
