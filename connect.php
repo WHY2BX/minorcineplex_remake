@@ -6,7 +6,7 @@
 // $dbname = "minorcineplex";
 // $port = 9061;
 
-//Local
+//Localh
 $servername = "localhost";
 $username = "root";
 $password = "";
