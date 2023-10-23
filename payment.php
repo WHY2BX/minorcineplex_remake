@@ -88,13 +88,13 @@
                         $total -= 15;
                       }
                       else if($promotion == 'Discount 60%'){
-                        $total = $total*0.6;
+                        $total = $total-($total*0.6);
                       }
                       else if($promotion == 'Free Movie Ticket'){
                         $total -= 120;
                       }
                       else if($promotion == 'Discount 10%'){
-                        $total = $total*0.1;
+                        $total = $total-($total*0.1);
                       }                      
                       else if($promotion == 'None'){
                         $total = $total;
