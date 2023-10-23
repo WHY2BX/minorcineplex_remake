@@ -88,8 +88,11 @@
           $no = 2;
           while($no <= 24){ 
       ?>
-      
-          <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
+          <?php  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name']) && $_SESSION['name'] != 'Manager') {?>
+              <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
+      <?php } else { ?>
+              <div class="col-lg-4" onClick="window.open('movie_nobook.php?no=<?php echo $no; ?>', '_self')" align="center">
+      <?php } ?>
 
               <div class="card">
 

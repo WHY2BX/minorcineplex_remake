@@ -252,7 +252,15 @@
   
   .card-body_detail {
     caret-color: transparent;
-    padding: 20px 20px 20px 20px;
+    padding: 50px 20px 50px 20px;
+    color: #3b83ff;
+    border-radius: 80px;
+    background-color: #5292ff2b;
+  }
+
+  .card-body_detail_nobook {
+    caret-color: transparent;
+    padding: 85px 20px 85px 20px;
     color: #3b83ff;
     border-radius: 80px;
     background-color: #5292ff2b;

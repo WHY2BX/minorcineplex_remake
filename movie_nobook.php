@@ -80,7 +80,7 @@ if ($no !== null) {
         include "Guest_sidebar.php";
   	?>
 
-  <div class="card-body_detail" style="text-align: center;  ">
+  <div class="card-body_detail_nobook" style="text-align: center;  ">
 				  <br><br><br><br>
 				  
 				  <?php
@@ -132,8 +132,10 @@ if ($no !== null) {
 						}else{
 							echo "login.php";
 						}?>>
-
-					</div>
+						<button class="btn-animate animate shake">
+							<span>จอง</span>
+						</button></a>
+					</div><br>
 			</div>
 </body>
 </html>
