@@ -54,9 +54,12 @@ if ($no !== null) {
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <link href="assets/css/style.css" rel="stylesheet">
   <!-- Font Kanit -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
+
+  	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+   	<script src="rating.js" defer></script>
 
 </head>
 
@@ -135,7 +138,17 @@ if ($no !== null) {
 						<button class="btn-animate animate shake">
 							<span>จอง</span>
 						</button></a>
-					</div>
+					</div><br>
+				<div class="rating-box">
+				<header>How was your experience?</header>
+				<div class="stars">
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+				</div>
 			</div>
+		</div>
 </body>
 </html>

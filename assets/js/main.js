@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
           });
 
           if (!foundMatch) {
-              alert("No movies matching.");
+              alert("No Movies Matching 🥲");
           } else {
               if (firstMatchedCard) {
                   firstMatchedCard.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -359,5 +359,15 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       }
   });
-});
 
+  const marks = document.querySelectorAll(".fa-xmark");
+  marks.forEach(mark => {
+      mark.addEventListener("click", function() {
+          movieSearch.value = "";
+          const movieCards = document.querySelectorAll(".card");
+          movieCards.forEach(card => {
+            card.style.filter = "none";
+        });
+      });
+  });
+});

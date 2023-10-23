@@ -37,6 +37,8 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
@@ -83,8 +85,8 @@
       <div class="row">
 
       <?php 
-          $no = 1;
-          while($no <= 3){ 
+          $no = 2;
+          while($no <= 24){ 
       ?>
       
           <div class="col-lg-4" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')" align="center">
@@ -132,21 +134,22 @@
 
           </div>
 
-        <?php $no++; } ?>
+        <?php $no+=8; } ?>
 
       </div>
 
     <div class="search-container">
     <div class="search-bar">
     <input type="text" id="movieSearch" placeholder="Search by Movie Name">
-    <button id="searchButton"><img src="./assets/css/search.png"></button>
+    <i class="fa-solid fa-xmark"></i>
+    <button id="searchButton"><img src="./assets/img/search.png"></button>
     </div>
   </div><br><br>
 
       <div class="row">
 
       <?php 
-          $no = 4;
+          $no = 1;
           while($no < 28){ 
       ?>
       <?php  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name']) && $_SESSION['name'] != 'Manager') {?>
