@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Manage Promotion</title>
+  <title>Add Promotion</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -79,7 +79,7 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Manage Promotion [Edit]</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Add Promotion</h5>
                   </div>
                   <br><br>
 
@@ -95,42 +95,21 @@
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
                     
-                  <div class="col-12">
-                        <label for="Movie">Choose a Level:</label>
                         
-                        <?php
-                            //หนัง
-                            $sql = "SELECT * FROM Promotion";	
-                            $result = mysqli_query($conn, $sql);
-
-                            if (mysqli_num_rows($result) > 0) {
-                                
-                                echo "<select name ='Promotion' class='dropdown-item'>";
-
-                                while($row = mysqli_fetch_assoc($result)) {	
-                                    echo "<option>".$row["Movie_PassLevel"]."</option>";                                          
-                                }
-                                echo "</select>";
-                            }
-                            ?>
-
-                        </div>
-                        
-                        <label for="Movie">Choose New Promotion Details</label>
+                        <label for="Movie">Choose Promotion Details</label>
                         <!--คำอธิบาย-->
                         <div class="col-12">
                         <select name ='Promotion' class='dropdown-item'>
-                        <option>discount 100</option>
-                        <option>discount 90</option>
-                        <option>discount 80</option>
-                        <option>discount 70</option>
-                        <option>discount 60</option>
-                        <option>discount 50</option>
-                        <option>discount 40</option>
-                        <option>discount 30</option>
-                        <option>discount 20</option>
-                        <option>discount 10</option>
-                        <option>Free</option>
+                        <option>discount 100%</option>
+                        <option>discount 90%</option>
+                        <option>discount 80%</option>
+                        <option>discount 70%</option>
+                        <option>discount 60%</option>
+                        <option>discount 50%</option>
+                        <option>discount 40%</option>
+                        <option>discount 30%</option>
+                        <option>discount 20%</option>
+                        <option>discount 10%</option>
                       <div class="invalid-feedback">Please enter Promotion!</div>
                     </div>
 
