@@ -153,7 +153,7 @@
 
       <?php 
           $no = 1;
-          while($no < 28){ 
+          while($no < 29){ 
       ?>
       <?php  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name']) && $_SESSION['name'] != 'Manager') {?>
               <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">
