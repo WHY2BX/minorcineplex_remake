@@ -1,9 +1,17 @@
 <?php
-$servername = "161.246.127.24";
-$username = "admin";
-$password = "admin";
+//Iserv
+// $servername = "161.246.127.24";
+// $username = "admin";
+// $password = "admin";
+// $dbname = "minorcineplex";
+// $port = 9061;
+
+//Local
+$servername = "localhost";
+$username = "root";
+$password = "1234";
 $dbname = "minorcineplex";
-$port = 9061;
+$port = 3306;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);

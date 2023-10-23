@@ -84,12 +84,10 @@
                   <br><br>
 
 
-
-
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="addShowtime_action.php" method="post" novalidate>
                   
-                  <label for="Movie">CHOOSE OLD SHOWTIME TO EDIT</label>
+                  <label class="manageshowtime_label" for="Movie">CHOOSE OLD SHOWTIME TO EDIT</label>
 
 
                     <div class="col-12">
@@ -178,8 +176,8 @@
 
                         ?>
                         </div>
-                        <br><br><br><br>
-                        <label for="Movie">CHOOSE NEW SHOWTIME DATA</label>
+                        <br><br><br><br><hr class="line_section">
+                        <label class="manageshowtime_label" for="Movie">CHOOSE NEW SHOWTIME DATA</label>
 
                         <div class="col-12">
                         <label for="Movie">Choose a Movie:</label>
@@ -264,9 +262,6 @@
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Edit Showtime</button>
                     </div>
-
-
-
 
 
                   </form>
