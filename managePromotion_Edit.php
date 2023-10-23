@@ -101,9 +101,18 @@
 
                         <!--ระดับPromotion-->
                         <select name ='Promotion' class='dropdown-item'>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                        <option value="value">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
 
 
                         </select>
@@ -113,21 +122,29 @@
                         <!--คำอธิบาย-->
                         <div class="col-12">
                         <select name ='Promotion' class='dropdown-item'>
-                        <option>discount 100</option>
-                        <option>discount 50</option>
-                        <option>Free</option>
+                        <option>discount 10%</option>
+                        <option>discount 20%</option>
+                        <option>discount 30%</option>
+                        <option>discount 40%</option>
+                        <option>discount 50%</option>
+                        <option>discount 60%</option>
+                        <option>discount 70%</option>
+                        <option>discount 80%</option>
+                        <option>discount 90%</option>
+                        <option>discount 100%</option>
                       <div class="invalid-feedback">Please enter Promotion!</div>
+                      <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Edit Showtime</button>
+                    </div>
                     </div>
 
 
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Edit Promotion</button>
-                    </div>
-
-
-
+                    
+                    
+                    
+                    
                   </form>
-
+                  
                 </div>
               </div>
 
@@ -140,9 +157,6 @@
     </div>
   </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>

@@ -109,6 +109,7 @@
   }
   
   .dropdown-item{
+    border-radius: 5px;
     background-color: #f4f4f4;
     color: #012970;
   }
@@ -141,6 +142,17 @@
   
   .dropdown-menu .dropdown-item:hover {
     background-color: #f6f9ff;
+  }
+
+  .line_section{
+    border-bottom: 0px solid #186dff;
+
+  }
+
+  .manageshowtime_label{
+    color: #001970;
+    font-size: 18px;
+    align-items: center;
   }
   
   @media (min-width: 768px) {
@@ -243,6 +255,10 @@
     padding: 10px 10px 10px 10px;
     color: #3b83ff;
     border-radius: 80px
+  }
+
+  .card-body form{
+    margin: auto;
   }
 
   .card-body h1{
@@ -484,7 +500,7 @@
   
   .header .search-form button {
     border: 0;
-    padding: 0;
+    padding: 0;h hh
     margin-left: -30px;
     background: none;
   }
@@ -1722,24 +1738,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* .rowreward{
-  margin-top: 15%;
-  display: flex;
-  padding-top: 5%;
-  cursor:grab;
-  margin-left: 15%;
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-
-#myProgress {
-  border-radius: 10px;
-  height: 30px;
-  width: 100%;
-  background-color: rgb(201, 201, 201);
-  margin-left: 15%; 
-} */
-
 .rowreward {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -1747,7 +1745,7 @@
   gap: 15px;
   margin-left: 15%;
   padding-top: 5%;
-  grid-row: 1; /* Position the .rowreward element in the first row */
+  grid-row: 1;
   cursor: grab;
   margin-top: 15%;
   margin-left: 15%;
