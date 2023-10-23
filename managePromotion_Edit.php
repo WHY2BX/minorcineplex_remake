@@ -95,27 +95,25 @@
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
                     
-                    <div class="col-12">
-                        <label for="Movie">Choose a Promotion to edit</label>
-                        <br><br>
+                  <div class="col-12">
+                        <label for="Movie">Choose a Level:</label>
+                        
+                        <?php
+                            //หนัง
+                            $sql = "SELECT * FROM Promotion";	
+                            $result = mysqli_query($conn, $sql);
 
-                        <!--ระดับPromotion-->
-                        <select name ='Promotion' class='dropdown-item'>
-                        <option value="value">1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
+                            if (mysqli_num_rows($result) > 0) {
+                                
+                                echo "<select name ='Promotion' class='dropdown-item'>";
 
+                                while($row = mysqli_fetch_assoc($result)) {	
+                                    echo "<option>".$row["Movie_PassLevel"]."</option>";                                          
+                                }
+                                echo "</select>";
+                            }
+                            ?>
 
-                        </select>
                         </div>
                         
                         <label for="Movie">Choose New Promotion Details</label>

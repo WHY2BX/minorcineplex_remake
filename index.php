@@ -151,9 +151,17 @@
 
       <div class="row">
 
-      <?php 
+      <?php
           $no = 1;
-          while($no < 28){ 
+          $num = 0;
+          $sql = "SELECT max(Movie_ID) FROM Movie";
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result) > 0) {
+              while($row = mysqli_fetch_assoc($result)) {
+                  $num = $row['max(Movie_ID)'];
+              }
+          }
+          while($no <= $num){
       ?>
       <?php  if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name']) && $_SESSION['name'] != 'Manager') {?>
               <div class="col-lg-2" onClick="window.open('movie.php?no=<?php echo $no; ?>', '_self')">

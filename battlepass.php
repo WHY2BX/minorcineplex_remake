@@ -1,5 +1,4 @@
 <?php 
-	//@session_start();
 	ob_start();
 	session_start();
 	require_once('connect.php');
@@ -36,8 +35,11 @@
           include "Guest_header.php";
   ?>
 
-  <?php
-    if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
+<?php 
+      if(isset($_SESSION['name'])){
+        include "Manager_sidebar.php";
+    }
+    else if (isset($_SESSION['first_name']) && ! empty($_SESSION['first_name'])){
         include "sidebar.php";   }
     else
         include "Guest_sidebar.php";

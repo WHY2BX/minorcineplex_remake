@@ -56,12 +56,64 @@
             include "Guest_sidebar.php";
     ?>
 
+<main>
+    <div class="container">
 
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
+              <div class="d-flex justify-content-center py-4">
 
+              </div><!-- End Logo -->
 
+              <div class="card mb-3">
 
+                <div class="card-body">
 
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Add Promotion</h5>
+                  </div>
+                  <br><br>
 
-    </body>
+                  <?php
+                    // if(isset($_POST['submit'])){
+                    //     $_SESSION['movie'] = $_POST['Movie'];
+                    //     $_SESSION['location'] = $_POST['Location'];
+                    //     $_SESSION['theater'] = $_POST['Theater'];
+                    // }               
+                  ?>
+
+                  <!--Movie-->
+                  <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
+                        <label for="Movie">Choose Promotion</label>
+                        <!--คำอธิบาย-->
+                        <div class="col-12">
+                        <select name ='Promotion' class='dropdown-item'>
+                        <option>discount 100%</option>
+                        <option>discount 90%</option>
+                        <option>discount 80%</option>
+                        <option>discount 70%</option>
+                        <option>discount 60%</option>
+                        <option>discount 50%</option>
+                        <option>discount 40%</option>
+                        <option>discount 30%</option>
+                        <option>discount 20%</option>
+                        <option>discount 10%</option>
+                      <div class="invalid-feedback">Please enter Promotion!</div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit">Edit Promotion</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
