@@ -15,8 +15,8 @@
 </head>
 <body>
 <div class="movie-container">
-  <label>Pick a movie: </label>
-  
+  <label style="font-size: 30px;">Pick a movie: </label>
+  <br>
   <form action="booking_action.php" method="POST">
   
   
@@ -80,12 +80,9 @@
            ?>
     </div>
 
-
-
-
-  
   <div class="container">
     <div class="screen"></div>
+    <span class="Display_text">Screen</span>
     <form action="booking_action.php">
     <div class="row">
           <input type ="checkbox" class="seat" name = "seats[]" value="A1">
@@ -149,7 +146,7 @@
         </div>
 
         <p class="text">
-        คุณได้เลือก <span id="count">0</span> ที่นั่ง, ราคารวมทั้งสิ้น <span id="total">0</span> บาท
+        คุณได้เลือกที่นั่ง <span id="seats"></span>,จำนวน <span id="count">0</span> ราคารวมทั้งสิ้น <span id="total">0</span> บาท
         </p>
 
         <div class="col-12">
@@ -157,7 +154,7 @@
         </div>
         <br>
         <div class="col-12">
-          <button class="btn btn-primary w-100" name = "ca" type="submit" style="background-color: red;border-color: red;">Cancel</button>
+          <button id="cancel_but" class="btn btn-primary w-100" name = "ca" type="submit" style="background-color: red;border-color: red;margin-top: -8px;">Cancel</button>
         </div>
     </form>                       
   </div>

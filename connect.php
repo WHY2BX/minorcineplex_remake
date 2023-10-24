@@ -9,7 +9,7 @@
 //Localh
 $servername = "localhost";
 $username = "root";
-$password = "1234";
+$password = "";
 $dbname = "minorcineplex";
 $port = 3306;
 

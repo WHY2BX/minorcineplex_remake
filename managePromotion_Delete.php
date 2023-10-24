@@ -83,15 +83,6 @@
                   </div>
                   <br><br>
 
-                  <?php
-                    // if(isset($_POST['submit'])){
-                    //     $_SESSION['movie'] = $_POST['Movie'];
-                    //     $_SESSION['location'] = $_POST['Location'];
-                    //     $_SESSION['theater'] = $_POST['Theater'];
-                    // }               
-                  ?>
-
-
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="manageMovie_Delete_action.php" method="post" novalidate>
                     

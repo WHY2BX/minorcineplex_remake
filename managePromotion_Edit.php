@@ -5,9 +5,6 @@
 	require_once('connect.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -62,7 +59,7 @@
   ?>
 
 
-  <main>
+<main>
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -79,23 +76,14 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Manage Promotion [Edit]</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Manage Promotion [Delete]</h5>
                   </div>
                   <br><br>
 
-                  <?php
-                    // if(isset($_POST['submit'])){
-                    //     $_SESSION['movie'] = $_POST['Movie'];
-                    //     $_SESSION['location'] = $_POST['Location'];
-                    //     $_SESSION['theater'] = $_POST['Theater'];
-                    // }               
-                  ?>
-
-
                   <!--Movie-->
-                  <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="manageMovie_Delete_action.php" method="post" novalidate>
                     
-                  <div class="col-12">
+                    <div class="col-12">
                         <label for="Movie">Choose a Level:</label>
                         
                         <?php
@@ -114,35 +102,34 @@
                             }
                             ?>
 
-                        </div>
-                        
-                        <label for="Movie">Choose New Promotion Details</label>
-                        <!--คำอธิบาย-->
-                        <div class="col-12">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="Movie">Select Promotion:</label>
                         <select name ='Promotion' class='dropdown-item'>
-                        <option>discount 10%</option>
-                        <option>discount 20%</option>
-                        <option>discount 30%</option>
-                        <option>discount 40%</option>
-                        <option>discount 50%</option>
-                        <option>discount 60%</option>
-                        <option>discount 70%</option>
-                        <option>discount 80%</option>
-                        <option>discount 90%</option>
-                        <option>discount 100%</option>
-                      <div class="invalid-feedback">Please enter Promotion!</div>
-                      <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Edit Showtime</button>
+                          <option>discount 100%</option>
+                          <option>discount 90%</option>
+                          <option>discount 80%</option>
+                          <option>discount 70%</option>
+                          <option>discount 60%</option>
+                          <option>discount 50%</option>
+                          <option>discount 40%</option>
+                          <option>discount 30%</option>
+                          <option>discount 20%</option>
+                          <option>discount 10%</option>
+                        </select>
                     </div>
+                        
+
+                    <br>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Edit Promotion</button>
                     </div>
 
 
-                    
-                    
-                    
-                    
+
                   </form>
-                  
+
                 </div>
               </div>
 

@@ -9,7 +9,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-  background-color: #242333;
+  background-color: #102235fc;
   color: #fff;
   margin: 0;
 }
@@ -48,12 +48,12 @@ body {
 }
 
 .seat {
+  scale: 1.8;
   background-color: #444451;
   height: 12px;
   width: 15px;
-  margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin: 8px;
+  /* border-radius: 10px; */
 }
 
 .selected {
@@ -110,12 +110,12 @@ body {
 }
 
 .screen {
-  background: #fff;
+  background: #ffffff;
   height: 70px;
-  width: 70%;
+  width: 80%;
   margin: 15px 0;
   transform: rotateX(-45deg);
-  box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(255,255,255,0.7);
 }
 
 p.text {
@@ -134,4 +134,8 @@ p.text span {
 
 .dropdown-item{
   background-color: #fff;
+}
+
+.Display_text{
+  padding-bottom: 10px;
 }

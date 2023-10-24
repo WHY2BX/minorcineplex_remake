@@ -1,19 +1,30 @@
 <?php 
-  session_cache_limiter('private, must-revalidate');
-  ob_start();
+  // session_cache_limiter('private, must-revalidate');
+  // ob_start();
   session_start();
   require_once('connect.php');
 
-  $movie = $_SESSION['Movie_his'];
-  $theater = $_SESSION['Theaters'];
-  $location = $_SESSION['Location_his'];
+  if (isset($_SESSION['Movie_his'])) {
+    $movie = $_SESSION['Movie_his'] = "Garfield: The Movie";
+} else {
+  $movie = $_SESSION['Movie_his'] = "Garfield: The Movie";
+}
+  $theater = $_SESSION['Theaters'] = "Theater 1" ? "Theater 1" : "Theater 2";
+  $location = $_SESSION['Location_his'] = "Minor_Bangkok";
   $locationid;
   $client = $_SESSION['name'];
   $clientid;
-  $starttime = $_SESSION['Time_his'];
+  if (isset($_SESSION['Time_his'])) {
+    $starttime = $_SESSION['Time_his'] = "2023-09-13 13:00:00";
+} else {
+  $starttime = $_SESSION['Time_his'] = "2023-09-13 13:00:00";
+}
   $showtimeid;
-
-  $seat = $_SESSION['seat'];
+  if (isset($_SESSION['seat'])) {
+    $seat = $_SESSION['seat'] = "C3";
+} else {
+     $seat = $_SESSION['seat'] = "C3";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +186,7 @@
                     <br><br>
 
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" onClick="window.open('index.php', '_self')">Back</button>
+                      <button class="btn btn-primary w-100" type="button" onClick="window.open('users-profile.php', '_self')">Back</button>
                     </div>
 
 

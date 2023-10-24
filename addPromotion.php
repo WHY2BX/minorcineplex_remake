@@ -77,34 +77,26 @@
                   </div>
                   <br><br>
 
-                  <?php
-                    // if(isset($_POST['submit'])){
-                    //     $_SESSION['movie'] = $_POST['Movie'];
-                    //     $_SESSION['location'] = $_POST['Location'];
-                    //     $_SESSION['theater'] = $_POST['Theater'];
-                    // }               
-                  ?>
-
                   <!--Movie-->
                   <form class="row g-3 needs-validation" action="manageMovie_Edit_action.php" method="post" novalidate>
-                        <label for="Movie">Choose Promotion</label>
-                        <!--คำอธิบาย-->
                         <div class="col-12">
+                        <label for="Movie">Choose Promotion</label>
                         <select name ='Promotion' class='dropdown-item'>
-                        <option>discount 100%</option>
-                        <option>discount 90%</option>
-                        <option>discount 80%</option>
-                        <option>discount 70%</option>
-                        <option>discount 60%</option>
-                        <option>discount 50%</option>
-                        <option>discount 40%</option>
-                        <option>discount 30%</option>
-                        <option>discount 20%</option>
-                        <option>discount 10%</option>
-                      <div class="invalid-feedback">Please enter Promotion!</div>
+                          <option>discount 100%</option>
+                          <option>discount 90%</option>
+                          <option>discount 80%</option>
+                          <option>discount 70%</option>
+                          <option>discount 60%</option>
+                          <option>discount 50%</option>
+                          <option>discount 40%</option>
+                          <option>discount 30%</option>
+                          <option>discount 20%</option>
+                          <option>discount 10%</option>
+                        </select>
                     </div>
+                    <br>
                     <div class="col-12">
-                      <button type="submit">Edit Promotion</button>
+                      <button class="btn btn-primary w-100" type="submit">Add Promotion</button>
                     </div>
                   </form>
                 </div>
